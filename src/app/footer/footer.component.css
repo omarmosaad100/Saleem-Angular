@@ -1,7 +1,10 @@
 .footerBG{
+  width: 100%;
+  text-align: center;
   background-color: #03045E ;
   color: white;
 }
+
 .social-media-icons {
   list-style: none;
   padding: 0;
