@@ -1,6 +1,6 @@
-import { GenderEnum } from "../Enums/GenderEnum.enum";
+import { GenderEnum } from "../../Enums/GenderEnum.enum";
 
-export interface IRegisterPatient {
+export interface IRegisterAsPatient {
   nationalID: string;
   name: string;
   mobile: string;

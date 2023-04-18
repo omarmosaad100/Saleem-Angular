@@ -1,13 +1,13 @@
 <form class="register-form form px-3 mt-4 scroll" #Form = "ngForm" (ngSubmit) = "SubmitData()">
 
-    <!-- * email -->
+    <!-- * userNationalId -->
     <div class="mb-3">
-      <label for="email"  class="form-label">Email address</label>
-      <input #emailRef="ngModel" name="email"  [(ngModel)]="RegisterData.email" type="email" class="form-control" id="email" required pattern="[a-zA-Z0-9]{1,}@[a-zA-Z]{3,}.[a-zA-Z]{3,4}"  >
+      <label for="email"  class="form-label">NationalId </label>
+      <input #nationalId="ngModel" name="userNationalId"  [(ngModel)]="LoginData.userNationalId" type="text" class="form-control" id="email" required  >
 
-      <div [hidden]="emailRef.valid || emailRef.untouched" class="text-danger py-1">
-        <span [hidden]="!emailRef.errors?.['required']"> Email is Required <br></span>
-        <span [hidden]="!emailRef.errors?.['pattern']"> Please Enter Valid Email </span>
+      <div [hidden]="nationalId.valid || nationalId.untouched" class="text-danger py-1">
+        <span [hidden]="!nationalId.errors?.['required']"> NationalId is Required <br></span>
+        <span [hidden]="!nationalId.errors?.['pattern']"> Please Enter Valid NationalId </span>
       </div>
 
     </div>
@@ -15,13 +15,21 @@
     <!-- * Password -->
     <div class="mb-3">
       <label for="password" class="form-label">Password</label>
-      <input #password="ngModel" [(ngModel)]="RegisterData.password" type="password" class="form-control" id="password"  name="password"  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}" required>
+      <input #password="ngModel" [(ngModel)]="LoginData.password" type="password" class="form-control" id="password"  name="password"  required>
 
       <div [hidden]="password.untouched || password.valid" class="text-danger py-1">
         <span [hidden]="!password.errors?.['required']"> Password is Required <br></span>
         <span [hidden]="!password.errors?.['pattern']"> Password is too short! It should be more than 8 Characters  </span>
       </div>
     </div>
+
+
+    <button
+      [disabled]="Form.invalid"
+      type="submit"
+      class="btn btn-primary float-end btn-submit px-4"
+
+    > Submit</button>
 
 
 </form>
