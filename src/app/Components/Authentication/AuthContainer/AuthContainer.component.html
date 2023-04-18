@@ -1,0 +1,46 @@
+
+
+<div class="container-fluid">
+  <lib-toastify-toast-container>
+    [position]="top-left"
+
+  </lib-toastify-toast-container>
+  <div class="row">
+    <!--* Login Image -->
+    <div class="col-lg-6 col-md-12 image-container p-0">
+
+      <a routerLink="/Home" class="logo fs-4">
+        <img src="../../../../favicon.ico" alt="logo" class="logo-img"/>
+        <span>Saleem</span>
+
+      </a>
+      <img src="../../../../assets/Images/Login/login2.jpg" alt="login-image" class=""/>
+    </div>
+
+    <!--* Forms container -->
+    <div class="col-lg-6 col-md-12 p-0 d-flex justify-content-center ">
+      <div class="forms-container position-relative">
+        <!-- add Authentication Header Component-->
+        <app-AuthHeader (ActiveFormEvent) = "GetActiveForm($event)"></app-AuthHeader>
+
+        <div class="form-model mt-3 ">
+
+          <!-- add Authentication Header Component-->
+          <!-- Active Form Container-->
+          <!--* Login Form-->
+          <div [hidden]="!showLoginForm">
+            <app-LoginForm></app-LoginForm>
+          </div>
+
+          <!--* Register Form-->
+
+          <div [hidden]="!showRegisterForm">
+            <app-RegisterForm></app-RegisterForm>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

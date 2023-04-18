@@ -1,0 +1,25 @@
+
+.register-form{
+  max-height:460px;
+  overflow-y: scroll;
+}
+
+
+input:focus {
+  box-shadow: none;
+}
+
+.ng-invalid:not(form).ng-touched{
+  border-left: 5px solid #a94442;
+}
+
+
+.ng-valid:not(form).ng-touched{
+  border-left: 5px solid #42A948;
+}
+
+.btn-submit{
+  background-color: #CAE5E2;
+  border: 0;
+  color:#327295 ;
+}
