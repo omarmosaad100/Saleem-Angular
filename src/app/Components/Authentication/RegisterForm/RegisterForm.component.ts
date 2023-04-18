@@ -26,10 +26,10 @@ export class RegisterFormComponent implements OnInit {
 
   SubmitData( ):void{
     if(this.gender == 'Male'){
-        this.RegisterData.gender = GenderEnum.Male
+        this.RegisterData.gender = GenderEnum.Male // 0
     }
     else{
-      this.RegisterData.gender = GenderEnum.Female
+      this.RegisterData.gender = GenderEnum.Female  // 1
     }
 
     this.service.SubmitData(this.RegisterData);
