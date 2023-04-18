@@ -1,22 +1,29 @@
-<div class="register-form form px-3  scroll">
-  <!-- {{email.valid | json}} -->
+<form class="register-form form px-3  scroll" #Form = "ngForm" (ngSubmit) = "SubmitData()">
 
-    <!-- * name -->
+
+
+  <lib-toastify-toast-container>
+    [position]="top-left"
+
+  </lib-toastify-toast-container>
+
+  <!-- * name -->
     <div class="mb-2">
       <label for="name" class="form-label"> Username</label>
-      <input #fname="ngModel" ngModel  type="text"  class="form-control" id="name"  required >
-      <div [hidden]="fname.untouched || fname.valid" class=" text-danger py-1">
+      <input #fname="ngModel" ngModel  type="text"  class="form-control" id="name" name="fname" required >
+      <div [hidden]=" fname.valid || fname.untouched" class=" text-danger py-1">
         Name is Required
       </div>
     </div>
 
     <!-- * email -->
     <div class="mb-2">
-      <label for="email" class="form-label">Email address</label>
-      <input #email="ngModel" ngModel type="email" class="form-control" id="email" required pattern="[a-zA-Z]{1,}@[a-zA-Z]{3,}.[a-zA-Z]{3,4}" >
-      <div [hidden]="email.untouched || email.valid" class="text-danger py-1">
-        <span [hidden]="!email.errors?.['required']"> Email is Required <br></span>
-        <span [hidden]="!email.errors?.['pattern']"> Please Enter Valid Email </span>
+      <label for="email"  class="form-label">Email address</label>
+      <input #emailRef="ngModel" name="email"  [(ngModel)]="RegisterData.email" type="email" class="form-control" id="email" required pattern="[a-zA-Z0-9]{1,}@[a-zA-Z]{3,}.[a-zA-Z]{3,4}"  >
+
+      <div [hidden]="emailRef.valid || emailRef.untouched" class="text-danger py-1">
+        <span [hidden]="!emailRef.errors?.['required']"> Email is Required <br></span>
+        <span [hidden]="!emailRef.errors?.['pattern']"> Please Enter Valid Email </span>
       </div>
 
     </div>
@@ -24,7 +31,7 @@
     <!-- * Password -->
     <div class="mb-2">
       <label for="password" class="form-label">Password</label>
-      <input #password="ngModel" ngModel type="password" class="form-control" id="password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}" required>
+      <input #password="ngModel" [(ngModel)]="RegisterData.password" type="password" class="form-control" id="password"  name="password"  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}" required>
 
       <div [hidden]="password.untouched || password.valid" class="text-danger py-1">
         <span [hidden]="!password.errors?.['required']"> Password is Required <br></span>
@@ -35,7 +42,7 @@
     <!-- * NationalID -->
     <div class="mb-2">
       <label for="nationalID" class="form-label">National ID</label>
-      <input #nationalID="ngModel" ngModel type="text" class="form-control" id="nationalID" pattern="[0-9]{14}" required>
+      <input #nationalID="ngModel" [(ngModel)]="RegisterData.nationalID" type="text" class="form-control" id="nationalID" pattern="[0-9]{14}" required name="nationalID">
 
       <div [hidden]="nationalID.untouched || nationalID.valid" class="text-danger py-1">
         <span [hidden]="!nationalID.errors?.['required']"> National ID is Required <br></span>
@@ -48,11 +55,11 @@
       <label for="mobile" class="form-label">Mobile</label>
       <div class="input-group">
         <span class="input-group-text" id="area-code">+20</span>
-        <input #mobile="ngModel" ngModel type="text" class="form-control" id="mobile" aria-describedby="area-code" pattern="[0-9]{10}" required>
+        <input #mobile="ngModel" [(ngModel)]="RegisterData.mobile" type="text" class="form-control" id="mobile" aria-describedby="area-code" pattern="[0-9]{10}" name="mobile" required>
 
       </div>
 
-      <div [hidden]="mobile.untouched || mobile.valid" class="text-danger py-1">
+      <div [hidden]="mobile.untouched || mobile.valid" class="text-danger py-1" >
         <span [hidden]="!mobile.errors?.['required']"> Mobile is Required <br></span>
         <span [hidden]="!mobile.errors?.['pattern']"> Mobile is not valid  </span>
       </div>
@@ -62,21 +69,27 @@
     <!-- * Age -->
     <div class="mb-2">
       <label for="age" class="form-label">Age</label>
-      <input #age="ngModel" ngModel type="number" min="0" max="200" class="form-control" id="age" required>
+      <input #age="ngModel" [(ngModel)]="RegisterData.age" type="number" min="0" max="200" class="form-control" id="age" required name="age">
     </div>
 
 
     <!-- * Gender -->
     <div class="mb-2">
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="Gender" id="Female" value="Female">
+        <input class="form-check-input" type="radio" name="Gender" id="Female"  [(ngModel)]="gender" value="Female">
         <label class="form-check-label" for="Female">Female</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="Gender" id="Male" value="Male">
+        <input class="form-check-input" type="radio" name="Gender" id="Male" [(ngModel)]="gender"  value="Male">
         <label class="form-check-label" for="Male">Male</label>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary float-end btn-submit px-4">Submit</button>
 
-</div>
+    <button
+      [disabled]="Form.invalid"
+      type="submit"
+      class="btn btn-primary float-end btn-submit px-4"
+
+    > Submit</button>
+
+  </form>

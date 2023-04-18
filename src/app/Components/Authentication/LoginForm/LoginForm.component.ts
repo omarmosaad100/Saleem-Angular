@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RegisterPatient } from 'src/app/Models/RegisterPatient';
+import { RegisterService } from 'src/app/Services/AuthServices/RegisterService/Register.service';
 
 @Component({
   selector: 'app-LoginForm',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginFormComponent implements OnInit {
 
-  constructor() { }
+  RegisterData :RegisterPatient ;
+
+
+  constructor(private service:RegisterService){
+    this.RegisterData = new RegisterPatient();
+  }
 
   ngOnInit() {
   }
+
+  SubmitData( ):void{}
 
 }

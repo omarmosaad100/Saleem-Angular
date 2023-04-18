@@ -16,6 +16,7 @@ import { AuthHeaderComponent } from './Components/Authentication/AuthHeader/Auth
 import { AuthContainerComponent } from './Components/Authentication/AuthContainer/AuthContainer.component';
 import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './Components/HomePage/HomePage/HomePage.component';
+import { ToastService, AngularToastifyModule } from 'angular-toastify';
 
 @NgModule({
   declarations: [
@@ -42,11 +43,11 @@ import { HomePageComponent } from './Components/HomePage/HomePage/HomePage.compo
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    FormsModule
-
+    FormsModule,
+    AngularToastifyModule
 
   ],
-  providers: [],
+  providers: [ToastService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
