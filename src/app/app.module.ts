@@ -4,9 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavComponent } from './nav/nav.component';
-import { FooterComponent } from './footer/footer.component';
-import { ErrorPageComponent } from './error-page/error-page.component';
+import { NavComponent } from './Component/nav/nav.component';
+import { FooterComponent } from './Component/footer/footer.component';
+import { ErrorPageComponent } from './Component/error-page/error-page.component';
 import { RoutingComponent } from './routing/routing.component';
 
 @NgModule({
