@@ -1,0 +1,27 @@
+<form class="register-form form px-3 mt-4 scroll" #Form = "ngForm" (ngSubmit) = "SubmitData()">
+
+    <!-- * email -->
+    <div class="mb-3">
+      <label for="email"  class="form-label">Email address</label>
+      <input #emailRef="ngModel" name="email"  [(ngModel)]="RegisterData.email" type="email" class="form-control" id="email" required pattern="[a-zA-Z0-9]{1,}@[a-zA-Z]{3,}.[a-zA-Z]{3,4}"  >
+
+      <div [hidden]="emailRef.valid || emailRef.untouched" class="text-danger py-1">
+        <span [hidden]="!emailRef.errors?.['required']"> Email is Required <br></span>
+        <span [hidden]="!emailRef.errors?.['pattern']"> Please Enter Valid Email </span>
+      </div>
+
+    </div>
+
+    <!-- * Password -->
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input #password="ngModel" [(ngModel)]="RegisterData.password" type="password" class="form-control" id="password"  name="password"  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}" required>
+
+      <div [hidden]="password.untouched || password.valid" class="text-danger py-1">
+        <span [hidden]="!password.errors?.['required']"> Password is Required <br></span>
+        <span [hidden]="!password.errors?.['pattern']"> Password is too short! It should be more than 8 Characters  </span>
+      </div>
+    </div>
+
+
+</form>
