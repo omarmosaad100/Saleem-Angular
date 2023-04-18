@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { GenderEnum } from 'src/app/Enums/GenderEnum.enum';
-import { RegisterPatient } from 'src/app/Models/RegisterPatient';
+import { RegisterAsPatient } from 'src/app/Models/Register/RegisterAsPatient';
 import { RegisterService } from 'src/app/Services/AuthServices/RegisterService/Register.service';
 
 @Component({
@@ -11,13 +11,13 @@ import { RegisterService } from 'src/app/Services/AuthServices/RegisterService/R
 export class RegisterFormComponent implements OnInit {
 
   gender:string = "Male";
-  RegisterData :RegisterPatient ;
+  RegisterData :RegisterAsPatient ;
   errorMessages:""[] = [];
   successMessage:string = "";
   isAdded:any;
 
   constructor(private service:RegisterService){
-    this.RegisterData = new RegisterPatient();
+    this.RegisterData = new RegisterAsPatient();
   }
   ngOnInit(): void {
 
@@ -33,20 +33,6 @@ export class RegisterFormComponent implements OnInit {
     }
 
     this.service.SubmitData(this.RegisterData);
-    // console.log(result)
-    // if(result.status == "error"){
-    //   console.log(result.errorMessage);
-    //   for (const iterator of result.errorMessage) {
-    //     this.errorMessages.push(result.errorMessage["description"]);
-    //   }
-    //   this.isAdded = false;
-
-    // }
-    // else{
-    //   this.isAdded = true;
-
-    //   this.successMessage = result.successMessage
-    // }
   }
 
 

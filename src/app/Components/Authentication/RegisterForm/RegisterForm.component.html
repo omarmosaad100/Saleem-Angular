@@ -1,16 +1,9 @@
 <form class="register-form form px-3  scroll" #Form = "ngForm" (ngSubmit) = "SubmitData()">
 
-
-
-  <lib-toastify-toast-container>
-    [position]="top-left"
-
-  </lib-toastify-toast-container>
-
   <!-- * name -->
     <div class="mb-2">
       <label for="name" class="form-label"> Username</label>
-      <input #fname="ngModel" ngModel  type="text"  class="form-control" id="name" name="fname" required >
+      <input #fname="ngModel" ngModel  type="text"  class="form-control" id="name" name="name" required >
       <div [hidden]=" fname.valid || fname.untouched" class=" text-danger py-1">
         Name is Required
       </div>

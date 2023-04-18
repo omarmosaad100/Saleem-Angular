@@ -1,17 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ToastService } from 'angular-toastify';
-import { retry } from 'rxjs';
-import { GenderEnum } from 'src/app/Enums/GenderEnum.enum';
-import { IRegisterPatient } from 'src/app/Models/IRegisterPatient';
-import { RegisterPatient } from 'src/app/Models/RegisterPatient';
+import { IRegisterAsPatient } from 'src/app/Models/Register/IRegisterAsPatient';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
 
-data:RegisterPatient | undefined;
 
 constructor(private http: HttpClient , private _toastService: ToastService){
 
@@ -19,7 +16,7 @@ constructor(private http: HttpClient , private _toastService: ToastService){
 errors:{} = {};
 
 
-SubmitData(data:IRegisterPatient): void {
+SubmitData(data:IRegisterAsPatient): void {
   this.http.post(
     'https://localhost:7016/api/Patient/Register',
     data
