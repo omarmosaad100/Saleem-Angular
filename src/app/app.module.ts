@@ -8,6 +8,7 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { RoutingComponent } from './routing/routing.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RoutingComponent } from './routing/routing.component';
     NavComponent,
     FooterComponent,
     ErrorPageComponent,
-    RoutingComponent
+    RoutingComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
