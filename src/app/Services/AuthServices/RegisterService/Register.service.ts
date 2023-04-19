@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ToastService } from 'angular-toastify';
 import { IRegisterAsPatient } from 'src/app/Models/Register/IRegisterAsPatient';
@@ -26,7 +26,26 @@ SubmitData(data:IRegisterAsPatient): void {
       console.log(data);
     },
     error: (error)=>{
-      this._toastService.error( 'Please Enter Valid Data ❌');
+      console.log(error)
+      if (error.error?.length > 0) {
+        console.log(error.error)
+        error.error.forEach((e:any) =>
+          {
+            this._toastService.error( `Error: ${e["description"]}`);
+          }
+
+        )
+    } else {
+        let iterator : any;
+        for (iterator of  Object.values(error.error.errors)) {
+          Array.from(iterator).forEach(element => {
+            this._toastService.error(element + "❌");
+          });
+        }
+    }
+
+
+
     },
     complete: ()=>{
       this._toastService.success('Patient Added Successfully ❤✅');
