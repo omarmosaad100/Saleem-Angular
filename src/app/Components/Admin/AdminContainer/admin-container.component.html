@@ -1,0 +1,61 @@
+<app-nav></app-nav>
+
+<div class="container my-3">
+  <div class="row">
+    <div class="col-lg-2 col-md-12 col-sm-12" style="height: 500px;">
+      <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary dashBoardSide">
+        <!-- <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+          <span class="fs-4">Admin</span>
+        </a> -->
+        <div>
+          <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none " data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+            <strong>Negm</strong>
+          </a>
+        </div>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/getAllDrugs" class="nav-link" aria-current="page">
+              <svg class="bi pe-none me-2" width="16" height="16"></svg>
+              List all drugs
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLinkActive="active" routerLink="/getDrug"  class="nav-link disabled-link" aria-current="page">
+              <svg class="bi pe-none me-2" width="16" height="16"></svg>
+              Get drug by id
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLinkActive="active" routerLink="/addDrug" class="nav-link" aria-current="page">
+              <svg class="bi pe-none me-2" width="16" height="16"></svg>
+              Add new drug
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLinkActive="active" routerLink="/updateDrug" class="nav-link" aria-current="page">
+              <svg class="bi pe-none me-2" width="16" height="16"></svg>
+              Update drug by id
+            </a>
+          </li>
+          <li>
+            <a routerLinkActive="active" routerLink="/deleteDrug" class="nav-link link-body-emphasis">
+              <svg class="bi pe-none me-2" width="16" height="16"></svg>
+              Delete drug by id
+            </a>
+          </li>
+        </ul>
+        <hr>
+      </div>
+    </div>
+
+    <div class="offset-lg-1 col-lg-9 col-md-12 col-sm-12 AdminViews scroll">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

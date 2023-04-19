@@ -8,7 +8,6 @@ import { NavComponent } from './Components/nav/nav.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { ErrorPageComponent } from './Components/error-page/error-page.component';
 import { RoutingComponent } from './routing/routing.component';
-import { AdminComponent } from './admin/admin.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ActivateBtnDirective } from './Directives/Directives';
 import { RegisterFormComponent } from './Components/Authentication/RegisterForm/RegisterForm.component';
@@ -18,6 +17,13 @@ import { AuthContainerComponent } from './Components/Authentication/AuthContaine
 import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './Components/HomePage/HomePage/HomePage.component';
 import { ToastService, AngularToastifyModule } from 'angular-toastify';
+import { AdminContainerComponent } from './Components/Admin/AdminContainer/admin-container.component';
+import { DeleteDrugComponent } from './Components/Admin/delete-drug/delete-drug.component';
+import { AddDrugComponent } from './Components/Admin/add-drug/add-drug.component';
+import { GetAllDrugsComponent } from './Components/Admin/get-all-drugs/get-all-drugs.component';
+import { GetDrugByIdComponent } from './Components/Admin/get-drug-by-id/get-drug-by-id.component';
+import { UpdateDrugComponent } from './Components/Admin/update-drug/update-drug.component';
+
 
 @NgModule({
   declarations: [
@@ -26,8 +32,9 @@ import { ToastService, AngularToastifyModule } from 'angular-toastify';
     FooterComponent,
     ErrorPageComponent,
     RoutingComponent,
-    AdminComponent
     HomePageComponent,
+    DeleteDrugComponent,
+    AddDrugComponent,
 
     // Auth Imports
     AuthContainerComponent,
@@ -36,7 +43,11 @@ import { ToastService, AngularToastifyModule } from 'angular-toastify';
     RegisterFormComponent,
 
     // directives
-    ActivateBtnDirective
+    ActivateBtnDirective,
+    AdminContainerComponent,
+    GetAllDrugsComponent,
+    GetDrugByIdComponent,
+    UpdateDrugComponent
 
 
   ],
@@ -46,7 +57,8 @@ import { ToastService, AngularToastifyModule } from 'angular-toastify';
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    AngularToastifyModule
+    AngularToastifyModule,
+
 
   ],
   providers: [ToastService],
