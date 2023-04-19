@@ -29,8 +29,6 @@ export class LoginService {
         }
       },
       error: (error)=>{
-        console.log(error);
-
         this._toastService.error( 'Please Enter Valid Data ❌');
       },
       complete: ()=>{
