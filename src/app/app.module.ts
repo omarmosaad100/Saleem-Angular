@@ -17,6 +17,8 @@ import { AuthContainerComponent } from './Components/Authentication/AuthContaine
 import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './Components/HomePage/HomePage/HomePage.component';
 import { ToastService, AngularToastifyModule } from 'angular-toastify';
+import { AppointmentDetailsFormComponent } from './Components/appointment-details-form/appointment-details-form.component';
+import { ViewAppointmentComponent } from './Components/view-appointment/view-appointment.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ToastService, AngularToastifyModule } from 'angular-toastify';
     RegisterFormComponent,
 
     // directives
-    ActivateBtnDirective
+    ActivateBtnDirective,
+      AppointmentDetailsFormComponent,
+      ViewAppointmentComponent
 
 
   ],
