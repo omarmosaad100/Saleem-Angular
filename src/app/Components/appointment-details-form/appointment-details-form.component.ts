@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppointmentService } from 'src/app/Services/AppointmentService/appointment.service';
 
 @Component({
   selector: 'app-appointment-details-form',
@@ -7,10 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./appointment-details-form.component.css']
 })
 export class AppointmentDetailsFormComponent {
-  doctorComment= "hi";
+  doctorComment= "";
   
 
-  constructor(private router: Router) { }
+  constructor(private router: Router ,private appointmentService :AppointmentService) { }
 
   issues = [
     { name: 'Fever', selected: false },
@@ -28,6 +29,12 @@ export class AppointmentDetailsFormComponent {
     // Send the selected issues and doctor's comment to the server or perform any other necessary action
     console.log(selectedIssues);
     console.log("Comment :-  "+this.doctorComment);
-  }
+    this.sendData(selectedIssues ,this.doctorComment);
+    this.router.navigate(['/viewAppointment']);
 
+  }
+  sendData(arr:string[] ,cmnt:string) {
+    this.appointmentService.issuesArr= arr;
+    this.appointmentService.comment=cmnt;
+  }
 }
