@@ -11,7 +11,7 @@ export class AdminService {
   private readonly URL = "https://localhost:7016/api/Admin";
 
   getAllDrugs(){
-    return this.myClient.get(this.URL);
+    return this.myClient.get(this.URL+"/GetAllDrugs");
   }
   getDrugById(id:any){
     return this.myClient.get(this.URL+"/GetDrug/"+id);

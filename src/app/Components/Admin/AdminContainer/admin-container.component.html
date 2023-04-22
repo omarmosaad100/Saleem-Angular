@@ -17,33 +17,54 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
-            <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/getAllDrugs" class="nav-link" aria-current="page">
+            <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/GetAllDrugs" class="nav-link" aria-current="page">
               <svg class="bi pe-none me-2" width="16" height="16"></svg>
               List all drugs
             </a>
           </li>
           <li class="nav-item">
-            <a routerLinkActive="active" routerLink="/getDrug"  class="nav-link disabled-link" aria-current="page">
+            <a routerLinkActive="active" routerLink="/GetDrug"  class="nav-link disabled-link" aria-current="page">
               <svg class="bi pe-none me-2" width="16" height="16"></svg>
               Get drug by id
             </a>
           </li>
           <li class="nav-item">
-            <a routerLinkActive="active" routerLink="/addDrug" class="nav-link" aria-current="page">
+            <a routerLinkActive="active" routerLink="/AddDrug" class="nav-link" aria-current="page">
               <svg class="bi pe-none me-2" width="16" height="16"></svg>
               Add new drug
             </a>
           </li>
           <li class="nav-item">
-            <a routerLinkActive="active" routerLink="/updateDrug" class="nav-link" aria-current="page">
+            <a routerLinkActive="active" routerLink="/UpdateDrug" class="nav-link disabled-link" aria-current="page">
               <svg class="bi pe-none me-2" width="16" height="16"></svg>
               Update drug by id
             </a>
           </li>
-          <li>
-            <a routerLinkActive="active" routerLink="/deleteDrug" class="nav-link link-body-emphasis">
+          <li class="nav-item">
+            <a routerLinkActive="active" routerLink="/AddIssue" class="nav-link" aria-current="page">
               <svg class="bi pe-none me-2" width="16" height="16"></svg>
-              Delete drug by id
+              Add Issue
+            </a>
+          </li>
+        </ul>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a routerLinkActive="active" routerLink="/GetAllDoctors" class="nav-link" aria-current="page">
+              <svg class="bi pe-none me-2" width="16" height="16"></svg>
+              List all doctors
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLinkActive="active" routerLink="/AddLicense"  class="nav-link disabled-link" aria-current="page">
+              <svg class="bi pe-none me-2" width="16" height="16"></svg>
+              Add license
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLinkActive="active" routerLink="/RemoveDoctorLicense"  class="nav-link disabled-link" aria-current="page">
+              <svg class="bi pe-none me-2" width="16" height="16"></svg>
+              Delete doctor license
             </a>
           </li>
         </ul>

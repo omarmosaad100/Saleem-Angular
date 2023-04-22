@@ -14,7 +14,7 @@ import { RegisterFormComponent } from './Components/Authentication/RegisterForm/
 import { LoginFormComponent } from './Components/Authentication/LoginForm/LoginForm.component';
 import { AuthHeaderComponent } from './Components/Authentication/AuthHeader/AuthHeader.component';
 import { AuthContainerComponent } from './Components/Authentication/AuthContainer/AuthContainer.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './Components/HomePage/HomePage/HomePage.component';
 import { ToastService, AngularToastifyModule } from 'angular-toastify';
 import { AdminContainerComponent } from './Components/Admin/AdminContainer/admin-container.component';
@@ -58,6 +58,7 @@ import { UpdateDrugComponent } from './Components/Admin/update-drug/update-drug.
     AppRoutingModule,
     FormsModule,
     AngularToastifyModule,
+    ReactiveFormsModule,
 
 
   ],

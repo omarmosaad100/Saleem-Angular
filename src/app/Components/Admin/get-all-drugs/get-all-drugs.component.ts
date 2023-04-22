@@ -22,7 +22,7 @@ export class GetAllDrugsComponent  implements OnInit {
 
 
   ngOnInit(): void {
-    this.http.get('https://localhost:7016/api/Admin/GetAllDrugs').subscribe({
+    this.myservice.getAllDrugs().subscribe({
       next: (data)=>{this.drugs=data},
       error: (error)=>{console.log(error)},
       complete: ()=>{console.log("Request has completed")}

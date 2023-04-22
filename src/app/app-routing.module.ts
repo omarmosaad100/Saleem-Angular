@@ -17,11 +17,11 @@ const routes: Routes = [
   {path:"Register",component : AuthContainerComponent},
 
   //admin components
-  {path:"addDrug" , component:AddDrugComponent},
-  {path:"deleteDrug/:id" , component:DeleteDrugComponent},
-  {path:"getAllDrugs" , component:GetAllDrugsComponent},
-  {path:"getDrug/:id" , component:GetDrugByIdComponent},
-  {path:"updateDrug/:id" , component:UpdateDrugComponent},
+  {path:"AddDrug" , component:AddDrugComponent},
+  {path:"DeleteDrug/:id" , component:DeleteDrugComponent},
+  {path:"GetAllDrugs" , component:GetAllDrugsComponent},
+  {path:"GetDrug/:id" , component:GetDrugByIdComponent},
+  {path:"UpdateDrug/:id" , component:UpdateDrugComponent},
 
   {path:"**",component : ErrorPageComponent},
 

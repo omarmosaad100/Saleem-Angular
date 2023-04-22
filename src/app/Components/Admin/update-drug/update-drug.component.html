@@ -1,7 +1,15 @@
-<form>
+<form [formGroup]="editDrug" (ngSubmit)="UpdateDrug()">
+  <div class="form-group">
+    <label for="name">Id</label>
+    <input type="text" class="form-control" id="drugId" value="{{ID}}" disabled>
+  </div>
   <div class="form-group">
     <label for="name">Name</label>
-    <input type="text" class="form-control" id="name" placeholder="Enter drug name">
+    <input type="text" class="form-control" id="name" formControlName="name">
   </div>
-  <button type="submit" class="btn btn-primary my-3">Add drug</button>
+  <div class="form-group">
+    <label for="method">Method of taking</label>
+    <input type="text" class="form-control" id="method" formControlName="method">
+  </div>
+  <button type="submit" class="btn btn-primary my-3">Update drug</button>
 </form>
