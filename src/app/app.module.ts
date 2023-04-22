@@ -14,14 +14,11 @@ import { AuthHeaderComponent } from './Components/Authentication/AuthHeader/Auth
 import { AuthContainerComponent } from './Components/Authentication/AuthContainer/AuthContainer.component';
 import { FormsModule } from '@angular/forms';
 import { ToastService, AngularToastifyModule } from 'angular-toastify';
+import { HomePageModule } from './HomePageModule/home-page.module';
+import { LayoutModule } from './LayoutModule/layout.module';
+import { DoctorModule } from './DoctorModule/doctor.module';
+import { DoctorRoutingModule } from './DoctorModule/doctor-routing.module';
 
-import { HomePageModule } from './home-page/home-page.module';
-
-import { LayoutModule } from './layout/layout.module';
-import { AppointmentDetailsFormComponent } from './Components/appointment-details-form/appointment-details-form.component';
-import { DoctorRegistersPatientComponent } from './Components/doctor-registers-patient/doctor-registers-patient.component';
-import { ViewAppointmentComponent } from './Components/view-appointment/view-appointment.component';
-import { ViewPatientHistoryComponent } from './Components/view-patient-history/view-patient-history.component';
 
 @NgModule({
   declarations: [
@@ -36,14 +33,6 @@ import { ViewPatientHistoryComponent } from './Components/view-patient-history/v
 
     // directives
     ActivateBtnDirective,
-
-    // doctor component
-    AppointmentDetailsFormComponent,
-    ViewAppointmentComponent,
-    DoctorRegistersPatientComponent,
-    ViewPatientHistoryComponent
-
-
   ],
 
   imports: [
@@ -56,7 +45,10 @@ import { ViewPatientHistoryComponent } from './Components/view-patient-history/v
 
     // custom modules
     HomePageModule,
-    LayoutModule
+    LayoutModule,
+    DoctorModule,
+
+
 
   ],
   providers: [ToastService],
