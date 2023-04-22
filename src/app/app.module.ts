@@ -4,9 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavComponent } from './Components/nav/nav.component';
-import { FooterComponent } from './Components/footer/footer.component';
-import { ErrorPageComponent } from './Components/error-page/error-page.component';
+
 import { RoutingComponent } from './routing/routing.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ActivateBtnDirective } from './Directives/Directives';
@@ -15,17 +13,15 @@ import { LoginFormComponent } from './Components/Authentication/LoginForm/LoginF
 import { AuthHeaderComponent } from './Components/Authentication/AuthHeader/AuthHeader.component';
 import { AuthContainerComponent } from './Components/Authentication/AuthContainer/AuthContainer.component';
 import { FormsModule } from '@angular/forms';
-import { HomePageComponent } from './Components/HomePage/HomePage/HomePage.component';
 import { ToastService, AngularToastifyModule } from 'angular-toastify';
+import { HomePageModule } from './home-page/home-page.module';
+import { LayoutComponent } from './layout/layout.component';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
-    FooterComponent,
-    ErrorPageComponent,
     RoutingComponent,
-    HomePageComponent,
 
     // Auth Imports
     AuthContainerComponent,
@@ -35,19 +31,23 @@ import { ToastService, AngularToastifyModule } from 'angular-toastify';
 
     // directives
     ActivateBtnDirective
-
-
   ],
+
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    AngularToastifyModule
+    AngularToastifyModule,
+
+    // custom modules
+    HomePageModule,
+    LayoutModule
 
   ],
   providers: [ToastService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}
