@@ -1,0 +1,25 @@
+<div class="container my-5">
+  <table class="table table-hover tableScroll" style="height:500px">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Specialization</th>
+        <th scope="col">Gender</th>
+        <th scope="col">LicenseId</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let d of doctors">
+        <td>{{d.id}}</td>
+        <td>{{d.name}}</td>
+        <td>{{d.Gender}}</td>
+        <td>{{d.LicenseId}}</td>
+         <td><a (click)="delete(d.id)" class="btn btn-sm btn-danger">Delete</a></td>
+        <!-- <td><a class="btn btn-sm btn-dark">Update</a></td>
+        <td><a class="btn btn-sm btn-danger" (click)="delete(drug.id)">Delete</a></td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>

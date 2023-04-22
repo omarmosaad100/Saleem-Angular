@@ -8,6 +8,9 @@ import { DeleteDrugComponent } from './Components/Admin/delete-drug/delete-drug.
 import { GetAllDrugsComponent } from './Components/Admin/get-all-drugs/get-all-drugs.component';
 import { GetDrugByIdComponent } from './Components/Admin/get-drug-by-id/get-drug-by-id.component';
 import { UpdateDrugComponent } from './Components/Admin/update-drug/update-drug.component';
+import { GetAllDoctorsComponent } from './Components/Admin/get-all-doctors/get-all-doctors.component';
+import { AddLicenseComponent } from './Components/Admin/add-license/add-license.component';
+import { AddIssueComponent } from './Components/Admin/add-issue/add-issue.component';
 
 const routes: Routes = [
   {path:"" , component : HomePageComponent},
@@ -18,8 +21,11 @@ const routes: Routes = [
 
   //admin components
   {path:"AddDrug" , component:AddDrugComponent},
-  {path:"DeleteDrug/:id" , component:DeleteDrugComponent},
+  {path:"AddLicense" , component:AddLicenseComponent},
+  {path:"AddIssue" , component:AddIssueComponent},
+  {path:"DeleteDrug/:id" , component:AddLicenseComponent},
   {path:"GetAllDrugs" , component:GetAllDrugsComponent},
+  {path:"GetAllDoctors" , component:GetAllDoctorsComponent},
   {path:"GetDrug/:id" , component:GetDrugByIdComponent},
   {path:"UpdateDrug/:id" , component:UpdateDrugComponent},
 

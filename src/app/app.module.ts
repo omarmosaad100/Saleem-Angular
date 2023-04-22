@@ -23,6 +23,9 @@ import { AddDrugComponent } from './Components/Admin/add-drug/add-drug.component
 import { GetAllDrugsComponent } from './Components/Admin/get-all-drugs/get-all-drugs.component';
 import { GetDrugByIdComponent } from './Components/Admin/get-drug-by-id/get-drug-by-id.component';
 import { UpdateDrugComponent } from './Components/Admin/update-drug/update-drug.component';
+import { GetAllDoctorsComponent } from './Components/Admin/get-all-doctors/get-all-doctors.component';
+import { AddLicenseComponent } from './Components/Admin/add-license/add-license.component';
+import { AddIssueComponent } from './Components/Admin/add-issue/add-issue.component';
 
 
 @NgModule({
@@ -47,7 +50,10 @@ import { UpdateDrugComponent } from './Components/Admin/update-drug/update-drug.
     AdminContainerComponent,
     GetAllDrugsComponent,
     GetDrugByIdComponent,
-    UpdateDrugComponent
+    UpdateDrugComponent,
+    GetAllDoctorsComponent,
+    AddLicenseComponent,
+    AddIssueComponent
 
 
   ],

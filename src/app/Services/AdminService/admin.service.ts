@@ -13,12 +13,15 @@ export class AdminService {
   getAllDrugs(){
     return this.myClient.get(this.URL+"/GetAllDrugs");
   }
+  getAllDoctors(){
+    return this.myClient.get(this.URL+"/GetAllDoctors");
+  }
   getDrugById(id:any){
     return this.myClient.get(this.URL+"/GetDrug/"+id);
   }
   AddNewDrug(Drug:any)
   {
-    return this.myClient.post(this.URL , Drug);
+    return this.myClient.post(this.URL+"/AddDrug" , Drug);
   }
   UpdateDrugById(id:number , Drug:any)
   {
@@ -27,5 +30,8 @@ export class AdminService {
   DeleteDrugById(id:any)
   {
     return this.myClient.delete(this.URL+"/DeleteDrug/"+id);
+  }
+  DeleteDoctorById(id:any){
+    return this.myClient.delete(this.URL+"/RemoveDoctorLicense/"+id);
   }
 }
