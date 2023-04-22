@@ -19,6 +19,8 @@ import { HomePageComponent } from './Components/HomePage/HomePage/HomePage.compo
 import { ToastService, AngularToastifyModule } from 'angular-toastify';
 import { AppointmentDetailsFormComponent } from './Components/appointment-details-form/appointment-details-form.component';
 import { ViewAppointmentComponent } from './Components/view-appointment/view-appointment.component';
+import { DoctorRegistersPatientComponent } from './Components/doctor-registers-patient/doctor-registers-patient.component';
+import { ViewPatientHistoryComponent } from './Components/view-patient-history/view-patient-history.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { ViewAppointmentComponent } from './Components/view-appointment/view-app
     // directives
     ActivateBtnDirective,
       AppointmentDetailsFormComponent,
-      ViewAppointmentComponent
+      ViewAppointmentComponent,
+      DoctorRegistersPatientComponent,
+      ViewPatientHistoryComponent
 
 
   ],

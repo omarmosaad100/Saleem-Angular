@@ -1,0 +1,16 @@
+<app-nav></app-nav>
+
+<div class="container my-5" style="height:500px">
+
+<form>
+    <div class="mb-3">
+      <label for="nationalId" class="form-label">Egyptian National ID:</label>
+      <input type="text" class="form-control" id="nationalId" name="nationalId"  [(ngModel)]="nationalId"  required>
+      <div *ngIf="!isNationalIdValid() " class="text-danger">
+        Please enter a valid 14-digit Egyptian national ID.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="goToHistory()" >Submit</button>
+  </form>
+  </div>
+<app-footer></app-footer>
