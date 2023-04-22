@@ -1,0 +1,14 @@
+.doctor-img{
+  /* height: 120px; */
+  width: 100%;
+
+}
+
+.carousel-container{
+  max-height: 40vh;
+  margin-bottom: 50px;;
+}
+
+.carousel-indicators > button{
+  background-color: #212827!important;
+}

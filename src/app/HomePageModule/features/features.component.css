@@ -1,0 +1,31 @@
+.feature-text{
+  font-size: 13px;
+}
+
+.text-dark-blue{
+  color: #13384C;
+}
+
+.text-light-blue{
+
+  color: #58695D;
+}
+
+
+.feature-container{
+  width: 48%;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+
+@media (max-width:991px) {
+
+  .feature-container{
+    width: 95%;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+
+
+}

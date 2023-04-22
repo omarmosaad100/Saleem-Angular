@@ -4,9 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavComponent } from './Components/nav/nav.component';
-import { FooterComponent } from './Components/footer/footer.component';
-import { ErrorPageComponent } from './Components/error-page/error-page.component';
+
 import { RoutingComponent } from './routing/routing.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ActivateBtnDirective } from './Directives/Directives';
@@ -15,21 +13,17 @@ import { LoginFormComponent } from './Components/Authentication/LoginForm/LoginF
 import { AuthHeaderComponent } from './Components/Authentication/AuthHeader/AuthHeader.component';
 import { AuthContainerComponent } from './Components/Authentication/AuthContainer/AuthContainer.component';
 import { FormsModule } from '@angular/forms';
-import { HomePageComponent } from './Components/HomePage/HomePage/HomePage.component';
 import { ToastService, AngularToastifyModule } from 'angular-toastify';
-import { AppointmentDetailsFormComponent } from './Components/appointment-details-form/appointment-details-form.component';
-import { ViewAppointmentComponent } from './Components/view-appointment/view-appointment.component';
-import { DoctorRegistersPatientComponent } from './Components/doctor-registers-patient/doctor-registers-patient.component';
-import { ViewPatientHistoryComponent } from './Components/view-patient-history/view-patient-history.component';
+import { HomePageModule } from './HomePageModule/home-page.module';
+import { LayoutModule } from './LayoutModule/layout.module';
+import { DoctorModule } from './DoctorModule/doctor.module';
+import { DoctorRoutingModule } from './DoctorModule/doctor-routing.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
-    FooterComponent,
-    ErrorPageComponent,
     RoutingComponent,
-    HomePageComponent,
 
     // Auth Imports
     AuthContainerComponent,
@@ -39,23 +33,26 @@ import { ViewPatientHistoryComponent } from './Components/view-patient-history/v
 
     // directives
     ActivateBtnDirective,
-      AppointmentDetailsFormComponent,
-      ViewAppointmentComponent,
-      DoctorRegistersPatientComponent,
-      ViewPatientHistoryComponent
-
-
   ],
+
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    AngularToastifyModule
+    AngularToastifyModule,
+
+    // custom modules
+    HomePageModule,
+    LayoutModule,
+    DoctorModule,
+
+
 
   ],
   providers: [ToastService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}

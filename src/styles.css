@@ -31,8 +31,16 @@ body::-webkit-scrollbar-thumb , .scroll::-webkit-scrollbar-thumb
 
 /** end Scrollbar style */
 
+*{
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
 
+}
 
+.logo-img{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
 /* change style of Toast */
 .toast-body{
   padding-bottom: 20px!important;

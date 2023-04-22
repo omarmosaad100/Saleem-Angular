@@ -1,0 +1,32 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-white bg-white shadow"> <!--fixed-top-->
+    <div class="container">
+        <div>
+          <img src="../../../../favicon.ico" alt="logo" class="logo-img"/>
+          <a class="navbar-brand" href="#">{{Title}}</a>
+        </div>
+
+          <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" [ngClass]="{'show': isNavbarOpen}">
+            <ul class="navbar-nav mr-auto w-100">
+              <li class="nav-item active button-1">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item button-1 ">
+                <a class="nav-link" href="#">Donate</a>
+              </li>
+
+            </ul>
+            <div class="float-end d-flex nav-right w-25 justify-content-between" >
+              <a class="nav-link px-3 btn py-1" href="#" routerLink="/Login" routerLinkActive="router-link-active" >Login</a>
+              <a class="nav-link w-50 btn btn-primary text-light py-1" href="#" >Sign up</a>
+            </div>
+          </div>
+
+
+    </div>
+  </nav>
+  <!-- <div class="horizontalDivider"></div> -->
+</header>
