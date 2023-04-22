@@ -59,9 +59,6 @@ export class SpecialtiesCarouselComponent implements OnInit {
 
         });
         this.data.push(this.group1 , this.group2 , this.group3);
-
-
-        console.log(this.data)
       });
 
 

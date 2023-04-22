@@ -23,7 +23,7 @@ import { LayoutModule } from "../LayoutModule/layout.module";
     imports: [
         CommonModule,
         FormsModule,
-        LayoutModule,
+        // LayoutModule,
         DoctorRoutingModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],  // Add this line

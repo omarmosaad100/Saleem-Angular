@@ -6,15 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class HomeService {
 
-//
-data:[] = [];
 
 constructor(private http: HttpClient ){
 
-}
-
-getData():any{
- return this.data;
 }
 
 getSpecialties() {
