@@ -14,9 +14,14 @@ import { AuthHeaderComponent } from './Components/Authentication/AuthHeader/Auth
 import { AuthContainerComponent } from './Components/Authentication/AuthContainer/AuthContainer.component';
 import { FormsModule } from '@angular/forms';
 import { ToastService, AngularToastifyModule } from 'angular-toastify';
+
 import { HomePageModule } from './home-page/home-page.module';
-import { LayoutComponent } from './layout/layout.component';
+
 import { LayoutModule } from './layout/layout.module';
+import { AppointmentDetailsFormComponent } from './Components/appointment-details-form/appointment-details-form.component';
+import { DoctorRegistersPatientComponent } from './Components/doctor-registers-patient/doctor-registers-patient.component';
+import { ViewAppointmentComponent } from './Components/view-appointment/view-appointment.component';
+import { ViewPatientHistoryComponent } from './Components/view-patient-history/view-patient-history.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,15 @@ import { LayoutModule } from './layout/layout.module';
     RegisterFormComponent,
 
     // directives
-    ActivateBtnDirective
+    ActivateBtnDirective,
+
+    // doctor component
+    AppointmentDetailsFormComponent,
+    ViewAppointmentComponent,
+    DoctorRegistersPatientComponent,
+    ViewPatientHistoryComponent
+
+
   ],
 
   imports: [
