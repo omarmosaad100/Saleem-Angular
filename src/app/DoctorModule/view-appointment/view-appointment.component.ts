@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AppointmentService } from 'src/app/Services/AppointmentService/appointment.service';
+import { AppointmentService } from '../Services/AppointmentService/appointment.service';
 
 @Component({
   selector: 'app-view-appointment',
@@ -17,7 +17,7 @@ export class ViewAppointmentComponent {
   patientName: string = "Jane Doe";
   currentDate: Date = new Date();
   //issues: string = "Fever, headache, and cough";
-  
+
   suggestedDrugs: string = "Acetaminophen, ibuprofen, and cough syrup";
 
 }

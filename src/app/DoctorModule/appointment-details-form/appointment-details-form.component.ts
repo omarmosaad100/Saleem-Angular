@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppointmentService } from 'src/app/Services/AppointmentService/appointment.service';
+import { AppointmentService } from '../Services/AppointmentService/appointment.service';
 
 @Component({
   selector: 'app-appointment-details-form',
@@ -9,7 +9,7 @@ import { AppointmentService } from 'src/app/Services/AppointmentService/appointm
 })
 export class AppointmentDetailsFormComponent {
   doctorComment= "";
-  
+
 
   constructor(private router: Router ,private appointmentService :AppointmentService) { }
 
