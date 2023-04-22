@@ -15,7 +15,7 @@ export class DoctorRegistersPatientComponent {
   }
   goToHistory(){
     if(this.isNationalIdValid()){
-      this.router.navigate(['/ViewPatientHistory']);
+      this.router.navigate(['/ViewPatientHistory', this.nationalId]);
     }
   }
 }

@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:"AddAppointment",component : AppointmentDetailsFormComponent},
   {path:"viewAppointment",component : ViewAppointmentComponent},
   {path:"DoctorRegistersPatient",component : DoctorRegistersPatientComponent},
-  {path:"ViewPatientHistory",component : ViewPatientHistoryComponent},
+  {path:"ViewPatientHistory/:nid",component : ViewPatientHistoryComponent},
 
 
 ];
