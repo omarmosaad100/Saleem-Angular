@@ -53,8 +53,7 @@ import { AddIssueComponent } from './Components/Admin/add-issue/add-issue.compon
     UpdateDrugComponent,
     GetAllDoctorsComponent,
     AddLicenseComponent,
-    AddIssueComponent
-
+    AddIssueComponent,
 
   ],
   imports: [

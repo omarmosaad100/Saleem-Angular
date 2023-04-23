@@ -24,12 +24,12 @@ export class GetAllDoctorsComponent implements OnInit {
     this.myservice.getAllDoctors().subscribe({
       next: (data)=>{this.doctors=data},
       error: (error)=>{console.log(error)},
-      complete: ()=>{console.log("Request has completed")}
+      complete: ()=>{console.log(this.doctors)}
     });
   }
   delete(id:any){
     this.myservice.DeleteDoctorById(id).subscribe({});
-    this.router.navigate(['/getAllDrugs']);
+    this.router.navigate(['/GetAllDoctors']);
   }
 
 

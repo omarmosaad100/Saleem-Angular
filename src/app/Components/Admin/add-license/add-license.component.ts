@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {AdminService} from "../../../Services/AdminService/admin.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-license',
@@ -7,4 +9,26 @@ import { Component } from '@angular/core';
 })
 export class AddLicenseComponent {
 
+  nationalId: any;
+
+  constructor(private myService: AdminService, private router: Router) {
+  }
+
+  addLicense() {
+    this.myService.AddNewDoctorLicense({NationalId: this.nationalId}).subscribe({
+      next: (data) => {
+      },
+      error: (error) => {
+        //alert(error.message)
+        alert("Make Sure that the national Id is correct!")
+      },
+      complete: () => {
+        alert("License Added Successfully!")
+      }
+    });
+
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+      this.router.navigate(['/AddLicense']);
+    });
+  }
 }

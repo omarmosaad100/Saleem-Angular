@@ -32,6 +32,10 @@ export class AdminService {
     return this.myClient.delete(this.URL+"/DeleteDrug/"+id);
   }
   DeleteDoctorById(id:any){
-    return this.myClient.delete(this.URL+"/RemoveDoctorLicense/"+id);
+    return this.myClient.delete(this.URL+"/RemoveDoctorLicense?id="+id);
+  }
+
+  AddNewDoctorLicense(nationalId:any){
+    return this.myClient.post(this.URL+"/AddLicense", nationalId);
   }
 }
