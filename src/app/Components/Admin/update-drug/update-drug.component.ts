@@ -15,11 +15,13 @@ export class UpdateDrugComponent implements OnInit {
 
 
   ID: any;
+  MethodOfTakingValue:any;
   Drug: NewDrugDto = new NewDrugDto("", 0);
 
   editDrug = new FormGroup({
     name: new FormControl(""),
-    method: new FormControl(""),
+    // method: new FormControl(""),
+    methodTaking: new FormControl("")
   })
 
   constructor(private myActivate: ActivatedRoute, private myService: AdminService, private router: Router) {
@@ -30,9 +32,13 @@ export class UpdateDrugComponent implements OnInit {
     this.myService.getDrugById(this.ID).subscribe({
       next: (data: any) => {
         this.Drug = data;
+        this.MethodOfTakingValue = this.getEnumString(data["method"]);
+        console.log(DrugTakingMethod[this.MethodOfTakingValue]);
+
         this.editDrug = new FormGroup({
-          name: new FormControl(data["name"]),
-          method: new FormControl(data["method"]),
+          name: new FormControl(this.Drug.name),
+          // method: new FormControl(this.MethodOfTakingValue),
+          methodTaking: new FormControl(this.MethodOfTakingValue)
         });
       },
       error: () => {
@@ -43,7 +49,8 @@ export class UpdateDrugComponent implements OnInit {
   UpdateDrug() {
     console.log(this.editDrug.value);
     this.Drug.name = this.editDrug.value.name!;
-    this.Drug.method = Number(this.editDrug.value.method!) as DrugTakingMethod;
+    let methodtest = this.editDrug.value.methodTaking!
+    this.Drug.method = DrugTakingMethod[methodtest as keyof typeof DrugTakingMethod];
     this.myService.UpdateDrugById(this.ID, this.Drug).subscribe({
       next: (data) => {
         console.log(data)
@@ -59,5 +66,17 @@ export class UpdateDrugComponent implements OnInit {
     })
 
   }
+
+  getEnumString(value: DrugTakingMethod): string {
+    return DrugTakingMethod[value];
+  }
+  get enumValues():string[] {
+    return Object.keys(DrugTakingMethod)
+    .filter(key => isNaN(Number(key))) // filter out numeric values
+  }
+  // get methodNumber():any{
+  //   return Object.keys(DrugTakingMethod)
+  //   .filter(key => isNaN(Number(key))) // filter out numeric values
+  // }
 }
 

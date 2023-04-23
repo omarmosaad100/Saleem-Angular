@@ -7,9 +7,16 @@
     <label for="name">Name</label>
     <input type="text" class="form-control" id="name" formControlName="name">
   </div>
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="method">Method of taking</label>
     <input type="text" class="form-control" id="method" formControlName="method">
+  </div> -->
+  <div class="form-group">
+    <label for="method">Method of taking</label>
+    <select [(ngModel)]="MethodOfTakingValue" class="form-control" formControlName="methodTaking">
+      <option *ngFor="let value of enumValues" [value]="value">{{ value }}</option>
+    </select>
   </div>
+
   <button type="submit" class="btn btn-primary my-3">Update drug</button>
 </form>
