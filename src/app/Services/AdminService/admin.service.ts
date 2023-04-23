@@ -38,4 +38,8 @@ export class AdminService {
   AddNewDoctorLicense(nationalId:any){
     return this.myClient.post(this.URL+"/AddLicense", nationalId);
   }
+
+  getAllIssues(){
+    return this.myClient.get(this.URL+"/GetAllIssues");
+  }
 }

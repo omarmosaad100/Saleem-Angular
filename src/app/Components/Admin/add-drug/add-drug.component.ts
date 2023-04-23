@@ -1,6 +1,6 @@
 import {v4 as uuidv4} from 'uuid';
 
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {AdminService} from 'src/app/Services/AdminService/admin.service';
 import {Router} from '@angular/router';
@@ -12,18 +12,31 @@ import {DrugDto} from './drugDto';
   templateUrl: './add-drug.component.html',
   styleUrls: ['./add-drug.component.css']
 })
-export class AddDrugComponent {
+export class AddDrugComponent implements OnInit {
   constructor(private myService: AdminService, private router: Router) {
   }
 
   ID: any;
   Drug: DrugDto = new DrugDto("", 0);
+  Issues: any;
+
 
   AddedDrug = new FormGroup({
     id: new FormControl(""),
     name: new FormControl(""),
     method: new FormControl(""),
   });
+
+  ngOnInit() {
+    this.myService.getAllIssues().subscribe({
+      next: (data) => {
+        this.Issues = data
+      },
+      error: (error) => {
+        console.log(error)
+      }
+    });
+  }
 
   AddDrug() {
     console.log(this.AddedDrug.value);

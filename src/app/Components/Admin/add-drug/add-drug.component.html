@@ -1,8 +1,8 @@
 <form [formGroup]="AddedDrug" (ngSubmit)="AddDrug()">
-<!--  <div class="form-group">-->
-<!--    <label for="name">Id</label>-->
-<!--    <input type="text" class="form-control" id="drugId" formControlName="id">-->
-<!--  </div>-->
+  <!--  <div class="form-group">-->
+  <!--    <label for="name">Id</label>-->
+  <!--    <input type="text" class="form-control" id="drugId" formControlName="id">-->
+  <!--  </div>-->
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" id="name" formControlName="name">
@@ -11,5 +11,19 @@
     <label for="name">Method of taking</label>
     <input type="text" class="form-control" id="method" formControlName="method">
   </div>
+  <div class="d-grid justify-content-center align-items-center grid">
+    <div class="row">
+      <div class="col-6" *ngFor="let issue of Issues">
+        <input issue="treated" type="checkbox" name="{{issue.name}}" [value]="issue.id">
+        <label>{{issue.name}}</label>
+      </div>
+      <div class="col-6" *ngFor="let issue of Issues">
+        <input issue="conflicted" type="checkbox" name="{{issue.name}}" [value]="issue.id">
+        <label>{{issue.name}}</label>
+      </div>
+    </div>
+  </div>
+
+
   <button type="submit" class="btn btn-primary my-3">Add drug</button>
 </form>

@@ -4,6 +4,10 @@
     <h5 class="card-title">{{Drug.name}}</h5>
     <p class="card-text">{{Drug.id}}</p>
     <p class="card-text">{{Drug.method}}</p>
+    <h4>Treated Issues</h4>
+    <p *ngFor="let treatedIssue of Drug.treatedIssuesIds" class="card-text">{{treatedIssue.name}}</p>
+    <h4>Conflicted Issues</h4>
+    <p *ngFor="let conflictedIssue of Drug.conflictedIssuesIds" class="card-text">{{conflictedIssue.name}}</p>
     <a routerLink="/GetAllDrugs" class="btn btn-primary">Go to drug list</a>
     <a routerLink="/UpdateDrug/{{Drug.id}}" class="btn btn-primary ms-5">Update drug</a>
   </div>
