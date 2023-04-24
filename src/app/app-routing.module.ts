@@ -5,6 +5,7 @@ import { AuthContainerComponent } from './Components/Authentication/AuthContaine
 import { ErrorPageComponent } from './LayoutModule/Components/error-page/error-page.component';
 import { HomePageComponent } from './HomePageModule/home-page/home-page.component';
 import { LayoutComponent } from './LayoutModule/layout.component';
+import { DoctorCardsComponent } from './PatientModule/DoctorCards/DoctorCards.component';
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
 
 
   {path:"Home" , redirectTo:""},
+  {path:"doctorVisited" , component : DoctorCardsComponent},
 
 
   {path:"Login",component : AuthContainerComponent},
