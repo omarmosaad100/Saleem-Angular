@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { DoctorVisitCard } from '../..//Models/DoctorVisitCard/DoctorVisitCard';
+import { DoctorVisitCard } from '../../Models/patientDoctorVisitCard/DoctorVisitCard';
 import { Specialization, SpecializationMap } from '../../Enums/SpecializationEnum.enum';
 
 
 @Component({
-  selector: 'app-doctor-cards',
-  templateUrl: './DoctorCards.component.html',
-  styleUrls: ['./DoctorCards.component.css']
+  selector: 'app-patientappointments',
+  templateUrl: './patient-appointments.component.html',
+  styleUrls: ['./patient-appointments.component.css']
 })
 
 
-export class DoctorCardsComponent implements OnInit {
+export class patientappointmentsCompenent implements OnInit {
   doctors: DoctorVisitCard[] =[];
 
-  
+  logDoctorId(doctorId: string) {
+    console.log("Doctor ID: ", doctorId);
+  }
 
   constructor(private http: HttpClient) {
 

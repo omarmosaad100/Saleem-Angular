@@ -5,7 +5,8 @@ import { AuthContainerComponent } from './Components/Authentication/AuthContaine
 import { ErrorPageComponent } from './LayoutModule/Components/error-page/error-page.component';
 import { HomePageComponent } from './HomePageModule/home-page/home-page.component';
 import { LayoutComponent } from './LayoutModule/layout.component';
-import { DoctorCardsComponent } from './PatientModule/DoctorCards/DoctorCards.component';
+import { patientappointmentsCompenent } from './PatientModule/patient-appointments/patient-appointments.component';
+import { PatientDrugsComponent } from './PatientModule/patient-Drugs/Patient-Drugs.component';
 
 
 
@@ -25,7 +26,8 @@ const routes: Routes = [
 
 
   {path:"Home" , redirectTo:""},
-  {path:"doctorVisited" , component : DoctorCardsComponent},
+  {path:"doctorVisited" , component : patientappointmentsCompenent},
+  {path:"patientdrugs" , component : PatientDrugsComponent},
 
 
   {path:"Login",component : AuthContainerComponent},

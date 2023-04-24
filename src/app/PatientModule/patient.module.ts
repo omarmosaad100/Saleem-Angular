@@ -4,7 +4,8 @@ import { PatientComponent } from './patient-profile/patient-profile.component';
 import { PatientRoutingModule } from './patient-routing.module';
 import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard.component';
 import { PatientSidebarComponent } from './patient-sidebar/patient-sidebar.component';
-import { DoctorCardsComponent } from './DoctorCards/DoctorCards.component';
+import { patientappointmentsCompenent } from './patient-appointments/patient-appointments.component';
+import { PatientDrugsComponent } from './patient-Drugs/Patient-Drugs.component';
 
 
 
@@ -13,7 +14,8 @@ import { DoctorCardsComponent } from './DoctorCards/DoctorCards.component';
     PatientComponent,
     PatientDashboardComponent,
     PatientSidebarComponent,
-    DoctorCardsComponent
+    patientappointmentsCompenent,
+    PatientDrugsComponent
   ],
   imports: [
     CommonModule,
