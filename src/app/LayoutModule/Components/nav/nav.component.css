@@ -5,6 +5,9 @@
   margin: 0 auto;
   width: 100%;
 }
+.nav-right{
+  width: 40%;
+}
 /*
 .button-1 {
   /* align-items: center;

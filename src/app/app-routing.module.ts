@@ -6,13 +6,6 @@ import { ErrorPageComponent } from './LayoutModule/Components/error-page/error-p
 import { HomePageComponent } from './HomePageModule/home-page/home-page.component';
 import { LayoutComponent } from './LayoutModule/layout.component';
 
-// doctor routes
-import { DoctorComponent } from './DoctorModule/doctor.component';
-import { AppointmentDetailsFormComponent } from './DoctorModule/appointment-details-form/appointment-details-form.component';
-import { ViewAppointmentComponent } from './DoctorModule/view-appointment/view-appointment.component';
-import { DoctorRegistersPatientComponent } from './DoctorModule/doctor-registers-patient/doctor-registers-patient.component';
-import { ViewPatientHistoryComponent } from './DoctorModule/view-patient-history/view-patient-history.component';
-import { DoctorRoutingModule } from './DoctorModule/doctor-routing.module';
 
 
 const routes: Routes = [
@@ -21,6 +14,10 @@ const routes: Routes = [
     {path:""
       ,loadChildren: () => import('./DoctorModule/doctor.module')
       .then(m => m.DoctorModule)
+    },
+    {path:"patient"
+      ,loadChildren: () => import('./PatientModule/patient.module')
+      .then(p => p.PatientModule)
     },
 
   ]},

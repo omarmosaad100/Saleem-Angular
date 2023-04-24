@@ -14,10 +14,13 @@ import { AuthHeaderComponent } from './Components/Authentication/AuthHeader/Auth
 import { AuthContainerComponent } from './Components/Authentication/AuthContainer/AuthContainer.component';
 import { FormsModule } from '@angular/forms';
 import { ToastService, AngularToastifyModule } from 'angular-toastify';
+
 import { HomePageModule } from './HomePageModule/home-page.module';
 import { LayoutModule } from './LayoutModule/layout.module';
 import { DoctorModule } from './DoctorModule/doctor.module';
 import { DoctorRoutingModule } from './DoctorModule/doctor-routing.module';
+import { PatientModule } from './PatientModule/patient.module';
+import { AuthGuard } from './Guards/auth.guard';
 
 
 @NgModule({
@@ -47,8 +50,7 @@ import { DoctorRoutingModule } from './DoctorModule/doctor-routing.module';
     HomePageModule,
     LayoutModule,
     DoctorModule,
-
-
+    PatientModule
 
   ],
   providers: [ToastService],
