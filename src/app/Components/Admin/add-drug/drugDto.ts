@@ -1,4 +1,4 @@
-import {DrugTakingMethod} from '../update-drug/drugTakingMethod.enum';
+import {DrugTakingMethod} from '../../../Enums/drugTakingMethod.enum';
 
 export class DrugDto {
   id: any;

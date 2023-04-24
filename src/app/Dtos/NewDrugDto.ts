@@ -1,4 +1,4 @@
-import {DrugTakingMethod} from './drugTakingMethod.enum';
+import {DrugTakingMethod} from '../Enums/drugTakingMethod.enum';
 import {v4 as uuidv4} from 'uuid';
 
 export class NewDrugDto {

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {AdminService} from 'src/app/Services/AdminService/admin.service';
-import {NewDrugDto} from "../update-drug/NewDrugDto";
-import {DrugTakingMethod} from "../update-drug/drugTakingMethod.enum";
+import {NewDrugDto} from "../../../Dtos/NewDrugDto";
+import {DrugTakingMethod} from "../../../Enums/drugTakingMethod.enum";
 
 
 @Component({
@@ -24,13 +24,17 @@ export class GetDrugByIdComponent implements OnInit {
       next: (data:any) => {
         console.log(data);
         this.Drug.name = data.name;
-        this.Drug.method = data.method;
+        this.Drug.method = this.getEnumString(data["method"])
         this.Drug.treatedIssuesIds = data.treatedIssues;
         this.Drug.conflictedIssuesIds = data.conflictedIssues;
       },
       error: () => {
       }
     });
+  }
+
+  getEnumString(value: DrugTakingMethod): string {
+    return DrugTakingMethod[value];
   }
 
 }

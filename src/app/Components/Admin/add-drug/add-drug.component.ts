@@ -4,7 +4,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {AdminService} from 'src/app/Services/AdminService/admin.service';
 import {Router} from '@angular/router';
-import {DrugTakingMethod} from '../update-drug/drugTakingMethod.enum';
+import {DrugTakingMethod} from '../../../Enums/drugTakingMethod.enum';
 import {DrugDto} from './drugDto';
 
 @Component({
