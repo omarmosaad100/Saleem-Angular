@@ -22,7 +22,7 @@
             <!-- un authorized -->
             <div  class="float-end d-flex nav-right justify-content-between" >
               <a [hidden] = "isAuth" class="nav-link px-3 btn py-1 w-40" href="#" routerLink="/Login" routerLinkActive="router-link-active" >Login</a>
-              <a  [hidden] ="isAuth" class="nav-link w-50 btn btn-primary text-light py-1 mx-2 w-40" href="/Login" >Sign up</a>
+              <a  [hidden] ="isAuth" class="nav-link w-50 btn btn-primary text-light py-1 mx-2 w-40" href="/Login">Sign up</a>
               <!-- authorized -->
               <button class="d-flex nav-link px-3 w-50  btn py-1" (click)="getProfile()" >
                 <img  [hidden] = "!isAuth"  src="../../../../assets/Images/profile.png" alt="Profile" class="w-30 h-30"/>

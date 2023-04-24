@@ -60,3 +60,11 @@ body::-webkit-scrollbar-thumb , .scroll::-webkit-scrollbar-thumb
 .h-30{
   height: 30px;
 }
+
+h1{
+  color: #073853;
+}
+
+.bg-dark-blue{
+  background-color:  #073853;
+}
