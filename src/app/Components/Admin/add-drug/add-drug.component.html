@@ -3,9 +3,15 @@
   <input type="text" class="form-control" id="name" [(ngModel)]="Drug.name">
 </div>
 <div class="form-group">
+  <label>Method of taking</label>
+  <select [(ngModel)]="MethodOfTakingValue" class="form-control">
+    <option *ngFor="let value of enumValues" [value]="value">{{ value }}</option>
+  </select>
+</div>
+<!-- <div class="form-group">
   <label for="name">Method of taking</label>
   <input type="text" class="form-control" id="method" [(ngModel)]="Drug.method">
-</div>
+</div> -->
 <div class="d-grid justify-content-center align-items-center grid">
   <div class="row">
     <h4>Treated Issues</h4>

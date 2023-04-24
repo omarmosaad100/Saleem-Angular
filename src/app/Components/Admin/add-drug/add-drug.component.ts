@@ -19,13 +19,19 @@ export class AddDrugComponent implements OnInit {
   treatedIssuesChecked: any[] = [];
   conflictedIssuesChecked: any[] = [] ;
 
+  MethodOfTakingValue:any;
+
   constructor(private myService: AdminService, private router: Router) {
+    this.MethodOfTakingValue = DrugTakingMethod.Oral;
   }
 
   ngOnInit() {
+
+
     this.myService.getAllIssues().subscribe({
-      next: (data) => {
+      next: (data:any) => {
         this.Issues = data
+
       },
       error: (error) => {
         console.log(error)
@@ -61,7 +67,9 @@ export class AddDrugComponent implements OnInit {
   }
 
   AddDrug() {
-    this.Drug.method = Number(this.Drug.method!) as DrugTakingMethod;
+    console.log(this.MethodOfTakingValue);
+
+    this.Drug.method = DrugTakingMethod[this.MethodOfTakingValue! as keyof typeof DrugTakingMethod];
     this.Drug.conflictedIssuesIds = this.conflictedIssuesChecked;
     this.Drug.treatedIssuesIds = this.treatedIssuesChecked;
     console.log(this.Drug);
@@ -80,6 +88,15 @@ export class AddDrugComponent implements OnInit {
         });
       }
     });
+  }
+
+
+  getEnumString(value: DrugTakingMethod): string {
+    return DrugTakingMethod[value];
+  }
+  get enumValues():string[] {
+    return Object.keys(DrugTakingMethod)
+    .filter(key => isNaN(Number(key))) // filter out numeric values
   }
 }
 
