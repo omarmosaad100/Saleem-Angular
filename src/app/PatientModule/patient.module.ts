@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule, DatePipe  } from '@angular/common';
 import { PatientComponent } from './patient-profile/patient-profile.component';
 import { PatientRoutingModule } from './patient-routing.module';
 import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard.component';
@@ -26,6 +26,7 @@ import { PatientIllnessesComponent } from './patient-illnesses/patient-illnesses
     PatientDrugsComponent,
   ],
   imports: [
+    CommonModule,
     PatientRoutingModule
   ],
   providers: [DatePipe],
