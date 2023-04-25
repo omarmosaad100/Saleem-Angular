@@ -8,6 +8,7 @@ import { DetailsComponent } from './patient-profile/details/details.component';
 import { patientappointmentsCompenent } from './patient-appointments/patient-appointments.component';
 import { PatientDrugsComponent } from './patient-Drugs/Patient-Drugs.component';
 import { PatientIllnessesComponent } from './patient-illnesses/patient-illnesses.component';
+import { NgbPaginationModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -24,7 +25,9 @@ import { PatientIllnessesComponent } from './patient-illnesses/patient-illnesses
   ],
   imports: [
     CommonModule,
-    PatientRoutingModule
+    PatientRoutingModule,
+    NgbTypeaheadModule,
+     NgbPaginationModule
   ],
   providers: [DatePipe],
 

@@ -33,6 +33,7 @@ export class patientappointmentsCompenent implements OnInit {
       .subscribe((data) => {
         console.log(data);
         this.doctors = data;
+    
       });
   }
 
