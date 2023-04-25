@@ -1,17 +1,20 @@
 <div class=" bg-white patient-illnesses pb-3">
   <h3 class="text-center py-3"> Patient Illnesses </h3>
-  <div class="px-2" *ngFor="let specialization of illnesses">
-        <h6 class="">{{getSpecializationName(specialization.specialization) }}</h6>
+
+  <ng-container *ngIf="illnesses.length>0 else noIllness">
+    <div class="px-2" *ngFor="let specialization of illnesses">
+      <h6 class="">{{getSpecializationName(specialization.specialization) }}</h6>
         <ul>
           <li *ngFor="let issue of specialization.diagnosedIssues">
             <p class="mb-0 pb-1">Issue: {{ issue.name }}</p>
-            <!-- <ul>
-              <li *ngFor="let appt of issue.appointments">
-                <p class="card-text">Date: {{ appt.date | date:'yyyy-mm-dd' }}</p>
-                <p class="card-text">Comment: {{ appt.comment }}</p>
-              </li>
-            </ul> -->
           </li>
         </ul>
-      </div>
     </div>
+  </ng-container>
+
+  <ng-template #noIllness>
+    <div class="alert alert-primary">
+      Patient don't have any illnesses
+    </div>
+  </ng-template>
+  </div>
