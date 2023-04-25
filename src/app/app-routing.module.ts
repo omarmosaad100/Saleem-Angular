@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ErrorPageComponent } from './Components/error-page/error-page.component';
 import { AuthContainerComponent } from './Components/Authentication/AuthContainer/AuthContainer.component';
-import { HomePageComponent } from './Components/HomePage/HomePage/HomePage.component';
+//import { HomePageComponent } from './Components/HomePage/HomePage/HomePage.component';
 import { AddDrugComponent } from './Components/Admin/add-drug/add-drug.component';
 import { DeleteDrugComponent } from './Components/Admin/delete-drug/delete-drug.component';
 import { GetAllDrugsComponent } from './Components/Admin/get-all-drugs/get-all-drugs.component';
@@ -12,9 +11,34 @@ import { GetAllDoctorsComponent } from './Components/Admin/get-all-doctors/get-a
 import { AddLicenseComponent } from './Components/Admin/add-license/add-license.component';
 import { AddIssueComponent } from './Components/Admin/add-issue/add-issue.component';
 
+import { ErrorPageComponent } from './LayoutModule/Components/error-page/error-page.component';
+import { HomePageComponent } from './HomePageModule/home-page/home-page.component';
+import { LayoutComponent } from './LayoutModule/layout.component';
+import { patientappointmentsCompenent } from './PatientModule/patient-appointments/patient-appointments.component';
+import { PatientDrugsComponent } from './PatientModule/patient-Drugs/Patient-Drugs.component';
+import { PatientIllnessesComponent } from './PatientModule/patient-illnesses/patient-illnesses.component';
+
+
+
 const routes: Routes = [
-  {path:"" , component : HomePageComponent},
+  {path:"" , component : LayoutComponent,children:[
+    {path:"" , component:HomePageComponent },
+    {path:""
+      ,loadChildren: () => import('./DoctorModule/doctor.module')
+      .then(m => m.DoctorModule)
+    },
+   
+
+  ]},
+
+  {path:"patient"
+  ,loadChildren: () => import('./PatientModule/patient.module')
+  .then(p => p.PatientModule)
+},
+
   {path:"Home" , redirectTo:""},
+
+
 
   {path:"Login",component : AuthContainerComponent},
   {path:"Register",component : AuthContainerComponent},

@@ -1,0 +1,30 @@
+<ngb-carousel
+	#carousel
+	[interval]="5000"
+	[pauseOnHover]="pauseOnHover"
+	[pauseOnFocus]="pauseOnFocus"
+	(slide)="onSlide($event)"
+  class="w-100 mb-5"
+>
+
+  <ng-template ngbSlide *ngFor="let elementGroups of data; index as i" class="position-relative">
+
+    <div class="row carousel-container" >
+      <div class="card col-md-6 col-lg mx-2 col-sm-12 shadow p-0" *ngFor="let element of elementGroups" >
+        <img [src]="element.img"  alt="My image {{i + 1}} description"  class="card-img-top doctor-img"/>
+
+        <div class="card-body text-center">
+          <h5 class="card-text">{{element.name}}</h5>
+
+        </div>
+        <!-- <a href="#" class="btn btn-primary"> View Details</a> -->
+      </div>
+    </div>
+
+    </ng-template>
+
+
+
+
+</ngb-carousel>
+

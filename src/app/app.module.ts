@@ -4,9 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavComponent } from './Components/nav/nav.component';
-import { FooterComponent } from './Components/footer/footer.component';
-import { ErrorPageComponent } from './Components/error-page/error-page.component';
+
 import { RoutingComponent } from './routing/routing.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ActivateBtnDirective } from './Directives/Directives';
@@ -28,12 +26,17 @@ import { AddLicenseComponent } from './Components/Admin/add-license/add-license.
 import { AddIssueComponent } from './Components/Admin/add-issue/add-issue.component';
 
 
+import { HomePageModule } from './HomePageModule/home-page.module';
+import { LayoutModule } from './LayoutModule/layout.module';
+import { DoctorModule } from './DoctorModule/doctor.module';
+import { DoctorRoutingModule } from './DoctorModule/doctor-routing.module';
+import { PatientModule } from './PatientModule/patient.module';
+import { AuthGuard } from './Guards/auth.guard';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
-    FooterComponent,
-    ErrorPageComponent,
     RoutingComponent,
     HomePageComponent,
     DeleteDrugComponent,
@@ -56,6 +59,7 @@ import { AddIssueComponent } from './Components/Admin/add-issue/add-issue.compon
     AddIssueComponent,
 
   ],
+
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -66,8 +70,15 @@ import { AddIssueComponent } from './Components/Admin/add-issue/add-issue.compon
     ReactiveFormsModule,
 
 
+    // custom modules
+    HomePageModule,
+    LayoutModule,
+    DoctorModule,
+    PatientModule
+
   ],
   providers: [ToastService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}

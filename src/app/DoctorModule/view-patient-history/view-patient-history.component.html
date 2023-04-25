@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="view-patient-history.component.css">
+
+<div class="container my-5" style="min-height:500px">
+  <div class="row d-flex align-items-center justify-content-between">
+    <div class="col-md-4">
+      <h1>Patient history</h1>
+    </div>
+    <div class="col-md-4 text-md-right">
+      <a class=" btn btn-primary py-1" href="#" routerLink="/AddAppointment" role="button">Add Appointment</a>
+    </div>
+    <div class="col-md-4 text-md-right">
+      <a class=" btn btn-primary py-1" href="#" role="button">Filter</a>
+    </div>
+  </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="padding-top: 10px;">
+
+      <div class="col" *ngFor="let appointment of appointments">
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Appointment with Dr. {{ appointment.dId }}</h5>
+            <div class="card-text">
+              Date: {{ appointment.date | date:'short' }}<br>
+              Comment: {{ appointment.comment }}<br>
+              Specialization: {{ appointment.specialization }}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Diagnosed issues: <br>
+  <ul>
+    <li *ngFor="let issue of appointment.diagnosedIssues">{{ issue }}</li>
+  </ul>
+  Described drugs: <br>
+  <ul>
+    <li *ngFor="let drug of appointment.describedDrugs">{{ drug }}</li>
+  </ul> -->

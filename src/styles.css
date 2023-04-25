@@ -31,4 +31,40 @@ body::-webkit-scrollbar-thumb , .scroll::-webkit-scrollbar-thumb
 
 /** end Scrollbar style */
 
+*{
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
 
+}
+
+.logo-img{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+/* change style of Toast */
+.toast-body{
+  padding-bottom: 20px!important;
+  width:1000px!important;
+  min-height: 50px!important;
+  padding-left: 0!important;
+  padding-top: 10px;
+}
+
+.w-40{
+  width: 40%
+}
+
+.w-30{
+  width: 30px;
+}
+.h-30{
+  height: 30px;
+}
+
+h1 , h2{
+  color: #073853;
+}
+
+.bg-dark-blue{
+  background-color:  #073853;
+}

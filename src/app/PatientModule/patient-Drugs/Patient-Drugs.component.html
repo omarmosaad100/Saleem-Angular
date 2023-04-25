@@ -1,0 +1,36 @@
+<div class="w-85 mt-5 mx-auto " >
+  <h2 class="text-center my-5">View Drugs schedules </h2>
+  <table class="table table-hover table-striped table-borderless">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Dosage</th>
+        <th scope="col">Times Per Day</th>
+  
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let drug of drugs" class="pb-3 ">
+        <th scope="row">{{ drug.name}}</th>
+        <td>
+          {{ drug.startDate | date:'yyyy/MM/dd' }}
+        </td>
+        <td>{{ drug.endDate | date:'yyyy/MM/dd' }}</td>
+        <td>{{ drug.dosage }}</td>
+        <td>{{ drug.timesPerDay }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination
+      [collectionSize]="collectionSize"
+      [(page)]="page"
+      [pageSize]="pageSize"
+      (pageChange)="refreshCountries()"
+    >
+  </ngb-pagination>
+</div>
+

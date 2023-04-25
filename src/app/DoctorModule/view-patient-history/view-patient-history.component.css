@@ -1,0 +1,10 @@
+.card{
+  height: 125px;
+  max-height: 125px;
+  overflow: hidden;
+  background-color: red;
+}
+
+.appointments{
+  height: 100px;
+}
