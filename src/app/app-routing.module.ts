@@ -27,10 +27,7 @@ const routes: Routes = [
 
 
   {path:"Home" , redirectTo:""},
-  {path:"doctorVisited" , component : patientappointmentsCompenent},
-  {path:"patientdrugs" , component : PatientDrugsComponent},
-  {path:"illnesses" , component : PatientIllnessesComponent
-},
+
 
 
   {path:"Login",component : AuthContainerComponent},
