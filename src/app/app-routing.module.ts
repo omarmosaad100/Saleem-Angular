@@ -15,13 +15,14 @@ const routes: Routes = [
       ,loadChildren: () => import('./DoctorModule/doctor.module')
       .then(m => m.DoctorModule)
     },
-    {path:"patient"
-      ,loadChildren: () => import('./PatientModule/patient.module')
-      .then(p => p.PatientModule)
-    },
+   
 
   ]},
 
+  {path:"patient"
+  ,loadChildren: () => import('./PatientModule/patient.module')
+  .then(p => p.PatientModule)
+},
 
   {path:"Home" , redirectTo:""},
 
