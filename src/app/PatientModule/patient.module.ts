@@ -4,9 +4,7 @@ import { PatientComponent } from './patient-profile/patient-profile.component';
 import { PatientRoutingModule } from './patient-routing.module';
 import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard.component';
 import { PatientSidebarComponent } from './patient-sidebar/patient-sidebar.component';
-import { ScheduleDrugsComponent } from './patient-profile/schedule-drugs/schedule-drugs.component';
 import { DetailsComponent } from './patient-profile/details/details.component';
-import { IllnessesComponent } from './patient-profile/illnesses/illnesses.component';
 import { patientappointmentsCompenent } from './patient-appointments/patient-appointments.component';
 import { PatientDrugsComponent } from './patient-Drugs/Patient-Drugs.component';
 import { PatientIllnessesComponent } from './patient-illnesses/patient-illnesses.component';
@@ -20,12 +18,12 @@ import { PatientIllnessesComponent } from './patient-illnesses/patient-illnesses
     PatientSidebarComponent,
     DetailsComponent,
     // patient profile components
-    IllnessesComponent,
-    ScheduleDrugsComponent,
+    PatientIllnessesComponent,
     patientappointmentsCompenent,
     PatientDrugsComponent,
   ],
   imports: [
+    CommonModule,
     PatientRoutingModule
   ],
   providers: [DatePipe],

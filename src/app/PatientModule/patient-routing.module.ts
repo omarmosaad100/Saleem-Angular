@@ -15,7 +15,7 @@ const routes: Routes = [
       {path:"dashboard",component : PatientDashboardComponent , canActivate:[AuthGuard],
 
       children:[
-        {path:"" ,component : PatientComponent  , pathMatch:'full' },
+        {path:"profile" ,component : PatientComponent  , pathMatch:'full' },
         {path:"appointments" , component : patientappointmentsCompenent },
         {path:"drugs" , component : PatientDrugsComponent },
         // {path:"illeness" , component : PatientComponent , canActivate:[AuthGuard]},

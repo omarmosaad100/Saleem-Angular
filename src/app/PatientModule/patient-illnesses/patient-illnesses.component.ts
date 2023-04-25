@@ -1,11 +1,10 @@
 import { Component ,OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { patientIllnesses } from 'src/app/Models/patientIllnesses/patientIllnesses';
-import { Specialization, SpecializationMap } from '../../Enums/SpecializationEnum.enum';
-// import { DatePipe } from '@angular/common';
+import { SpecializationMap } from '../../Enums/SpecializationEnum.enum';
 
 @Component({
-  selector: 'app-patient-illnesses',
+  selector: 'patient-illnesses',
   templateUrl: './patient-illnesses.component.html',
   styleUrls: ['./patient-illnesses.component.css'],
 })

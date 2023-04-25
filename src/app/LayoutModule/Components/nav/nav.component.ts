@@ -27,7 +27,7 @@ export class NavComponent implements OnInit{
   getProfile(){
     let role = localStorage.getItem("role");
     if(role == 'Patient'){
-      this.router.navigate(['/patient/dashboard'])
+      this.router.navigate(['/patient/dashboard/profile'])
     }
   }
 

@@ -1,23 +1,29 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { APIUrlConnectionService } from 'src/app/Services/APIUrlConnection.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProfileService implements OnInit{
+export class ProfileService {
 
-data:any
+private token = localStorage.getItem('token') || '';
+private headers = { Authorization: 'Bearer ' + this.token };
+
 constructor(private httpRequest:HttpClient , private url:APIUrlConnectionService) {
 
 }
 
-ngOnInit(): void {
-  this.data = this.httpRequest
+getPatientData(): Observable<any> {
+  let data:any = this.httpRequest
   .get(
-    `${this.url.GetURL()}/Patient/GetPatientDetails`
+    `${this.url.GetURL()}/Patient/GetPatientDetails`,
+    { headers : this.headers }
   )
-  console.log(this.data);
+
+  return data;
+
 }
 
 
