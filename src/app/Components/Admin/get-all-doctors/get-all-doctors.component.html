@@ -1,0 +1,22 @@
+<div class="container my-5">
+  <table class="table table-hover myTableColor">
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Specialization</th>
+      <th scope="col">Gender</th>
+      <th scope="col">License Number</th>
+      <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let d of doctors">
+      <td>{{d.name}}</td>
+      <td>{{d.specialization}}</td>
+      <td>{{d.gender}}</td>
+      <td>{{d.licenseId}}</td>
+      <td><a (click)="delete(d.id)" class="btn btn-sm btn-danger">Remove License</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

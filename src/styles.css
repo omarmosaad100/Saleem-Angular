@@ -49,3 +49,22 @@ body::-webkit-scrollbar-thumb , .scroll::-webkit-scrollbar-thumb
   padding-left: 0!important;
   padding-top: 10px;
 }
+
+.w-40{
+  width: 40%
+}
+
+.w-30{
+  width: 30px;
+}
+.h-30{
+  height: 30px;
+}
+
+h1 , h2{
+  color: #073853;
+}
+
+.bg-dark-blue{
+  background-color:  #073853;
+}

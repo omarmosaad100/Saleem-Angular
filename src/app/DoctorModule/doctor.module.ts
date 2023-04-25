@@ -7,7 +7,6 @@ import { ViewPatientHistoryComponent } from './view-patient-history/view-patient
 import { FormsModule } from '@angular/forms';
 import { DoctorRoutingModule } from './doctor-routing.module';
 import { DoctorComponent } from './doctor.component';
-import { LayoutModule } from "../LayoutModule/layout.module";
 import { ReactiveFormsModule } from '@angular/forms';
 
 

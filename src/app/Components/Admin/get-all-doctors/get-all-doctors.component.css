@@ -1,0 +1,19 @@
+.myTableColor{
+  background-color: #1c3847;
+  border: #90E0EF;
+  color: #90E0EF;
+  text-align: center;
+}
+
+.myTableColor th{
+  color: white;
+}
+
+table.myTableColor tbody tr:hover {
+  background-color: #00B4D8;
+
+
+}
+table.myTableColor tbody tr:hover td{
+  color: #1c3847;
+}

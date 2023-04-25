@@ -16,7 +16,7 @@ export class AuthHeaderComponent implements OnInit {
 
   ShowForm(formName:string){
     this.ActiveFormEvent.emit(formName);
-    
+
   }
 
 }

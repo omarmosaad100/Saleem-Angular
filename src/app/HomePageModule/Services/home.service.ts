@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { APIUrlConnectionService } from 'src/app/Services/APIUrlConnection.service';
 
 @Injectable({
   providedIn: 'root'
@@ -7,13 +8,13 @@ import { Injectable } from '@angular/core';
 export class HomeService {
 
 
-constructor(private http: HttpClient ){
+constructor(private http: HttpClient , private ApiUrl : APIUrlConnectionService ){
 
 }
 
 getSpecialties() {
   return this.http.get(
-    'https://localhost:44318/api/Home'
+    `${this.ApiUrl.GetURL()}/Home`
   );
 
 }
