@@ -5,7 +5,7 @@
       <h5 class="card-title"><b>Name: {{ doctor.name }}</b></h5>  
       <p class="card-text">Gender: {{ doctor.gender === 0 ? 'Male' : 'Female' }}</p>  
       <p class="card-text">Specialization: {{ getSpecializationName(doctor.specialization) }}</p>
-      <p class="card-text">Date: {{ doctor.appointmentDate | date:'yyyy/MM/dd'}}</p>
+      <!-- <p class="card-text">Date: {{ doctor.appointmentDate | date:'yyyy/MM/dd'}}</p> -->
     </div>
     <div class="card text-center">
       <a class="btn btn-outline-primary" (click)="logDoctorId(doctor.id)">More Details</a>

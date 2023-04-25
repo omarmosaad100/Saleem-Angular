@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class APIUrlConnectionService {
 
 constructor() { }
-  URL: string = "http://localhost:7016/api";
+  URL: string = "http://localhost:5181/api";
 
   GetURL():string{
     return this.URL;

@@ -18,7 +18,7 @@ import { PatientIllnessesComponent } from './patient-illnesses/patient-illnesses
     PatientComponent,
     PatientDashboardComponent,
     PatientSidebarComponent,
-
+    DetailsComponent,
     // patient profile components
     IllnessesComponent,
     ScheduleDrugsComponent,

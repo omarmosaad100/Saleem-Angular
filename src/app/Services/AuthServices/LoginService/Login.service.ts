@@ -38,7 +38,7 @@ export class LoginService {
           this.isLoggedIn.next(true);
           if(data['role'] == 'Patient'){
             localStorage.setItem("role" , data['role']);
-            this.router.navigate(['/patient/dashboard']);
+            this.router.navigate(['/patient/dashboard/profile']);
           }
         }
       },
