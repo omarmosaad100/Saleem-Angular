@@ -17,6 +17,7 @@ export class patientappointmentsCompenent implements OnInit {
   logDoctorId(doctorId: string) {
     //Id for appointment not doctor
     console.log("Appointment ID: ", doctorId);
+    localStorage.setItem("Appointment ID",doctorId)
   }
 
   constructor(private http: HttpClient) {
