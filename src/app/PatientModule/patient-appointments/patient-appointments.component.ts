@@ -15,7 +15,8 @@ export class patientappointmentsCompenent implements OnInit {
   doctors: DoctorVisitCard[] =[];
 
   logDoctorId(doctorId: string) {
-    console.log("Doctor ID: ", doctorId);
+    //Id for appointment not doctor
+    console.log("Appointment ID: ", doctorId);
   }
 
   constructor(private http: HttpClient) {

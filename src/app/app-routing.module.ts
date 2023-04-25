@@ -7,6 +7,7 @@ import { HomePageComponent } from './HomePageModule/home-page/home-page.componen
 import { LayoutComponent } from './LayoutModule/layout.component';
 import { patientappointmentsCompenent } from './PatientModule/patient-appointments/patient-appointments.component';
 import { PatientDrugsComponent } from './PatientModule/patient-Drugs/Patient-Drugs.component';
+import { PatientIllnessesComponent } from './PatientModule/patient-illnesses/patient-illnesses.component';
 
 
 
@@ -28,6 +29,8 @@ const routes: Routes = [
   {path:"Home" , redirectTo:""},
   {path:"doctorVisited" , component : patientappointmentsCompenent},
   {path:"patientdrugs" , component : PatientDrugsComponent},
+  {path:"illnesses" , component : PatientIllnessesComponent
+},
 
 
   {path:"Login",component : AuthContainerComponent},

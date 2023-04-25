@@ -6,6 +6,7 @@ import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard
 import { PatientSidebarComponent } from './patient-sidebar/patient-sidebar.component';
 import { patientappointmentsCompenent } from './patient-appointments/patient-appointments.component';
 import { PatientDrugsComponent } from './patient-Drugs/Patient-Drugs.component';
+import { PatientIllnessesComponent } from './patient-illnesses/patient-illnesses.component';
 
 
 
@@ -15,7 +16,8 @@ import { PatientDrugsComponent } from './patient-Drugs/Patient-Drugs.component';
     PatientDashboardComponent,
     PatientSidebarComponent,
     patientappointmentsCompenent,
-    PatientDrugsComponent
+    PatientDrugsComponent,
+    PatientIllnessesComponent
   ],
   imports: [
     CommonModule,
