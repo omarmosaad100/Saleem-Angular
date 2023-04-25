@@ -1,20 +1,29 @@
 
-<div class="container my-5" style="height:500px">
-    <h1 class="text-center mb-5">Patient Issues Form</h1>
-    <form   (ngSubmit)="onSubmit()">
-        <div class="form-group">
+<div class="container my-5">
+    <h1 class="text-center mb-5">Appointment Details</h1>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group"  style="padding: 10px;">
             <label>Select patient issues:</label>
-            <div class="form-check" *ngFor="let issue of issues">
-                <input class="form-check-input"  name="{{issue.name}}"  type="checkbox" [(ngModel)]="issue.selected"  />
-                <label class="form-check-label">{{ issue.name }}</label>
+            <div class="issue-container">
+              <div class="form-check d-flex" *ngFor="let issue of issues">
+                <div>
+                  <input class="form-check-input"  name="{{issue.name}}"  type="checkbox" [(ngModel)]="issue.selected"  />
+                  <label class="form-check-label">{{ issue.name }}</label>
+                </div>
+              </div>
             </div>
         </div>
         <div class="form-group">
-            <label for="comment">Doctor's Comment:</label>
+            <label for="comment" style="margin: 10px;">Doctor's Comment:</label>
             <textarea class="form-control" id="comment" rows="3" name="comment" [(ngModel)]="doctorComment"></textarea>
         </div>
 
-        <button type="submit"   class="btn btn-primary">Submit</button>
+        <div style="text-align: center; padding: 10px;">
+          <a class="btn btn-secondary" (click)="goBack()" style="width: 100px; margin-right: 25%;">Back</a>
+          <button type="submit" class="btn btn-primary" style="width: 100px;">Submit</button>
+        </div>
+
+
     </form>
 </div>
 

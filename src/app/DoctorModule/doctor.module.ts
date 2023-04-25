@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { DoctorRoutingModule } from './doctor-routing.module';
 import { DoctorComponent } from './doctor.component';
 import { LayoutModule } from "../LayoutModule/layout.module";
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -24,6 +25,7 @@ import { LayoutModule } from "../LayoutModule/layout.module";
         CommonModule,
         FormsModule,
         // LayoutModule,
+        ReactiveFormsModule,
         DoctorRoutingModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],  // Add this line

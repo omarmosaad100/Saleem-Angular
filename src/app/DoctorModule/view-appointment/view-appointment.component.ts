@@ -1,23 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppointmentService } from '../Services/AppointmentService/appointment.service';
+import { Specialization } from 'src/app/Enums/Specialization.enum';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-view-appointment',
   templateUrl: './view-appointment.component.html',
   styleUrls: ['./view-appointment.component.css']
 })
-export class ViewAppointmentComponent {
-  issues :string[]=[]
-  Comment:String=""
-  constructor(private appointmentService:AppointmentService){
-    this.issues=this.appointmentService.issuesArr;
-    this.Comment=this.appointmentService.comment;
-  }
-  doctorName: string = "Dr. John Smith";
-  patientName: string = "Jane Doe";
-  currentDate: Date = new Date();
-  //issues: string = "Fever, headache, and cough";
+export class ViewAppointmentComponent implements OnInit {
 
-  suggestedDrugs: string = "Acetaminophen, ibuprofen, and cough syrup";
+  public appointment: any;
+
+  constructor(private Location: Location){}
+
+  getSpecializationDescription(specNum: number): string {
+    return Specialization[specNum];
+  }
+
+  goBack(){
+    this.Location.back();
+  }
+
+  ngOnInit(): void {
+      this.appointment = window.history.state.appointment;
+      console.log(this.appointment)
+  }
 
 }

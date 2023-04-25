@@ -18,6 +18,7 @@ import { HomePageModule } from './HomePageModule/home-page.module';
 import { LayoutModule } from './LayoutModule/layout.module';
 import { DoctorModule } from './DoctorModule/doctor.module';
 import { DoctorRoutingModule } from './DoctorModule/doctor-routing.module';
+import { ViewIssuesComponent } from './DoctorModule/view-issues/view-issues.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { DoctorRoutingModule } from './DoctorModule/doctor-routing.module';
 
     // directives
     ActivateBtnDirective,
+      ViewIssuesComponent,
   ],
 
   imports: [

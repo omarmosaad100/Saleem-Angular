@@ -18,3 +18,23 @@
     background-color: #0069d9;
     border-color: #0062cc;
 }
+
+.issue-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: Center;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 10px;
+}
+
+.form-check {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+#comment{
+  height: 50px;
+  width: 90%;
+  margin: auto;
+}
