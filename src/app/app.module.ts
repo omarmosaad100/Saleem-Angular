@@ -13,7 +13,7 @@ import { LoginFormComponent } from './Components/Authentication/LoginForm/LoginF
 import { AuthHeaderComponent } from './Components/Authentication/AuthHeader/AuthHeader.component';
 import { AuthContainerComponent } from './Components/Authentication/AuthContainer/AuthContainer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HomePageComponent } from './Components/HomePage/HomePage/HomePage.component';
+// import { HomePageComponent } from './Components/HomePage/HomePage/HomePage.component';
 import { ToastService, AngularToastifyModule } from 'angular-toastify';
 import { AdminContainerComponent } from './Components/Admin/AdminContainer/admin-container.component';
 import { DeleteDrugComponent } from './Components/Admin/delete-drug/delete-drug.component';
@@ -32,13 +32,14 @@ import { DoctorModule } from './DoctorModule/doctor.module';
 import { DoctorRoutingModule } from './DoctorModule/doctor-routing.module';
 import { PatientModule } from './PatientModule/patient.module';
 import { AuthGuard } from './Guards/auth.guard';
+import {HomePageComponent} from "./HomePageModule/home-page/home-page.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RoutingComponent,
-    HomePageComponent,
+    //HomePageComponent,
     DeleteDrugComponent,
     AddDrugComponent,
 
