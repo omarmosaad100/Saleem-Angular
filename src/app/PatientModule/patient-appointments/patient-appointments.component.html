@@ -2,8 +2,8 @@
   <div class="card m-2 p-3" *ngFor="let doctor of doctors">
     <img src="https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg" class="card-img-top text-center mx-auto"  style="height: 200px; width: 200px;" alt="...">
     <div class="card-body">
-      <h5 class="card-title"><b>Name: {{ doctor.name }}</b></h5>  
-      <p class="card-text">Gender: {{ doctor.gender === 0 ? 'Male' : 'Female' }}</p>  
+      <h5 class="card-title"><b>Name: {{ doctor.name }}</b></h5>
+      <p class="card-text">Gender: {{ doctor.gender === 0 ? 'Male' : 'Female' }}</p>
       <p class="card-text">Specialization: {{ getSpecializationName(doctor.specialization) }}</p>
       <p class="card-text">Date: {{ doctor.appointmentDate | date:'yyyy/MM/dd'}}</p>
     </div>

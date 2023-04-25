@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./patient-profile.component.css']
 })
 export class PatientComponent {
-
 }

@@ -61,7 +61,7 @@ body::-webkit-scrollbar-thumb , .scroll::-webkit-scrollbar-thumb
   height: 30px;
 }
 
-h1{
+h1 , h2{
   color: #073853;
 }
 

@@ -1,12 +1,12 @@
 import { Component ,OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { patientIllnesses } from 'src/app/Models/patientIllnesses/patientIllnesses';
-import { Specialization, SpecializationMap } from '../../Enums/SpecializationEnum.enum';
+import { SpecializationMap } from '../../Enums/SpecializationEnum.enum';
 
 @Component({
-  selector: 'app-patient-illnesses',
+  selector: 'patient-illnesses',
   templateUrl: './patient-illnesses.component.html',
-  styleUrls: ['./patient-illnesses.component.css']
+  styleUrls: ['./patient-illnesses.component.css'],
 })
 export class PatientIllnessesComponent {
   constructor(private http: HttpClient) { }

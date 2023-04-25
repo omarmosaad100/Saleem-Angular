@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientDashboardComponent implements OnInit {
 
+  isCollapsed:boolean = false;
   constructor() { }
-
   ngOnInit() {
   }
 
