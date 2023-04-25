@@ -9,6 +9,7 @@ import { patientappointmentsCompenent } from './patient-appointments/patient-app
 import { PatientDrugsComponent } from './patient-Drugs/Patient-Drugs.component';
 import { PatientIllnessesComponent } from './patient-illnesses/patient-illnesses.component';
 import { NgbPaginationModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
+import { PatientAppointmentDetailComponent } from './patient-appointment-detail/patient-appointment-detail.component';
 
 
 
@@ -22,6 +23,7 @@ import { NgbPaginationModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootst
     PatientIllnessesComponent,
     patientappointmentsCompenent,
     PatientDrugsComponent,
+    PatientAppointmentDetailComponent,
   ],
   imports: [
     CommonModule,
