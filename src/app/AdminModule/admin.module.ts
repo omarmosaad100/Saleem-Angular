@@ -13,7 +13,7 @@ import {AdminRoutingModule} from "./admin-routing.module";
 import {AdminApiService} from "./AdminServices/admin-api-calls/admin.api.service";
 import {NgbPaginationModule, NgbTypeaheadModule} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
+import {AdminLayoutComponent} from './admin-layout/admin-layout.component';
 import {LayoutModule} from "../LayoutModule/layout.module";
 import {AdminLayoutModule} from "./admin-layout/admin-layout.module";
 
@@ -41,7 +41,9 @@ import {AdminLayoutModule} from "./admin-layout/admin-layout.module";
     LayoutModule,
     AdminLayoutModule
   ],
-  providers: [DatePipe, AdminApiService],
+  providers: [DatePipe, AdminApiService, {
+    provide: 'text/css', useValue: 'text/css'
+  }],
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
