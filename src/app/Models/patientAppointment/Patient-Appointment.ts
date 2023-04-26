@@ -3,21 +3,8 @@ interface Diagnose {
     name: string;
     treatmentDrugs: string[];
     conflictingDrugs: string[];
-    appointments: Appointment[];
   }
-  
-  interface Appointment {
-    id: string;
-    rating: number;
-    date: string;
-    comment: string;
-    pId: string;
-    dId: string;
-    doctor: Doctor;
-    describedDrugs: string[];
-    diagnosedIssues: Diagnose[];
-    specialization: number;
-  }
+
   
   interface Doctor {
     id: string;
@@ -25,12 +12,12 @@ interface Diagnose {
     specialization: number;
     gender: number;
     licenseId: string;
-    appointments: Appointment[];
   }
   
 
 export class PatientAppointment {
     name: string | null ='';
+    doctor? :Doctor ;
     specialization: number =0;
     comment: string ='';
     describedDrugs: string[] =[];

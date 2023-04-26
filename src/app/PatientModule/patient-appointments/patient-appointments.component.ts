@@ -16,10 +16,12 @@ export class patientappointmentsCompenent implements OnInit {
   baseURL :string = this.url.GetURL() + '/Patient';
 
   doctors: DoctorVisitCard[] =[];
+isactive: boolean =true;
 
   logDoctorId(doctorId: string) {
     //Id for appointment not doctor
     console.log("Appointment ID: ", doctorId);
+    this.isactive = false;
     localStorage.setItem("Appointment ID",doctorId)
   }
 

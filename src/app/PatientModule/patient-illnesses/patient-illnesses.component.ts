@@ -4,7 +4,7 @@ import { patientIllnesses } from 'src/app/Models/patientIllnesses/patientIllness
 import { Specialization, SpecializationMap } from '../../Enums/SpecializationEnum.enum';
 import { APIUrlConnectionService } from "../../Services/APIUrlConnection.service";
 
-// import { DatePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'patient-illnesses',
