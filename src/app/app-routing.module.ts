@@ -28,37 +28,21 @@ const routes: Routes = [
         path: ""
         , loadChildren: () => import('./DoctorModule/doctor.module')
           .then(m => m.DoctorModule)
-      },
-      {
-        path: "Admin", component: AdminContainerComponent, children: [
-          {path: "AddDrug", component: AddDrugComponent},
-          {path: "AddLicense", component: AddLicenseComponent},
-          {path: "AddIssue", component: AddIssueComponent},
-          {path: "DeleteDrug/:id", component: AddLicenseComponent},
-          {path: "GetAllDrugs", component: GetAllDrugsComponent},
-          {path: "GetAllDoctors", component: GetAllDoctorsComponent},
-          {path: "GetDrug/:id", component: GetDrugByIdComponent},
-          {path: "UpdateDrug/:id", component: UpdateDrugComponent},
-        ]
-      },
-    ]
+      }]
   },
-
   {
     path: "patient"
     , loadChildren: () => import('./PatientModule/patient.module')
       .then(p => p.PatientModule)
   },
-
+  {
+    path: "Admin"
+    , loadChildren: () => import('./AdminModule/admin.module')
+      .then(a => a.AdminModule)
+  },
   {path: "Home", redirectTo: ""},
-
-
   {path: "Login", component: AuthContainerComponent},
   {path: "Register", component: AuthContainerComponent},
-
-  //admin components
-
-
   {path: "**", component: ErrorPageComponent}];
 
 @NgModule({

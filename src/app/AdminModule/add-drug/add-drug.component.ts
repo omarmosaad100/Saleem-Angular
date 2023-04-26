@@ -2,7 +2,7 @@ import {v4 as uuidv4} from 'uuid';
 
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {AdminService} from 'src/app/AdminModule/AdminService/admin.service';
+import {AdminApiService} from 'src/app/AdminModule/AdminServices/admin-api-calls/admin.api.service';
 import {Router} from '@angular/router';
 import {DrugTakingMethod} from '../../Enums/drugTakingMethod.enum';
 import {DrugDto} from './drugDto';
@@ -21,7 +21,7 @@ export class AddDrugComponent implements OnInit {
 
   MethodOfTakingValue:any;
 
-  constructor(private myService: AdminService, private router: Router) {
+  constructor(private myService: AdminApiService, private router: Router) {
     this.MethodOfTakingValue = DrugTakingMethod.Oral;
   }
 
