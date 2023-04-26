@@ -21,6 +21,7 @@ import { PatientModule } from './PatientModule/patient.module';
 import { AuthGuard } from './Guards/auth.guard';
 import {HomePageComponent} from "./HomePageModule/home-page/home-page.component";
 import {AdminModule} from "./AdminModule/admin.module";
+import {AdminLayoutModule} from "./AdminModule/admin-layout/admin-layout.module";
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import {AdminModule} from "./AdminModule/admin.module";
     LayoutModule,
     DoctorModule,
     PatientModule,
-    AdminModule
+    AdminModule,
+    AdminLayoutModule
   ],
   providers: [ToastService],
   bootstrap: [AppComponent],

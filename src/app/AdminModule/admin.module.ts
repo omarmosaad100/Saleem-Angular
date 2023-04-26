@@ -11,9 +11,11 @@ import {DeleteDrugComponent} from "./delete-drug/delete-drug.component";
 import {AddDrugComponent} from "./add-drug/add-drug.component";
 import {AdminRoutingModule} from "./admin-routing.module";
 import {AdminApiService} from "./AdminServices/admin-api-calls/admin.api.service";
-import {PatientRoutingModule} from "../PatientModule/patient-routing.module";
 import {NgbPaginationModule, NgbTypeaheadModule} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
+import {LayoutModule} from "../LayoutModule/layout.module";
+import {AdminLayoutModule} from "./admin-layout/admin-layout.module";
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     GetAllDoctorsComponent,
     AddLicenseComponent,
     AddIssueComponent,
+    AdminLayoutComponent,
   ],
   imports: [
     AdminRoutingModule,
@@ -34,7 +37,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     NgbTypeaheadModule,
     NgbPaginationModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    LayoutModule,
+    AdminLayoutModule
   ],
   providers: [DatePipe, AdminApiService],
 
