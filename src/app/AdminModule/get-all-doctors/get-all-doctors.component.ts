@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AdminService } from 'src/app/Services/AdminService/admin.service';
+import { AdminService } from 'src/app/AdminModule/AdminService/admin.service';
 
 @Component({
   selector: 'app-get-all-doctors',
