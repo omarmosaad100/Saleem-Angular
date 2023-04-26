@@ -58,9 +58,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     AdminModule,
     AdminLayoutModule,
 
-    //for ngx-boostrap
-    BrowserAnimationsModule,
-    BsDropdownModule.forRoot()
+
   ],
   providers: [ToastService, {
     provide: 'text/css', useValue: 'text/css'

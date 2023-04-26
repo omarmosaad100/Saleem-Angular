@@ -12,8 +12,12 @@
 
 /* negm test  */
 
-.dropdown-toggle , .dropdown-itme{
+.dropdown-toggle , .dropdown-item{
   cursor: pointer;
+}
+.navBG{
+  background-color: #1c3847;
+  color: white;
 }
 
 

@@ -5,6 +5,8 @@ import {AdminFooterComponent} from "./Components/footer/admin-footer.component";
 import {AdminErrorPageComponent} from "./Components/error-page/admin-error-page.component";
 import {AdminLayoutComponent} from "./admin-layout.component";
 import { FormsModule } from "@angular/forms";
+import { BsDropdownModule } from "ngx-bootstrap/dropdown";
+
 
 @NgModule({
   declarations: [
@@ -18,10 +20,13 @@ import { FormsModule } from "@angular/forms";
     AdminFooterComponent,
     AdminErrorPageComponent,
     // AdminLayoutComponent
+
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    //for ngx-boostrap dropdown
+    BsDropdownModule.forRoot()
   ]
 })
 export class AdminLayoutModule { }

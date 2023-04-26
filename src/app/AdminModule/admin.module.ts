@@ -16,6 +16,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AdminLayoutComponent} from './admin-layout/admin-layout.component';
 import {LayoutModule} from "../LayoutModule/layout.module";
 import {AdminLayoutModule} from "./admin-layout/admin-layout.module";
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {AdminLayoutModule} from "./admin-layout/admin-layout.module";
     AddLicenseComponent,
     AddIssueComponent,
     AdminLayoutComponent,
+    AdminLoginComponent,
   ],
   imports: [
     AdminRoutingModule,
