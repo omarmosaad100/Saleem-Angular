@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-white bg-white fixed-top">
+<!-- <nav class="navbar navbar-expand-md navbar-white bg-white fixed-top">
   <img src="../../../../../favicon.ico" class="logo-img" alt=""/>
   <a class="navbar-brand" href="/Admin">{{Title}}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,5 +10,41 @@
       <a class="nav-item nav-link" href="">Features</a>
       <a class="nav-item nav-link" href="">Pricing</a>
     </div>
+  </div>
+</nav> -->
+
+<!--Negm test navbar-->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="loggedIn">
+        <li class="nav-item">
+          <a class="nav-item nav-link active" href="">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="">Pricing</a>
+        </li>
+      </ul>
+
+      <div class="dropdown" *ngIf="loggedIn" dropdown>
+        <a href="" class="dropdown-toggle text-light text-decoration-none" dropdownToggle>Welcome user</a>
+        <div class="dropdown-menu mt-3" *dropdownMenu>
+          <a href="" class="dropdown-item">Profile</a>
+          <a href="" class="dropdown-item" (click)="logout()">Logout</a>
+        </div>
+      </div>
+
+
+      <form *ngIf="!loggedIn" #AdminLoginForm="ngForm" (ngSubmit)="login()" autocomplete="off" class="d-flex">
+        <input
+        name="username" [(ngModel)]="model.username"
+        class="form-control me-2" type="text" placeholder="Enter username" >
+        <input
+        name="password" [(ngModel)]="model.password"
+        class="form-control me-2" type="password" placeholder="Enter password" >
+        <button class="btn btn-outline-success" type="submit">Login</button>
+      </form>
   </div>
 </nav>

@@ -22,6 +22,7 @@ import {AuthGuard} from './Guards/auth.guard';
 import {HomePageComponent} from "./HomePageModule/home-page/home-page.component";
 import {AdminModule} from "./AdminModule/admin.module";
 import {AdminLayoutModule} from "./AdminModule/admin-layout/admin-layout.module";
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 
 @NgModule({
@@ -55,7 +56,11 @@ import {AdminLayoutModule} from "./AdminModule/admin-layout/admin-layout.module"
     DoctorModule,
     PatientModule,
     AdminModule,
-    AdminLayoutModule
+    AdminLayoutModule,
+
+    //for ngx-boostrap
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot()
   ],
   providers: [ToastService, {
     provide: 'text/css', useValue: 'text/css'

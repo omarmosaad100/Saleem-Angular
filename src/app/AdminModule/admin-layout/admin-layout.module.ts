@@ -4,6 +4,7 @@ import {AdminNavComponent} from "./Components/nav/admin-nav.component";
 import {AdminFooterComponent} from "./Components/footer/admin-footer.component";
 import {AdminErrorPageComponent} from "./Components/error-page/admin-error-page.component";
 import {AdminLayoutComponent} from "./admin-layout.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {AdminLayoutComponent} from "./admin-layout.component";
     // AdminLayoutComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class AdminLayoutModule { }
