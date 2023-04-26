@@ -17,7 +17,7 @@ export class PatientIllnessesComponent {
 
   ngOnInit() {const token = localStorage.getItem('token') || '';
   const headers = { Authorization: 'Bearer ' + token };
-  this.http.get<patientIllnesses[]>('http://localhost:5181/api/Patient/GetPatientillnesses', { headers })
+  this.http.get<patientIllnesses[]>('http://localhost:7016/api/Patient/GetPatientillnesses', { headers })
     .subscribe((data) => {
       console.log(data);
       this.illnesses = data;
