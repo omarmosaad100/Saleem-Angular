@@ -1,14 +1,10 @@
 import { Component ,OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { patientIllnesses } from 'src/app/Models/patientIllnesses/patientIllnesses';
-<<<<<<< Updated upstream
-import { SpecializationMap } from '../../Enums/SpecializationEnum.enum';
-=======
 import { Specialization, SpecializationMap } from '../../Enums/SpecializationEnum.enum';
 import { APIUrlConnectionService } from "../../Services/APIUrlConnection.service";
 
 // import { DatePipe } from '@angular/common';
->>>>>>> Stashed changes
 
 @Component({
   selector: 'patient-illnesses',
