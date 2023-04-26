@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DoctorVisitCard } from '../../Models/patientDoctorVisitCard/DoctorVisitCard';
 import { Specialization, SpecializationMap } from '../../Enums/SpecializationEnum.enum';
+import { APIUrlConnectionService } from "../../Services/APIUrlConnection.service";
 
 
 @Component({
@@ -12,6 +13,8 @@ import { Specialization, SpecializationMap } from '../../Enums/SpecializationEnu
 
 
 export class patientappointmentsCompenent implements OnInit {
+  baseURL :string = this.url.GetURL() + '/Patient';
+
   doctors: DoctorVisitCard[] =[];
 
   logDoctorId(doctorId: string) {
@@ -20,7 +23,7 @@ export class patientappointmentsCompenent implements OnInit {
     localStorage.setItem("Appointment ID",doctorId)
   }
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private url:APIUrlConnectionService) { 
 
   }
   getSpecializationName(specialization: number): string {
@@ -30,7 +33,7 @@ export class patientappointmentsCompenent implements OnInit {
   ngOnInit() {
     const token = localStorage.getItem('token') || '';
     const headers = { Authorization: 'Bearer ' + token };
-    this.http.get<DoctorVisitCard[]>('http://localhost:5181/api/Patient/GetDataOFVisitedDoctors', { headers })
+    this.http.get<DoctorVisitCard[]>(this.baseURL+'/GetDataOFVisitedDoctors', { headers })
       .subscribe((data) => {
         console.log(data);
         this.doctors = data;

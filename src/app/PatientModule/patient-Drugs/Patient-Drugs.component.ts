@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PatientDurgs } from 'src/app/Models/patientDrugs/patientDurgs';
-
+import { APIUrlConnectionService } from "../../Services/APIUrlConnection.service";
 
 
 @Component({
@@ -10,14 +10,15 @@ import { PatientDurgs } from 'src/app/Models/patientDrugs/patientDurgs';
   styleUrls: ['./Patient-Drugs.component.css']
 })
 export class PatientDrugsComponent implements OnInit {
-
+  baseURL :string = this.url.GetURL() + '/Patient';
 
   drugs:PatientDurgs[]=[]
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private url:APIUrlConnectionService) { 
+  }
 
   ngOnInit() {const token = localStorage.getItem('token') || '';
   const headers = { Authorization: 'Bearer ' + token };
-  this.http.get<PatientDurgs[]>('http://localhost:5181/api/Patient/GetPatientDrugs', { headers })
+  this.http.get<PatientDurgs[]>( this.baseURL+'/GetPatientDrugs', { headers })
     .subscribe((data) => {
       console.log(data);
       this.drugs = data;
