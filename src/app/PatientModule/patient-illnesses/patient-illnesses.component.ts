@@ -15,8 +15,8 @@ export class PatientIllnessesComponent {
 
   baseURL :string = this.url.GetURL() + '/Patient';
 
-  constructor(private http: HttpClient, private url:APIUrlConnectionService) { 
-    
+  constructor(private http: HttpClient, private url:APIUrlConnectionService) {
+
    }
   illnesses:patientIllnesses[]=[]
   getSpecializationName(specialization: number): string {
