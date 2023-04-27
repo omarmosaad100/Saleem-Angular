@@ -29,7 +29,6 @@ export class GetAllDoctorsComponent implements OnInit {
         console.log(error)
       },
       complete: () => {
-        console.log(this.doctors)
       }
     });
   }

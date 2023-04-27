@@ -40,7 +40,6 @@ export class GetAllDrugsComponent implements OnInit {
         console.log(error)
       },
       complete: () => {
-        console.log("Request has completed")
       }
     });
   }
