@@ -26,8 +26,11 @@ const routes: Routes = [
         {path:"changePassword" , component : EditPasswordComponent },
 
 
-        {path:"aaaa" , component : PatientAppointmentDetailComponent },
 
+        {path:"aaaa" , component : PatientAppointmentDetailComponent },
+        // {path:"illeness" , component : PatientComponent , canActivate:[AuthGuard]},
+
+      ]},
 
 
     ]
