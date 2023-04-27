@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AdminService} from 'src/app/AdminModule/AdminService/admin.service';
+import {AdminApiService} from 'src/app/AdminModule/AdminServices/admin-api-calls/admin.api.service';
 import {NewDrugDto} from '../../Dtos/NewDrugDto';
 import {DrugTakingMethod} from '../../Enums/drugTakingMethod.enum';
 
@@ -24,7 +24,7 @@ export class UpdateDrugComponent implements OnInit {
     methodTaking: new FormControl("")
   })
 
-  constructor(private myActivate: ActivatedRoute, private myService: AdminService, private router: Router) {
+  constructor(private myActivate: ActivatedRoute, private myService: AdminApiService, private router: Router) {
     this.ID = myActivate.snapshot.params["id"]
   }
 
@@ -60,7 +60,7 @@ export class UpdateDrugComponent implements OnInit {
       },
       complete: () => {
         this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-          this.router.navigate(['/GetAllDrugs']);
+          this.router.navigate(['/Admin/GetAllDrugs']);
         });
       }
     })

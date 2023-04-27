@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {AdminService} from "../AdminService/admin.service";
+import {AdminApiService} from "../AdminServices/admin-api-calls/admin.api.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -11,7 +11,7 @@ export class AddLicenseComponent {
 
   nationalId: any;
 
-  constructor(private myService: AdminService, private router: Router) {
+  constructor(private myService: AdminApiService, private router: Router) {
   }
 
   addLicense() {
