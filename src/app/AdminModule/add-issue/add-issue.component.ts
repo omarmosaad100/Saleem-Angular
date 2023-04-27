@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {AdminService} from "../AdminService/admin.service";
+import {AdminApiService} from "../AdminServices/admin-api-calls/admin.api.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 export class AddIssueComponent {
   IssueName: string = "";
 
-  constructor(private myService: AdminService, private router: Router) {
+  constructor(private myService: AdminApiService, private router: Router) {
   }
 
   addIssue() {

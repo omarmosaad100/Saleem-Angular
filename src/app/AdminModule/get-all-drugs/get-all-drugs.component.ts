@@ -1,7 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AdminService} from 'src/app/AdminModule/AdminService/admin.service';
+import {AdminApiService} from 'src/app/AdminModule/AdminServices/admin-api-calls/admin.api.service';
 import {DrugTakingMethod} from '../../Enums/drugTakingMethod.enum';
 import {NewDrugDto} from '../../Dtos/NewDrugDto';
 
@@ -21,7 +21,7 @@ export class GetAllDrugsComponent implements OnInit {
 
 
   constructor(private http: HttpClient,
-              private myservice: AdminService,
+              private myservice: AdminApiService,
               private myactivate: ActivatedRoute,
               private router: Router) {
     this.ID = this.myactivate.snapshot.params["id"]
