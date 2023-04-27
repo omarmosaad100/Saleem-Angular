@@ -1,51 +1,15 @@
-<!-- <nav class="navbar navbar-expand-md navbar-white bg-white fixed-top">
-  <img src="../../../../../favicon.ico" class="logo-img" alt=""/>
-  <a class="navbar-brand" href="/Admin">{{Title}}</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="">Features</a>
-      <a class="nav-item nav-link" href="">Pricing</a>
-    </div>
-  </div>
-</nav> -->
-
-<!--Negm test navbar-->
 <nav class="navbar navbar-expand-md fixed-top navBG">
   <div class="container">
-      <div>
-        <img src="../../../../favicon.ico" alt="logo" class="logo-img"/>
-        <a class="navbar-brand text-white" href="/Admin">{{Title}}</a>
+    <div>
+      <img src="../../../../../favicon.ico" alt="logo" class="logo-img"/>
+      <a class="navbar-brand text-white" href="/Admin">{{Title}}</a>
+    </div>
+    <div class="dropdown" *ngIf="loggedIn" dropdown>
+      <a class="dropdown-toggle text-white text-decoration-none" dropdownToggle>Welcome Admin</a>
+      <div class="dropdown-menu mt-3" *dropdownMenu>
+        <a class="dropdown-item" (click)="logout()">Logout</a>
       </div>
-
-      <!-- <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="loggedIn">
-
-      </ul> -->
-
-      <!-- <div class="dropdown" *ngIf="loggedIn" dropdown>
-        <a class="dropdown-toggle text-white text-decoration-none" dropdownToggle>Welcome Admin</a>
-        <div class="dropdown-menu mt-3" *dropdownMenu>
-          <a class="dropdown-item" (click)="logout()">Logout</a>
-        </div>
-      </div> -->
-
-
-
-      <!-- <form *ngIf="!loggedIn" #AdminLoginForm="ngForm" (ngSubmit)="login()" autocomplete="off" class="d-flex">
-        <input
-        name="username" [(ngModel)]="model.username"
-        class="form-control me-2" type="text" placeholder="Enter username" >
-        <input
-        name="password" [(ngModel)]="model.password"
-        class="form-control me-2" type="password" placeholder="Enter password" >
-        <button class="btn btn-outline-success" type="submit">Login</button>
-      </form> -->
-
-
+    </div>
   </div>
-
 </nav>
 

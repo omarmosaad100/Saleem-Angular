@@ -3,18 +3,19 @@
     <div class="form-group">
       <label for="username">Username</label>
       <input
-      name="username" [(ngModel)]="model.username"
-      class="form-control me-2" type="text" placeholder="Enter username" >
+        name="username"
+        id="username" [(ngModel)]="model.username"
+        class="form-control me-2" type="text" placeholder="Enter username">
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <input name="password" [(ngModel)]="model.password"
-      class="form-control me-2" type="password" placeholder="Enter password" >
+      <input id="password" [(ngModel)]="model.password" name="password"
+             class="form-control me-2" type="password" placeholder="Enter password">
       <button class="btn btn-outline-success" type="submit">Login</button>
     </div>
   </form>
 
-  <div *ngIf="loggedIn">
+  <div *ngIf="loggedIn" class="d-flex justify-content-center align-items-center flex-column">
     <h1>
       You Are Already Logged In.
     </h1>

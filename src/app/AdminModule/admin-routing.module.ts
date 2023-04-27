@@ -8,12 +8,14 @@ import {GetAllDrugsComponent} from "./get-all-drugs/get-all-drugs.component";
 import {GetAllDoctorsComponent} from "./get-all-doctors/get-all-doctors.component";
 import {GetDrugByIdComponent} from "./get-drug-by-id/get-drug-by-id.component";
 import {UpdateDrugComponent} from "./update-drug/update-drug.component";
-import { AdminLoginComponent } from "./admin-login/admin-login.component";
+import {AdminLoginComponent} from "./admin-login/admin-login.component";
+import {AdminAuthGuard} from "./AdminGuard/admin-auth.guard";
 
 const routes: Routes = [
   {path: "Login", component: AdminLoginComponent},
   {
-    path: "", component: AdminContainerComponent, children: [
+    path: "", component: AdminContainerComponent, canActivate: [AdminAuthGuard],
+    children: [
       {path: "AddDrug", component: AddDrugComponent},
       {path: "AddLicense", component: AddLicenseComponent},
       {path: "AddIssue", component: AddIssueComponent},
