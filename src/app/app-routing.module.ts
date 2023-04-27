@@ -4,14 +4,11 @@ import {AuthContainerComponent} from './Components/Authentication/AuthContainer/
 import {ErrorPageComponent} from './LayoutModule/Components/error-page/error-page.component';
 import {HomePageComponent} from './HomePageModule/home-page/home-page.component';
 import {LayoutComponent} from './LayoutModule/layout.component';
-<<<<<<< HEAD
 import {PatientAppointmentsComponent} from './PatientModule/patient-appointments/patient-appointments.component';
 import {PatientDrugsComponent} from './PatientModule/patient-Drugs/Patient-Drugs.component';
 import {PatientIllnessesComponent} from './PatientModule/patient-illnesses/patient-illnesses.component';
 import {AdminContainerComponent} from "./AdminModule/AdminContainer/admin-container.component";
-=======
 import {AdminLayoutComponent} from "./AdminModule/admin-layout/admin-layout.component";
->>>>>>> 006b4cf8618203a889207d6ccb52ba00ec710e0b
 
 
 const routes: Routes = [
