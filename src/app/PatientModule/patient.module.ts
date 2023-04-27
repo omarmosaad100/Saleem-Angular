@@ -5,7 +5,7 @@ import { PatientRoutingModule } from './patient-routing.module';
 import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard.component';
 import { PatientSidebarComponent } from './patient-sidebar/patient-sidebar.component';
 import { DetailsComponent } from './patient-profile/details/details.component';
-import { patientappointmentsCompenent } from './patient-appointments/patient-appointments.component';
+import { PatientAppointmentsComponent } from './patient-appointments/patient-appointments.component';
 import { PatientDrugsComponent } from './patient-Drugs/Patient-Drugs.component';
 import { PatientIllnessesComponent } from './patient-illnesses/patient-illnesses.component';
 import { NgbDropdownModule, NgbPaginationModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
@@ -24,7 +24,7 @@ import { EditPasswordComponent } from './edit-password/edit-password.component';
     DetailsComponent,
     // patient profile components
     PatientIllnessesComponent,
-    patientappointmentsCompenent,
+    PatientAppointmentsComponent,
     PatientDrugsComponent,
     PatientAppointmentDetailComponent,
     EditPasswordComponent,

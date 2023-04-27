@@ -6,6 +6,7 @@ import { GenderEnum } from 'src/app/Enums/GenderEnum.enum';
 import { EditProfileService } from '../Services/edit-profile.service';
 import { ToastService } from 'angular-toastify';
 import { CloudinaryService } from '../Services/cloudinary.service';
+import { ProfileImgService } from 'src/app/Services/ProfileImg.service';
 
 @Component({
   selector: 'patient-edit-profile-form',
@@ -26,7 +27,7 @@ export class EditProfileFormComponent implements OnInit {
   selectedFile: File | null = null;
 
   constructor(private profileService:ProfileService , private http: HttpClient , private service:EditProfileService
-    ,private cloudService:CloudinaryService
+    ,private cloudService:CloudinaryService , private imgService:ProfileImgService
   ){
     this.ProfileData = new RegisterAsPatient();
   }
@@ -53,6 +54,8 @@ export class EditProfileFormComponent implements OnInit {
         const imageUrl = this.cloudService.cl.url(res.public_id, { width: 200, height: 200, crop: 'fill' });
         // Save the imageUrl to your user profile or database
         this.imgPath = imageUrl;
+        this.imgService.setUrl (imageUrl);
+        localStorage.setItem("profileImg" , imageUrl);
       });
   }
 
@@ -66,6 +69,7 @@ export class EditProfileFormComponent implements OnInit {
     }
 
     this.ProfileData.imgPath = this.imgPath;
+
     this.service.submitData(this.ProfileData).subscribe({
       next: (data)=>{
         console.log(data);
