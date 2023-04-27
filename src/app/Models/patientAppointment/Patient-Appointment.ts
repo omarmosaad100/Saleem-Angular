@@ -4,6 +4,10 @@ interface Diagnose {
     treatmentDrugs: string[];
     conflictingDrugs: string[];
   }
+interface Drugs {
+    id: string;
+    name: string;
+  }
 
   
   interface Doctor {
@@ -19,7 +23,8 @@ export class PatientAppointment {
     name: string | null ='';
     doctor? :Doctor ;
     specialization: number =0;
+    date:Date=new Date;
     comment: string ='';
-    describedDrugs: string[] =[];
+    describedDrugs: Drugs[] =[];
     diagnosedIssues: Diagnose[]=[];
 }

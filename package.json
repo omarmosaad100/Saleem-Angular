@@ -22,7 +22,7 @@
     "@popperjs/core": "^2.11.7",
     "angular-toastify": "^1.0.5",
     "bootstrap": "^5.2.3",
-    "cloudinary-core": "^2.9.0",
+    "cloudinary-core": "^2.13.0",
     "font-awesome": "^4.7.0",
     "guid-typescript": "^1.0.9",
     "ngx-bootstrap": "^10.2.0",

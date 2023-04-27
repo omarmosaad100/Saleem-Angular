@@ -14,7 +14,7 @@ import {AddIssueComponent} from './AdminModule/add-issue/add-issue.component';
 import {ErrorPageComponent} from './LayoutModule/Components/error-page/error-page.component';
 import {HomePageComponent} from './HomePageModule/home-page/home-page.component';
 import {LayoutComponent} from './LayoutModule/layout.component';
-import {patientappointmentsCompenent} from './PatientModule/patient-appointments/patient-appointments.component';
+import {PatientAppointmentsComponent} from './PatientModule/patient-appointments/patient-appointments.component';
 import {PatientDrugsComponent} from './PatientModule/patient-Drugs/Patient-Drugs.component';
 import {PatientIllnessesComponent} from './PatientModule/patient-illnesses/patient-illnesses.component';
 import {AdminContainerComponent} from "./AdminModule/AdminContainer/admin-container.component";
