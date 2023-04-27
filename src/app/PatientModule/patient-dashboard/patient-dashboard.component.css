@@ -4,3 +4,10 @@
   color: #327295;
 }
 
+.dahboard-nav{
+  background-color:  white!important;
+  /* color: white; */
+  padding-bottom: 20px;
+  height: 65px;
+  /* box-shadow: 2px 3px 5px rgb(186, 186, 186); */
+}
