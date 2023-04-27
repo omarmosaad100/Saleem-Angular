@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {AdminService} from 'src/app/Services/AdminService/admin.service';
-import {NewDrugDto} from "../../../Dtos/NewDrugDto";
-import {DrugTakingMethod} from "../../../Enums/drugTakingMethod.enum";
+import {AdminService} from 'src/app/AdminModule/AdminService/admin.service';
+import {NewDrugDto} from "../../Dtos/NewDrugDto";
+import {DrugTakingMethod} from "../../Enums/drugTakingMethod.enum";
 
 
 @Component({

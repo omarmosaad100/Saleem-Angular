@@ -1,9 +1,9 @@
 import {HttpClient} from '@angular/common/http';
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AdminService} from 'src/app/Services/AdminService/admin.service';
-import {DrugTakingMethod} from '../../../Enums/drugTakingMethod.enum';
-import {NewDrugDto} from '../../../Dtos/NewDrugDto';
+import {AdminService} from 'src/app/AdminModule/AdminService/admin.service';
+import {DrugTakingMethod} from '../../Enums/drugTakingMethod.enum';
+import {NewDrugDto} from '../../Dtos/NewDrugDto';
 
 
 

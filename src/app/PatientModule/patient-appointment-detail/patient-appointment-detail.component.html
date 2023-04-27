@@ -1,1 +1,30 @@
-<p>patient-appointment-detail works!</p>
+<div class="container">
+  <h2>Appointment Details</h2>
+
+  <div class="row">
+    <div class="col-md-6">
+
+      <div class="form-group">
+        <label for="comment">Comment:</label>
+        <p id="comment">{{ appointment.comment }}</p>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="describedDrugs">Described Drugs:</label>
+        <ul>
+          <li *ngFor="let drug of appointment.describedDrugs">{{ drug }}</li>
+        </ul>
+      </div>
+
+      <div class="form-group">
+        <label for="diagnosedIssues">Diagnosed Issues:</label>
+        <ul>
+          <li *ngFor="let issue of appointment.diagnosedIssues">{{ issue.name }}</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>

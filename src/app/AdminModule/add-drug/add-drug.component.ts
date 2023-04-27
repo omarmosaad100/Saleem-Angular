@@ -2,9 +2,9 @@ import {v4 as uuidv4} from 'uuid';
 
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {AdminService} from 'src/app/Services/AdminService/admin.service';
+import {AdminService} from 'src/app/AdminModule/AdminService/admin.service';
 import {Router} from '@angular/router';
-import {DrugTakingMethod} from '../../../Enums/drugTakingMethod.enum';
+import {DrugTakingMethod} from '../../Enums/drugTakingMethod.enum';
 import {DrugDto} from './drugDto';
 
 @Component({
@@ -84,7 +84,7 @@ export class AddDrugComponent implements OnInit {
       complete: () => {
         alert("Drug Added Successfully!");
         this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-          this.router.navigate(['/GetAllDrugs']);
+          this.router.navigate(['/Admin/GetAllDrugs']);
         });
       }
     });
