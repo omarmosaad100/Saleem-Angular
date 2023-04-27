@@ -4,9 +4,9 @@
   </div>
 
   <div class="col-md col-sm-12 dashboard-content bg-light p-0">
-    <div class="w-100 bg-white py-2" style="height: 50px;">
+    <div class="w-100 dahboard-nav py-2">
 
-      <i class="fa-solid fa-list btn-collapse" (click)="isCollapsed = !isCollapsed "></i>
+      <i class="fa-solid fa-list btn-collapse p-2" (click)="isCollapsed = !isCollapsed "></i>
 
       <div class="mx-3 float-end pb-2"  ngbDropdown>
         <button
@@ -14,7 +14,7 @@
           id="dropdownManual"
           ngbDropdownToggle
         >
-          <img src="../../../../assets/Images/profile.png" alt="Profile" class="w-30 h-30"/>
+          <img [src]="imgSrc" alt="Profile" class="w-30 h-30"/>
           <h6 class="d-inline-block px-3 "> {{username}} </h6>
         </button>
         <div ngbDropdownMenu aria-labelledby="dropdownManual" class="w-100 border-0 bg-white">
