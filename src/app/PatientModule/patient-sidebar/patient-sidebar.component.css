@@ -1,19 +1,26 @@
-.sidebar-routes li a{ 
+.sidebar-routes li a{
   cursor:  pointer;
   padding-left: 10px;
   border: 0;
   text-align: left!important;
   border-radius: 5px;
 
-} 
+}
 .sidebar-routes li a:hover{
   background-color: #C1D4D4;
 
 }
 
 .active{
-  background-color: #C1D4D4;
+  background-color: #E3EAEE;
+  color: #022034;
   border: 0;
   text-align: start!important;
 
+}
+
+.sidebar{
+  background-color:  #022034!important;
+  color: white;
+  min-height: 100vh;
 }

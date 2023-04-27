@@ -66,5 +66,11 @@ h1 , h2{
 }
 
 .bg-dark-blue{
-  background-color:  #073853;
+  background-color:  #022034!important;
+}
+
+.main-navbar{
+  background-color:  #022034!important;
+  color: white;
+
 }
