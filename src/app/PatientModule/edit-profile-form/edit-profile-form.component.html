@@ -1,0 +1,89 @@
+<form class="m-auto w-75 mt-5  form px-3  scroll" #Form = "ngForm" (ngSubmit) = "SubmitData()">
+
+
+  <div class="alert alert-danger" *ngIf="hasError"> {{errorMessage}}</div>
+  <div class="alert alert-success" *ngIf="success">{{successMessage}}</div>
+
+
+  <div class="position-relative w-100 d-flex justify-content-center">
+    <img src="{{ProfileData.imgPath ?? '../../../../assets/Images/profile.png'}}"  alt="profile" class="profile-img"/>
+
+    <button (click)="imgInput.click()" class="btn edit-profile-icon" type="button">
+      <i class="fa-solid fa-pen-to-square"></i>
+    </button>
+    <input type="file" #imgInput style="display:none" (change)="onFileSelected($event)">
+  </div>
+
+
+
+    <div class="d-flex mb-3 mt-5 w-100 ">
+
+      <!-- * name -->
+      <div class="m-2 w-50">
+        <label for="name" class="form-label"> Username</label>
+        <input #fname="ngModel" [(ngModel)]="ProfileData.name"  type="text"  class="form-control" id="name" name="name" required >
+        <div [hidden]=" fname.valid || fname.untouched" class=" text-danger py-1">
+          Name is Required
+        </div>
+      </div>
+
+      <!-- * email -->
+      <div class="m-2 w-50 ">
+        <label for="email"  class="form-label  ">Email address</label>
+        <input #emailRef="ngModel" name="email"  [(ngModel)]="ProfileData.email" type="email" class="form-control" id="email" required pattern="[a-zA-Z0-9]{1,}@[a-zA-Z]{3,}.[a-zA-Z]{3,4}"  >
+
+        <div [hidden]="emailRef.valid || emailRef.untouched" class="text-danger py-1">
+          <span [hidden]="!emailRef.errors?.['required']"> Email is Required <br></span>
+          <span [hidden]="!emailRef.errors?.['pattern']"> Please Enter Valid Email </span>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="d-flex my-4 w-100">
+      <!-- * Mobile -->
+      <div class="m-2 w-50">
+        <label for="mobile" class="form-label">Mobile</label>
+        <div class="input-group">
+          <span class="input-group-text" id="area-code">+20</span>
+          <input #mobile="ngModel" [(ngModel)]="ProfileData.phoneNumber" type="text" class="form-control" id="mobile" aria-describedby="area-code" pattern="[0-9]{10}" name="mobile" required>
+
+        </div>
+
+        <div [hidden]="mobile.untouched || mobile.valid" class="text-danger py-1" >
+          <span [hidden]="!mobile.errors?.['required']"> Mobile is Required <br></span>
+          <span [hidden]="!mobile.errors?.['pattern']"> Mobile is not valid  </span>
+        </div>
+      </div>
+
+      <!-- * Age -->
+      <div class="m-2 w-50">
+        <label for="age" class="form-label">Age</label>
+        <input #age="ngModel" [(ngModel)]="ProfileData.age" type="number" min="0" max="200" class="form-control py-2" id="age" required name="age">
+      </div>
+
+
+     </div>
+
+    <!-- * Gender -->
+    <div class="my-3">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="Gender" id="Female"  [(ngModel)]="gender" value="Female">
+        <label class="form-check-label" for="Female">Female</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="Gender" id="Male" [(ngModel)]="gender"  value="Male" >
+        <label class="form-check-label" for="Male">Male</label>
+      </div>
+    </div>
+
+    <button
+      [disabled]="Form.invalid"
+      type="submit"
+      class="btn btn-primary float-end btn-submit px-4"
+
+    > Submit</button>
+
+  </form>

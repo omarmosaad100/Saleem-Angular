@@ -3,11 +3,12 @@
     <div class="profile d-flex flex-column align-items-center">
 
 
-      <img src="../../../../assets/Images/{{data.imgPath ?? 'profile.png'}}"  alt="profile" class="profile-img"/>
+      <!-- <img src="../../../../assets/Images/{{data.imgPath ?? 'profile.png'}}"  alt="profile" class="profile-img"/> -->
+      <img src="{{data.imgPath ?? '../../../../assets/Images/profile.png'}}"  alt="profile" class="profile-img"/>
 
       <h6 class="mt-4"> {{data.name}}</h6>
       <p class=""> {{data.email}}</p>
-      <a class="btn btn-primary btn-edit"> Edit Profile</a>
+      <a class="btn btn-primary btn-edit" routerLink="/patient/dashboard/edit"> Edit Profile</a>
     </div>
   </div>
 
