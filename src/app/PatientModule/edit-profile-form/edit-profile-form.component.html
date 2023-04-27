@@ -6,9 +6,9 @@
 
 
   <div class="position-relative w-100 d-flex justify-content-center">
-    <img src="../../../../assets/Images/{{ProfileData.imgPath ?? 'profile.png'}}"  alt="profile" class="profile-img"/>
+    <img src="{{ProfileData.imgPath ?? '../../../../assets/Images/profile.png'}}"  alt="profile" class="profile-img"/>
 
-    <button (click)="imgInput.click()" class="btn  edit-profile-icon">
+    <button (click)="imgInput.click()" class="btn edit-profile-icon" type="button">
       <i class="fa-solid fa-pen-to-square"></i>
     </button>
     <input type="file" #imgInput style="display:none" (change)="onFileSelected($event)">
@@ -74,7 +74,7 @@
         <label class="form-check-label" for="Female">Female</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="Gender" id="Male" [(ngModel)]="gender"  value="Male">
+        <input class="form-check-input" type="radio" name="Gender" id="Male" [(ngModel)]="gender"  value="Male" >
         <label class="form-check-label" for="Male">Male</label>
       </div>
     </div>

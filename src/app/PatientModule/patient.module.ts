@@ -8,7 +8,7 @@ import { DetailsComponent } from './patient-profile/details/details.component';
 import { patientappointmentsCompenent } from './patient-appointments/patient-appointments.component';
 import { PatientDrugsComponent } from './patient-Drugs/Patient-Drugs.component';
 import { PatientIllnessesComponent } from './patient-illnesses/patient-illnesses.component';
-import { NgbPaginationModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule, NgbPaginationModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { PatientAppointmentDetailComponent } from './patient-appointment-detail/patient-appointment-detail.component';
 import { EditProfileFormComponent } from './edit-profile-form/edit-profile-form.component';
 import { FormsModule } from '@angular/forms';
@@ -33,9 +33,11 @@ import { EditPasswordComponent } from './edit-password/edit-password.component';
   imports: [
     CommonModule,
     PatientRoutingModule,
+    FormsModule,
+
+    NgbPaginationModule,
     NgbTypeaheadModule,
-     NgbPaginationModule,
-     FormsModule
+    NgbDropdownModule
   ],
   providers: [DatePipe],
 

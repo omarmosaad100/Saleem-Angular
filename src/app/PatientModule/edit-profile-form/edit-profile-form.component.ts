@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { GenderEnum } from 'src/app/Enums/GenderEnum.enum';
 import { EditProfileService } from '../Services/edit-profile.service';
 import { ToastService } from 'angular-toastify';
+import { CloudinaryService } from '../Services/cloudinary.service';
 
 @Component({
   selector: 'patient-edit-profile-form',
@@ -13,6 +14,7 @@ import { ToastService } from 'angular-toastify';
 })
 export class EditProfileFormComponent implements OnInit {
 
+  imgPath:string = "";
   gender:string = "Male";
   ProfileData :any ;
   errorMessage:string = "Can't edit this Patient ❌";
@@ -23,41 +25,39 @@ export class EditProfileFormComponent implements OnInit {
 
   selectedFile: File | null = null;
 
-  constructor(private profileService:ProfileService , private http: HttpClient ,
-     private service:EditProfileService
-     ){
+  constructor(private profileService:ProfileService , private http: HttpClient , private service:EditProfileService
+    ,private cloudService:CloudinaryService
+  ){
     this.ProfileData = new RegisterAsPatient();
   }
   ngOnInit() {
     this.profileService.getPatientData().subscribe(
       (data)=>{
         this.ProfileData = data;
+        this.gender = GenderEnum[data.gender]
+        this.imgPath = data.imgPath;
+
       }
     )
   }
 
   onFileSelected(event: any) {
-    const file: File = event.target.files[0];
-    this.selectedFile = file
+    const file = event.target.files[0];
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 'sy3ny4xr');
 
-    // const reader = new FileReader();
-    // reader.onload = (e: any) => {
-    //   this.saveFile(e.target.result);
-    // };
-    // reader.readAsDataURL(this.selectedFile);
-  }
-
-  saveFile(fileContent: string) {
-    // const formData = new FormData();
-    // formData.append('file', fileContent);
-    // this.http.post('/api/saveFile', formData).subscribe((response: any) => {
-    //   console.log(response);
-    //   // Optionally display a success message to the user
-    // });
+    this.http.post('https://api.cloudinary.com/v1_1/dnvinlruh/image/upload', formData)
+      .subscribe((res:any) => {
+        console.log(res);
+        const imageUrl = this.cloudService.cl.url(res.public_id, { width: 200, height: 200, crop: 'fill' });
+        // Save the imageUrl to your user profile or database
+        this.imgPath = imageUrl;
+      });
   }
 
   SubmitData( ):void{
-    console.log("click")
+    console.log(this.imgPath)
     if(this.gender == 'Male'){
         this.ProfileData.gender = GenderEnum.Male // 0
     }
@@ -65,7 +65,7 @@ export class EditProfileFormComponent implements OnInit {
       this.ProfileData.gender = GenderEnum.Female  // 1
     }
 
-    this.ProfileData.imgPath = "string";
+    this.ProfileData.imgPath = this.imgPath;
     this.service.submitData(this.ProfileData).subscribe({
       next: (data)=>{
         console.log(data);
