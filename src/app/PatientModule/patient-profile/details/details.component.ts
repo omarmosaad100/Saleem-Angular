@@ -10,14 +10,16 @@ import { GenderEnum } from 'src/app/Enums/GenderEnum.enum';
 export class DetailsComponent implements OnInit {
 
   data:any
+  loading:boolean  = true;
+
   constructor(private service:ProfileService) { }
 
   ngOnInit() {
     this.service.getPatientData().subscribe(
       (data)=>{
-        console.log(data);
         this.data = data
         data.gender = GenderEnum[data.gender]
+        this.loading = false;
 
       }
     )

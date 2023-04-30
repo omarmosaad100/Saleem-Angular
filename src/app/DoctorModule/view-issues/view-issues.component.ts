@@ -15,7 +15,6 @@ export class ViewIssuesComponent {
     this.pid = this.route.snapshot.paramMap.get('pid');
     appointmentService.GetIssuesByPid(this.pid).subscribe((data => {
       this.issues = data;
-      console.log(this.issues);
     }))
   }
 

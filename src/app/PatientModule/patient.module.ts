@@ -13,6 +13,9 @@ import { PatientAppointmentDetailComponent } from './patient-appointment-detail/
 import { EditProfileFormComponent } from './edit-profile-form/edit-profile-form.component';
 import { FormsModule } from '@angular/forms';
 import { EditPasswordComponent } from './edit-password/edit-password.component';
+import { AppModule } from '../app.module';
+import { LoadingComponent } from '../LoadingModule/loading.component';
+import { LoadingModule } from '../LoadingModule/loading.module';
 
 
 
@@ -28,16 +31,20 @@ import { EditPasswordComponent } from './edit-password/edit-password.component';
     PatientDrugsComponent,
     PatientAppointmentDetailComponent,
     EditPasswordComponent,
-    EditProfileFormComponent
+    EditProfileFormComponent,
+
+    // LoadingComponent
   ],
   imports: [
     CommonModule,
     PatientRoutingModule,
     FormsModule,
-
     NgbPaginationModule,
     NgbTypeaheadModule,
-    NgbDropdownModule
+    NgbDropdownModule,
+    // LoadingModule
+
+
   ],
   providers: [DatePipe],
 

@@ -45,7 +45,6 @@ export class ViewPatientHistoryComponent {
       const data: any = await this.myService.getAppointmentsByNid(this.nid).pipe(map(res => res)).toPromise();
       this.appointments = data;
       this.filteredAppointments = data;
-      console.log(this.appointments);
     } catch (error) {
       console.error('Error fetching appointments:', error);
     }

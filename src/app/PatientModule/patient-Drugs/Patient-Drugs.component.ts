@@ -24,7 +24,6 @@ export class PatientDrugsComponent implements OnInit {
   const headers = { Authorization: 'Bearer ' + token };
   this.http.get<PatientDurgs[]>( this.baseURL+'/GetPatientDrugs', { headers })
     .subscribe((data) => {
-      console.log(data);
       this.drugs = data;
     })
   }

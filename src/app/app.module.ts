@@ -36,6 +36,7 @@ import { GetAllDrugsComponent } from './AdminModule/get-all-drugs/get-all-drugs.
     // directives
     ActivateBtnDirective,
     ViewIssuesComponent,
+    // LoadingComponent,
   ],
 
   imports: [
@@ -55,8 +56,7 @@ import { GetAllDrugsComponent } from './AdminModule/get-all-drugs/get-all-drugs.
     PatientModule,
     AdminModule,
     AdminLayoutModule,
-
-
+    // LoadingModule
   ],
   providers: [ToastService, {
     provide: 'text/css', useValue: 'text/css'

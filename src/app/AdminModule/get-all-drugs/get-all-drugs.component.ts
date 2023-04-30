@@ -3,7 +3,6 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AdminApiService} from 'src/app/AdminModule/AdminServices/admin-api-calls/admin.api.service';
 import {DrugTakingMethod} from '../../Enums/drugTakingMethod.enum';
-import { SlicePipe } from '@angular/common';
 @Component({
   selector: 'app-get-all-drugs',
   templateUrl: './get-all-drugs.component.html',
@@ -29,6 +28,7 @@ export class GetAllDrugsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadData();
+
   }
 
 
@@ -74,6 +74,10 @@ export class GetAllDrugsComponent implements OnInit {
   pageChange() {
     // this.loadData();
     this.drugs =  this.data.slice((this.currentPage-1)*this.pageSize , this.currentPage*this.pageSize)
+    for(let drug of this.drugs){
+      drug["method"] = this.getEnumString(drug["method"])
+    }
+
   }
 
 }

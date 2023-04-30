@@ -21,7 +21,6 @@ export class PatientAppointmentsComponent implements OnInit {
 
   logDoctorId(doctorId: string) {
     //Id for appointment not doctor
-    console.log('Appointment ID: ', doctorId);
     this.isactive = false;
     localStorage.setItem('Appointment ID', doctorId);
     const modalRef = this.modalService.open(PatientAppointmentDetailComponent);
@@ -36,7 +35,6 @@ export class PatientAppointmentsComponent implements OnInit {
     const token = localStorage.getItem('token') || '';
     const headers = { Authorization: 'Bearer ' + token };
     this.http.get<DoctorVisitCard[]>(this.baseURL + '/GetDataOFVisitedDoctors', { headers }).subscribe((data) => {
-      console.log(data);
       this.doctors = data;
     });
   }

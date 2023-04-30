@@ -27,7 +27,6 @@ export class EditPasswordComponent implements OnInit {
 
     this.service.submitData(this.data).subscribe({
       next: (data)=>{
-        console.log(data);
       },
       error: (error)=>{
        this.hasError = true

@@ -47,7 +47,6 @@ export class AppointmentDetailsFormComponent {
   onSubmit() {
     // Filter the selected issues
 
-    console.log(this.doctorComment);
 
 
     this.sendData();
@@ -90,7 +89,6 @@ export class AppointmentDetailsFormComponent {
   async sendData() {
     const selectedIssues = this.issues.filter((issue: any) => issue.selected).map((issue: any) => issue.id);
     const selectedIssuesNames = this.issues.filter((issue: any) => issue.selected).map((issue: any) => issue.name);
-    console.log(selectedIssues);
 
     await this.GetDoctorProfileById();
 
@@ -134,10 +132,8 @@ export class AppointmentDetailsFormComponent {
     appDto.dId = this.did;
     appDto.pId = this.pid;
     appDto.specialization = this.doctorProfile.specialization;
-    console.log(this.recommendedDrugs);
     appDto.describedDrugs = this.recommendedDrugs
 
-    console.log(appDto)
     this.appointmentService.AddAppointment(appDto).subscribe(() => {
       this.appointmentAdded.emit();
       this.goBack();
