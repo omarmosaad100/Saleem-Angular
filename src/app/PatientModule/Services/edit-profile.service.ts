@@ -19,7 +19,6 @@ export class EditProfileService {
 
 
 submitData(data:any): Observable<any> {
-  console.log(data);
     return this.httpRequest.put(
       `${this.url.GetURL()}/Patient/EditPatienProfile`,
       {

@@ -14,7 +14,7 @@ import {AdminAuthGuard} from "./AdminGuard/admin-auth.guard";
 const routes: Routes = [
   {path: "Login", component: AdminLoginComponent},
   {
-    path: "", component: AdminContainerComponent, canActivate: [AdminAuthGuard],
+    path: "",component: AdminContainerComponent , canActivate: [AdminAuthGuard],
     children: [
       {path: "AddDrug", component: AddDrugComponent},
       {path: "AddLicense", component: AddLicenseComponent},

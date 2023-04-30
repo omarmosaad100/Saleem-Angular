@@ -22,7 +22,6 @@ export class NavComponent implements OnInit{
   ngOnInit(): void {
     this.authService.getLoggedStatus().subscribe(status=>{
       this.isAuth=status;
-      console.log(this.isAuth);
     });
 
     // this.imgService.getImgUrl().subscribe(img=>{

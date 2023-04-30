@@ -39,7 +39,6 @@ export class LoginService {
           if(data['role'] == 'Patient'){
             localStorage.setItem("role" , data['role']);
             localStorage.setItem("username" , data['username']);
-
             this.router.navigate(['/patient/dashboard/profile']);
           }
         }

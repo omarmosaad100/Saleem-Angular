@@ -27,7 +27,6 @@ export class PatientIllnessesComponent {
   const headers = { Authorization: 'Bearer ' + token };
   this.http.get<patientIllnesses[]>(this.baseURL+'/GetPatientillnesses', { headers })
     .subscribe((data) => {
-      console.log(data);
       this.illnesses = data;
     })
   }

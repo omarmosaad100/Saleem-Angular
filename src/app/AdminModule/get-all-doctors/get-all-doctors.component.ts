@@ -2,6 +2,8 @@ import {HttpClient} from '@angular/common/http';
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AdminApiService} from 'src/app/AdminModule/AdminServices/admin-api-calls/admin.api.service';
+import { Specialization } from 'src/app/Enums/Specialization.enum';
+import { GenderEnum } from 'src/app/Enums/GenderEnum.enum';
 
 @Component({
   selector: 'app-get-all-doctors',
@@ -24,11 +26,16 @@ export class GetAllDoctorsComponent implements OnInit {
     this.myservice.getAllDoctors().subscribe({
       next: (data) => {
         this.doctors = data
+        for(let doctor of this.doctors){
+          doctor["specialization"] = this.getEnumString( Specialization,doctor["specialization"])
+          doctor["gender"] = this.getEnumString(GenderEnum, doctor["gender"])
+        }
       },
       error: (error) => {
         console.log(error)
       },
       complete: () => {
+        console.log("Request completed")
       }
     });
   }
@@ -46,4 +53,9 @@ export class GetAllDoctorsComponent implements OnInit {
       }
     });
   }
+
+  getEnumString(enumType: any, value: string): string {
+    return enumType[value];
+  }
+
 }

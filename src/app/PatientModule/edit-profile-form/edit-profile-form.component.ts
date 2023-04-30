@@ -50,7 +50,6 @@ export class EditProfileFormComponent implements OnInit {
 
     this.http.post('https://api.cloudinary.com/v1_1/dnvinlruh/image/upload', formData)
       .subscribe((res:any) => {
-        console.log(res);
         const imageUrl = this.cloudService.cl.url(res.public_id, { width: 200, height: 200, crop: 'fill' });
         // Save the imageUrl to your user profile or database
         this.imgPath = imageUrl;
@@ -60,7 +59,6 @@ export class EditProfileFormComponent implements OnInit {
   }
 
   SubmitData( ):void{
-    console.log(this.imgPath)
     if(this.gender == 'Male'){
         this.ProfileData.gender = GenderEnum.Male // 0
     }
@@ -72,7 +70,6 @@ export class EditProfileFormComponent implements OnInit {
 
     this.service.submitData(this.ProfileData).subscribe({
       next: (data)=>{
-        console.log(data);
       },
       error: (error)=>{
        this.hasError = true

@@ -1,3 +1,7 @@
+<div *ngIf="data.length == 0" class="alert alert-danger">
+  The are no Specializations available at the moment.
+</div>
+
 <ngb-carousel
 	#carousel
 	[interval]="5000"
@@ -6,15 +10,14 @@
 	(slide)="onSlide($event)"
   class="w-100 mb-5"
 >
-
   <ng-template ngbSlide *ngFor="let elementGroups of data; index as i" class="position-relative">
 
     <div class="row carousel-container" >
       <div class="card col-md-6 col-lg mx-2 col-sm-12 shadow p-0" *ngFor="let element of elementGroups" >
-        <img [src]="element.img"  alt="My image {{i + 1}} description"  class="card-img-top doctor-img"/>
+        <img src="../../../../assets/Images/HomePage/Specialist/{{element}}.PNG"  alt="My image {{i + 1}} description"  class="card-img-top doctor-img"/>
 
         <div class="card-body text-center">
-          <h5 class="card-text">{{element.name}}</h5>
+          <h5 class="card-text">{{element}}</h5>
 
         </div>
         <!-- <a href="#" class="btn btn-primary"> View Details</a> -->

@@ -24,7 +24,6 @@ export class PatientAppointmentDetailComponent {
     const AppID = localStorage.getItem('Appointment ID') || '';
     const headers = { Authorization: 'Bearer ' + token };
     this.http.get<PatientAppointment>(this.baseURL + '/GetAppointmentDetails/' + AppID, { headers }).subscribe((data) => {
-      console.log(data);
       this.appointment = data;
     });
   }

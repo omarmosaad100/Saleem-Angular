@@ -3,22 +3,20 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AdminApiService} from 'src/app/AdminModule/AdminServices/admin-api-calls/admin.api.service';
 import {DrugTakingMethod} from '../../Enums/drugTakingMethod.enum';
-import {NewDrugDto} from '../../Dtos/NewDrugDto';
-
-
-
 @Component({
   selector: 'app-get-all-drugs',
   templateUrl: './get-all-drugs.component.html',
-  styleUrls: ['./get-all-drugs.component.css']
+  styleUrls: ['./get-all-drugs.component.css'],
 })
 export class GetAllDrugsComponent implements OnInit {
 
-  drugs: any;
+  drugs: any = [];
   ID: any;
-
   MethodOfTakingValue:any;
-
+  data:any;
+  page = 1;
+  currentPage = 1;
+	pageSize = 5;
 
   constructor(private http: HttpClient,
               private myservice: AdminApiService,
@@ -29,19 +27,8 @@ export class GetAllDrugsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.myservice.getAllDrugs().subscribe({
-      next: (data:any) => {
-        this.drugs = data
-        for(let drug of this.drugs){
-          drug["method"] = this.getEnumString(drug["method"])
-        }
-      },
-      error: (error) => {
-        console.log(error)
-      },
-      complete: () => {
-      }
-    });
+    this.loadData();
+
   }
 
 
@@ -63,10 +50,35 @@ export class GetAllDrugsComponent implements OnInit {
     //this.router.navigate(['/GetAllDrugs']);
   }
 
+  loadData(){
+    this.myservice.getAllDrugs().subscribe({
+      next: (data:any) => {
+        this.data = data;
+        this.drugs = data.slice(0,this.pageSize);
+        for(let drug of this.drugs){
+          drug["method"] = this.getEnumString(drug["method"])
+        }
+
+      },
+      error: (error) => {
+        console.log(error)
+      },
+      complete: () => {
+      }
+    });
+  }
   getEnumString(value: DrugTakingMethod): string {
     return DrugTakingMethod[value];
   }
 
+  pageChange() {
+    // this.loadData();
+    this.drugs =  this.data.slice((this.currentPage-1)*this.pageSize , this.currentPage*this.pageSize)
+    for(let drug of this.drugs){
+      drug["method"] = this.getEnumString(drug["method"])
+    }
+
+  }
 
 }
 
