@@ -17,6 +17,8 @@ import {AdminLayoutComponent} from './admin-layout/admin-layout.component';
 import {LayoutModule} from "../LayoutModule/layout.module";
 import {AdminLayoutModule} from "./admin-layout/admin-layout.module";
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserModule } from "@angular/platform-browser";
 
 
 @NgModule({
@@ -38,10 +40,12 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     CommonModule,
     NgbTypeaheadModule,
     NgbPaginationModule,
+    NgbModule,
     ReactiveFormsModule,
     FormsModule,
     LayoutModule,
-    AdminLayoutModule
+    AdminLayoutModule,
+
   ],
   providers: [DatePipe, AdminApiService, {
     provide: 'text/css', useValue: 'text/css'

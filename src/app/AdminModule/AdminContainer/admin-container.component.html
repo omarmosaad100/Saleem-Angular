@@ -1,81 +1,83 @@
-<!--<app-nav></app-nav>-->
-<div class="container my-3">
-  <div class="row">
-    <div class="col-lg-2 col-md-12 col-sm-12" style="height: 500px;">
-      <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary dashBoardSide">
-        <!-- <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-          <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-          <span class="fs-4">Admin</span>
-        </a> -->
-        <div>
-          <a href="/Admin" class="d-flex align-items-center link-body-emphasis text-decoration-none " data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="../../../favicon.ico" alt="" width="32" height="32" class="rounded-circle me-2">
-            <strong>Admin</strong>
+<div class="row mx-0" >
+
+  <div class="sidebar col-lg-3  col-sm-12 dashBoardSide" >
+    <a class="py-5 mx-3 mt-2 " routerLink="/">
+      <img src="../../../favicon.ico" alt="logo" class="w-30 h-30"/>
+      <h4 class="d-inline-block px-3 pt-4 pb-3"> Saleem </h4>
+    </a>
+
+    <div class="mt-3">
+      <ul class="list-unstyled sidebar-routes mx-2">
+        <li class="mt-3 text-left w-100">
+          <a class="btn h6 pt-2 w-100  fw-bold" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/Admin/GetAllDrugs">
+            <i class="fa-solid fa-pills  p-2 rounded-circle text-secondary"></i>
+            <!-- <i class="fa-solid fa-user  p-2 rounded-circle text-secondary"></i> -->
+            List all drugs
           </a>
-        </div>
-        <hr>
-        <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/Admin/GetAllDrugs" class="nav-link" aria-current="page">
-              <svg class="bi pe-none me-2" width="16" height="16"></svg>
-              List all drugs
-            </a>
-          </li>
-         <li class="nav-item">
-           <a routerLinkActive="active" routerLink="/Admin/GetDrug"  class="nav-link disabled-link" aria-current="page">
-             <svg class="bi pe-none me-2" width="16" height="16"></svg>
-             Get drug by id
-           </a>
-         </li>
-          <li class="nav-item">
-            <a routerLinkActive="active" routerLink="/Admin/AddDrug" class="nav-link" aria-current="page">
-              <svg class="bi pe-none me-2" width="16" height="16"></svg>
-              Add new drug
-            </a>
-          </li>
-         <li class="nav-item">
-           <a routerLinkActive="active" routerLink="/Admin/UpdateDrug" class="nav-link disabled-link" aria-current="page">
-             <svg class="bi pe-none me-2" width="16" height="16"></svg>
-             Update drug by id
-           </a>
-         </li>
-          <li class="nav-item">
-            <a routerLinkActive="active" routerLink="/Admin/AddIssue" class="nav-link" aria-current="page">
-              <svg class="bi pe-none me-2" width="16" height="16"></svg>
-              Add Issue
-            </a>
-          </li>
-        </ul>
-        <hr>
-        <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a routerLinkActive="active" routerLink="/Admin/GetAllDoctors" class="nav-link" aria-current="page">
-              <svg class="bi pe-none me-2" width="16" height="16"></svg>
-              List all doctors
-            </a>
-          </li>
-          <li class="nav-item">
-            <a routerLinkActive="active" routerLink="/Admin/AddLicense"  class="nav-link" aria-current="page">
-              <svg class="bi pe-none me-2" width="16" height="16"></svg>
-              Add license
-            </a>
-          </li>
-<!--          <li class="nav-item">-->
-<!--            <a routerLinkActive="active" routerLink="/RemoveDoctorLicense"  class="nav-link disabled-link" aria-current="page">-->
-<!--              <svg class="bi pe-none me-2" width="16" height="16"></svg>-->
-<!--              Delete doctor license-->
-<!--            </a>-->
-<!--          </li>-->
-        </ul>
-        <hr>
-      </div>
+        </li>
+
+        <li class="mt-2 text-left w-100">
+          <a class="btn h6 pt-2 w-100 text-secondary fw-bold disabled-link"routerLinkActive="active" routerLink="/Admin/GetDrug">
+            <!-- <i class="fa-solid fa-user-pen  p-2 rounded-circle text-secondary"></i> -->
+            <i class="fa-solid fa-pills  p-2 rounded-circle text-secondary"></i>
+            Get drug by id
+          </a>
+        </li>
+
+        <li class="mt-2 text-left w-100">
+          <a class="btn h6 pt-2 w-100  fw-bold" routerLinkActive="active" routerLink="/Admin/AddDrug">
+            <!-- <i class="fa fa-key p-2 rounded-circle text-secondary" ></i> -->
+            <i class="fa-solid fa-pills  p-2 rounded-circle text-secondary"></i>
+            Add new drug
+          </a>
+
+        </li>
+
+        <li class="mt-2 text-left w-100">
+          <a class="btn h6 pt-2 w-100 text-secondary fw-bold disabled-link" routerLinkActive="active" routerLink="/Admin/UpdateDrug">
+            <!-- <i class="fa-regular fa-calendar-check  p-2 rounded-circle text-secondary"></i> -->
+            <i class="fa-solid fa-pills  p-2 rounded-circle text-secondary"></i>
+            Update drug by id
+         </a>
+        </li>
+
+        <li class="mt-2 text-left w-100">
+          <a class="btn h6 pt-2 w-100 fw-bold" routerLinkActive="active" routerLink="/Admin/AddIssue">
+            <!-- <i class="fa-solid fa-pills  p-2 rounded-circle text-secondary"></i> -->
+            <i class="fa-solid fa-pills  p-2 rounded-circle text-secondary"></i>
+            Add Issue
+          </a>
+        </li>
+
+        <li class="mt-2 text-left w-100">
+          <a class="btn h6 pt-2 w-100 fw-bold" routerLinkActive="active" routerLink="/Admin/GetAllDoctors">
+            <i class="fa-solid  fa-user  p-2 rounded-circle text-secondary"></i>
+            List all doctors
+          </a>
+        </li>
+
+        <li class="mt-2 text-left w-100">
+          <a class="btn h6 pt-2 w-100 fw-bold" routerLinkActive="active" routerLink="/Admin/AddLicense">
+            <i class="fa-solid  fa-user  p-2 rounded-circle text-secondary"></i>
+            Add license
+          </a>
+        </li>
+
+      </ul>
     </div>
 
-    <div class="offset-lg-1 col-lg-9 col-md-12 col-sm-12 AdminViews scroll">
-      <router-outlet></router-outlet>
+  </div>
+
+  <div class="col-lg-9 col-sm-12 px-0">
+    <div style="width: 100%;">
+      <app-admin-nav></app-admin-nav>
+    </div>
+    <div >
+      <div class="AdminViews scroll mt-5" style="min-height: 75vh;">
+        <router-outlet></router-outlet>
+      </div>
+      <app-admin-footer></app-admin-footer>
     </div>
   </div>
 
 </div>
-
-<!--<app-footer></app-footer>-->

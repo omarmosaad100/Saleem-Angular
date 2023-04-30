@@ -22,6 +22,7 @@ export class AdminAuthGuard implements CanActivate {
     if (this.authService.isAuthenticated) {
       return true;
     } else {
+      console.log("jjdj")
       this._toastService.error('UnAuthorized, Please Login First!');
       this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
         this.router.navigate(['/Admin/Login']);

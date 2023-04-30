@@ -49,7 +49,7 @@ export class AdminLoginComponent implements OnInit {
       },
       complete: () => {
         this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-          this.router.navigate(['/Admin/']);
+          this.router.navigate(['/Admin/GetAllDrugs']);
         });
       }
     })

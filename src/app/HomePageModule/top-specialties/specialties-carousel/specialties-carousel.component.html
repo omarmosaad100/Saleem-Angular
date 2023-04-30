@@ -1,3 +1,7 @@
+<div *ngIf="data.length == 0" class="alert alert-danger">
+  The are no Specializations available at the moment.
+</div>
+
 <ngb-carousel
 	#carousel
 	[interval]="5000"
@@ -6,7 +10,6 @@
 	(slide)="onSlide($event)"
   class="w-100 mb-5"
 >
-
   <ng-template ngbSlide *ngFor="let elementGroups of data; index as i" class="position-relative">
 
     <div class="row carousel-container" >
