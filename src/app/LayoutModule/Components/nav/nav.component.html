@@ -10,16 +10,8 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" [ngClass]="{'show': isNavbarOpen}">
-            <ul class="navbar-nav mr-auto w-100">
-              <li class="nav-item active button-1">
-                <a class="nav-link text-white" href="#">Features</a>
-              </li>
-              <li class="nav-item button-1 ">
-                <a class="nav-link text-white" href="#">Donate</a>
-              </li>
-
-            </ul>
             <!-- un authorized -->
+
             <div  class="float-end d-flex nav-right justify-content-between" >
               <a [hidden] = "isAuth" class="nav-link px-3 btn py-1 w-40" href="#" routerLink="/Login" routerLinkActive="router-link-active" >Login</a>
               <a  [hidden] ="isAuth" class="nav-link w-50 btn btn-primary text-light py-1 mx-2 w-40" href="/Login">Sign up</a>

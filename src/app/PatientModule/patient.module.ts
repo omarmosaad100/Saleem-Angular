@@ -16,6 +16,7 @@ import { EditPasswordComponent } from './edit-password/edit-password.component';
 import { AppModule } from '../app.module';
 import { LoadingComponent } from '../LoadingModule/loading.component';
 import { LoadingModule } from '../LoadingModule/loading.module';
+import { DonationComponent } from './donation/donation.component';
 
 
 
@@ -32,7 +33,7 @@ import { LoadingModule } from '../LoadingModule/loading.module';
     PatientAppointmentDetailComponent,
     EditPasswordComponent,
     EditProfileFormComponent,
-
+    DonationComponent,
     // LoadingComponent
   ],
   imports: [

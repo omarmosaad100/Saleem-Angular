@@ -1,0 +1,23 @@
+
+
+<div class="container m-auto mt-5 donation">
+  <div class="row h-100">
+    <div class="col-md-6 col-sm-12 h-100 ">
+      <img src="../../../assets\Images\HomePage/donate.jpg" alt="donate" class="donate-img"/>
+    </div>
+    <div class="col-md col-sm-12 mt-5">
+      <h3>
+        Saleem is moving quickly to respond the needs of most of families and children
+      </h3>
+
+      <div class="my-3" [hidden]="closeForm">
+        <p class="text-danger"> Donation amount</p>
+        <input type="number" #donate_amount="ngModel" [(ngModel)]="donate" name="donate_amount" id="" class="form-control w-50 "  />
+        <button class="btn btn-danger mt-2" (click)="submit(donate_amount.value)">Donate Now</button>
+      </div>
+      <div id="paypal"></div>
+    </div>
+  </div>
+
+
+</div>
