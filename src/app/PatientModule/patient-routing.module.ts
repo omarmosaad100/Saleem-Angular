@@ -9,6 +9,7 @@ import { EditProfileFormComponent } from './edit-profile-form/edit-profile-form.
 import { EditPasswordComponent } from './edit-password/edit-password.component';
 import { AppointmentDetailsFormComponent } from '../DoctorModule/appointment-details-form/appointment-details-form.component';
 import { PatientAppointmentDetailComponent } from './patient-appointment-detail/patient-appointment-detail.component';
+import { DonationComponent } from './donation/donation.component';
 
 // doctor routes
 
@@ -24,6 +25,7 @@ const routes: Routes = [
         {path:"drugs" , component : PatientDrugsComponent },
         {path:"edit" , component : EditProfileFormComponent },
         {path:"changePassword" , component : EditPasswordComponent },
+        {path:"donate" , component : DonationComponent },
 
 
 
