@@ -22,9 +22,10 @@ export class PatientDashboardComponent implements OnInit {
     this.imgService.getUrl().subscribe(img=>{
       this.imgSrc = img=="" ? this.imgSrc : img;
     });
+    this.router.navigate(['/patient/dashboard/profile']); // routing automatically to profile
   }
   ngOnInit() {
-    let imgLocal = localStorage.getItem("profileImg") ?? "../../../assets/Images/profile.png"
+    // let imgLocal = localStorage.getItem("profileImg") ?? "../../../assets/Images/profile.png"
     this.imgService.getUrl().subscribe(img=>{
       this.imgSrc = img=="" ? this.imgSrc : img;
     });

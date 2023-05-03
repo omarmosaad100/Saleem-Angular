@@ -8,7 +8,13 @@
 .nav-right{
   width: 40%;
 }
+
+.auth-contanier{
+  /* background-color: aliceblue; */
+  min-width: 40%
+}
 /*
+
 .button-1 {
   /* align-items: center;
   text-align: center;
