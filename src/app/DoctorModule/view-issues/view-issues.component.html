@@ -1,14 +1,18 @@
-<a class="btn btn-primary" (click)="goBack()" >Back</a>
+<div class="all">
 
-<div class="row row-cols-1 row-cols-md-3 g-4" style="padding-top: 10px;">
-  <div *ngFor="let issue of issues">
-    <div class="card">
-      <div class="card-body row">
-        <div class="d-flex justify-content-between w-100 align-items-center">
-          <h5>{{ issue.name }}</h5>
-          <button class="btn btn-success" (click)="remove(issue.name)" style="height: 50px;">Remove</button>
+  <a class="btn btn-primary" (click)="goBack()" >Back</a>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4" style="padding-top: 10px;">
+    <div *ngFor="let issue of issues">
+      <div class="card">
+        <div class="card-body row">
+          <div class="d-flex justify-content-between w-100 align-items-center">
+            <h5>{{ issue.name }}</h5>
+            <button class="btn btn-success" (click)="remove(issue.name)" style="height: 50px;">Remove</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>

@@ -51,6 +51,8 @@ export class AppointmentDetailsFormComponent {
 
 
     this.sendData();
+
+
   }
 
   goBack() {
