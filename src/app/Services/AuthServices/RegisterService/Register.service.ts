@@ -23,12 +23,9 @@ SubmitData(data:IRegisterAsPatient): void {
 
   ).subscribe({
     next: (data)=>{
-      console.log(data);
     },
     error: (error)=>{
-      console.log(error)
       if (error.error?.length > 0) {
-        console.log(error.error)
         error.error.forEach((e:any) =>
           {
             this._toastService.error( `Error: ${e["description"]}`);

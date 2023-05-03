@@ -1,0 +1,19 @@
+input{
+  color: #9d9fa0;
+  font-size: 12px;
+}
+
+.profile-img{
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  /* display: flex;
+  justify-content: center; */
+}
+.edit-profile-icon{
+  position: absolute;
+  bottom:  0px;
+  right: 43%;
+  color: #FF7831;
+  cursor: pointer;
+}

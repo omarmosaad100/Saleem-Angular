@@ -4,15 +4,28 @@
   </div>
 
   <div class="col-md col-sm-12 dashboard-content bg-light p-0">
-    <div class="w-100 bg-white p-3">
-      <i class="fa-solid fa-list btn-collapse" (click)="isCollapsed = !isCollapsed "></i>
+    <div class="w-100 dahboard-nav py-2">
+
+      <i class="fa-solid fa-list btn-collapse p-2" (click)="isCollapsed = !isCollapsed "></i>
+
+      <div class="mx-3 float-end pb-2"  ngbDropdown>
+        <button
+          class="btn btn-outline-primary me-2"
+          id="dropdownManual"
+          ngbDropdownToggle
+        >
+          <img [src]="imgSrc" alt="Profile" class="w-30 h-30"/>
+          <h6 class="d-inline-block px-3 "> {{username}} </h6>
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownManual" class="w-100 border-0 bg-white">
+          <button ngbDropdownItem class="px-1 text-danger w-100" (click)="logout()" >Sign Out</button>
+
+        </div>
+
+      </div>
 
     </div>
     <router-outlet></router-outlet>
-  <!-- <div > -->
-    <!-- content -->
-    <!-- <app-doctor-cards class="col-md col-sm-12 dashboard-content"></app-doctor-cards>
-  </div> -->
 
 
 </div>

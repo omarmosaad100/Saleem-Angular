@@ -1,0 +1,41 @@
+<div *ngIf="drugs.length == 0" class="alert alert-danger" >
+  dd
+</div>
+
+<div class="container">
+  <table  ngbTable class="table table-hover" >
+    <thead>
+      <tr>
+        <!-- <th scope="col">Id</th> -->
+        <th scope="col">Name</th>
+        <th scope="col">Method of taking</th>
+        <th scope="col">Details</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let drug of drugs">
+        <!-- {{drug|json}} -->
+        <!-- <td>{{drug.id}}</td> -->
+        <td>{{drug.name}}</td>
+        <td>{{drug.method}}</td>
+        <td><a routerLink="/Admin/GetDrug/{{drug.id}}" class="btn btn-sm btn-secondary">Details</a></td>
+        <td><a routerLink="/Admin/UpdateDrug/{{drug.id}}" class="btn btn-sm btn-primary">Update</a></td>
+        <td><a (click)="delete(drug.id)" class="btn btn-sm btn-danger">Delete</a></td>
+        <!-- <td><a class="btn btn-sm btn-dark">Update</a></td>
+        <td><a class="btn btn-sm btn-danger" (click)="delete(drug.id)">Delete</a></td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="d-flex justify-content-center mt-5">
+  <ngb-pagination
+  [collectionSize]="data?.length"
+  [(page)]="currentPage"
+  [pageSize]="pageSize"
+  (pageChange)="pageChange()">
+  </ngb-pagination>
+</div>
+

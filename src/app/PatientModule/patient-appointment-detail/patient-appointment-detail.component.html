@@ -1,1 +1,32 @@
-<p>patient-appointment-detail works!</p>
+<div class="modal-header">
+  <h4 class="modal-title">Appointment Details</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+
+<div class="modal-body">
+  <div>
+    <p id="comment">Comment: {{ appointment.comment }}</p>
+  </div>
+  <div>
+    <p id="Date">Date: {{ appointment.date| date :'yyyy/MM/dd' }}</p>
+  </div>
+  <div>
+    <p id="specialization">Specialization :{{ getSpecializationName(appointment.specialization) }}</p>
+  </div>
+
+  <div>
+    <label for="describedDrugs">Described Drugs:</label>
+    <ul>
+      <li *ngFor="let drug of appointment.describedDrugs">{{ drug.name }}</li>
+    </ul>
+
+    <label for="diagnosedIssues">Diagnosed Issues:</label>
+    <ul>
+      <li *ngFor="let issue of appointment.diagnosedIssues">{{ issue.name }}</li>
+    </ul>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+  </div>
+</div>

@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
-import { AddAppointment } from '../../Models/Appointment-Details/AddAppointment';
+import { Component, Input } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { APIUrlConnectionService } from '../../Services/APIUrlConnection.service';
+import { PatientAppointment } from '../../Models/patientAppointment/Patient-Appointment';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Specialization, SpecializationMap } from '../../Enums/SpecializationEnum.enum';
 
 @Component({
   selector: 'app-patient-appointment-detail',
@@ -7,6 +11,20 @@ import { AddAppointment } from '../../Models/Appointment-Details/AddAppointment'
   styleUrls: ['./patient-appointment-detail.component.css']
 })
 export class PatientAppointmentDetailComponent {
-  appointment: AddAppointment = new AddAppointment; 
-  
+
+  baseURL: string = this.url.GetURL() + '/Patient';
+  appointment: PatientAppointment = new PatientAppointment();
+  getSpecializationName(specialization: number): string {
+    return SpecializationMap[specialization] || 'Unknown';
+  }
+  constructor(private http: HttpClient, private url: APIUrlConnectionService, public activeModal: NgbActiveModal) {}
+
+  ngOnInit() {
+    const token = localStorage.getItem('token') || '';
+    const AppID = localStorage.getItem('Appointment ID') || '';
+    const headers = { Authorization: 'Bearer ' + token };
+    this.http.get<PatientAppointment>(this.baseURL + '/GetAppointmentDetails/' + AppID, { headers }).subscribe((data) => {
+      this.appointment = data;
+    });
+  }
 }

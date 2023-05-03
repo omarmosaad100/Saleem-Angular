@@ -1,6 +1,7 @@
 import { Component, Input, ViewChild , OnInit} from '@angular/core';
 import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { HomeService } from '../../Services/home.service';
+import { HomeLoadingService } from '../../Services/home-loading.service';
 
 @Component({
   selector: 'app-specialties-carousel',
@@ -8,62 +9,40 @@ import { HomeService } from '../../Services/home.service';
   styleUrls: ['./specialties-carousel.component.css']
 })
 export class SpecialtiesCarouselComponent implements OnInit {
-	//data = [1,2,3,4,5].map((n) => `../../../../assets/Images/Login/${n}.jpg`);
 
-  // img:"../../../../assets/Images/Login/login1.jpg",
   data:any = [];
-  group1:any = [];
-  group2:any = [];
-  group3:any = [];
-  group4:any = [];
-
-
-  allSpecialties : any;
-
-  constructor(private service:HomeService ){
+  constructor(private service:HomeService  , private loadingService: HomeLoadingService){
 
   }
 
+  length  = 0;
 
   ngOnInit() {
+    this.loadingService.loadPages();
 
     this.service.getSpecialties()
-      .subscribe ( data => {
-        this.allSpecialties = data
+      .subscribe (
+        (data:any) => {
+            let splittedData = [];
+            for (let i = 0; i < data.length; i++) {
 
-        this.allSpecialties.forEach((data_:any , index:number) => {
-          if(index<4){
-            this.group1.push({
-              name : data_,
-              img : `../../../../assets/Images/HomePage/Specialist/${data_}.PNG`
-            });
-          }
-          else if(index>4 && index < 9 ){
-            this.group2.push({
-              name : data_,
-              img : `../../../../assets/Images/HomePage/Specialist/${data_}.PNG`
-            });
-          }
-          else if(index>9 && index < 14 ){
-            this.group3.push({
-              name : data_,
-              img : `../../../../assets/Images/HomePage/Specialist/${data_}.PNG`
-            });
-          }
-          else{
-            this.group4.push({
-              name : data_,
-              img : `../../../../assets/Images/HomePage/Specialist/${data_}.PNG`
-            });
-          }
+              splittedData.push(data.slice(i , i+=4));
+              console.log(i , splittedData)
 
-        });
-        this.data.push(this.group1 , this.group2 , this.group3);
-      });
+            }
+            console.log(splittedData)
+            this.data = splittedData
+            this.loadingService.unloadPages();
+        },
+        (error)=>{
+          this.loadingService.unloadPages();
 
+        }
 
-
+      );
   }
+
+
 	paused = false;
 	unpauseOnArrow = false;
 	pauseOnIndicator = false;

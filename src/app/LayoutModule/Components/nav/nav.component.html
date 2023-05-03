@@ -1,31 +1,23 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-white bg-white shadow"> <!--fixed-top-->
+  <nav class="navbar navbar-expand-md main-navbar bg-white shadow"> <!--fixed-top-->
     <div class="container">
         <div>
           <img src="../../../../favicon.ico" alt="logo" class="logo-img"/>
-          <a class="navbar-brand" href="#">{{Title}}</a>
+          <a class="navbar-brand text-white" href="#">{{Title}}</a>
         </div>
 
           <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" [ngClass]="{'show': isNavbarOpen}">
-            <ul class="navbar-nav mr-auto w-100">
-              <li class="nav-item active button-1">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item button-1 ">
-                <a class="nav-link" href="#">Donate</a>
-              </li>
-
-            </ul>
             <!-- un authorized -->
+
             <div  class="float-end d-flex nav-right justify-content-between" >
               <a [hidden] = "isAuth" class="nav-link px-3 btn py-1 w-40" href="#" routerLink="/Login" routerLinkActive="router-link-active" >Login</a>
               <a  [hidden] ="isAuth" class="nav-link w-50 btn btn-primary text-light py-1 mx-2 w-40" href="/Login">Sign up</a>
               <!-- authorized -->
-              <button class="d-flex nav-link px-3 w-50  btn py-1" (click)="getProfile()" >
-                <img  [hidden] = "!isAuth"  src="../../../../assets/Images/profile.png" alt="Profile" class="w-30 h-30"/>
+              <button class="d-flex nav-link px-3 w-50 btn py-1" (click)="getProfile()" >
+                <img  [hidden] = "!isAuth"  [src]="imgSrc" alt="Profile" class="w-30 h-30"/>
                 <span [hidden] = "!isAuth" class="mt-1 mx-2"> Profile </span>
               </button>
               <button [hidden] = "!isAuth" class="nav-link px-1 btn btn-danger text-light py-1 w-40" (click)="logout()" >Sign Out</button>

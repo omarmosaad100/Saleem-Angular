@@ -1,0 +1,70 @@
+/*.AdminViews{*/
+/*  border: 2px solid red;*/
+/*}*/
+
+
+.disabled-link {
+  color: gray;
+  pointer-events: none;
+  text-decoration: none;
+  cursor: default;
+}
+
+
+
+ @media (max-width: 768px) {
+  .AdminViews{
+    max-width:  100vw;
+    overflow-x: scroll;
+  }
+  .AdminViews::-webkit-scrollbar
+  {
+    height: 6px;
+    background-color: #F5F5F5;
+  }
+}
+/*
+@media (min-width: 768px) {
+  .AdminViews{
+    max-height:  50vh;
+    overflow-y: scroll;
+    max-width: 90%;
+    margin: auto;
+  }
+  .AdminViews::-webkit-scrollbar
+  {
+    height: 6px;
+    background-color: #F5F5F5;
+  }
+} */
+
+.sidebar-routes li a{
+  cursor:  pointer;
+  padding-left: 10px;
+  border: 0;
+  text-align: left!important;
+  border-radius: 5px;
+  color: #0d6efd;
+
+}
+.sidebar-routes li a:hover{
+  background-color: #C1D4D4;
+}
+
+.active{
+  background-color: #E3EAEE;
+  color: #0d6efd!important;
+  border: 0;
+  text-align: start!important;
+
+}
+
+.sidebar{
+  /* background-color:  #022034!important;
+  color: white; */
+  background-color: #1c3847;
+  color: white;
+  min-height: 100vh;
+}
+
+
