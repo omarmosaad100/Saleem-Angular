@@ -61,7 +61,7 @@ export class AppointmentDetailsFormComponent {
     // }, 100);
 
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-      this.router.navigate([`/ViewPatientHistory/${this.nid}`]);
+      this.router.navigate([`/Doctor/ViewPatientHistory/${this.nid}`]);
     });
   }
 

@@ -56,24 +56,30 @@ export class ViewPatientHistoryComponent {
 
   navigateToDetails(appointment: any)
   {
-    this.router.navigate(['/viewAppointment'],  { state: { appointment } });
+    this.router.navigate(['/Doctor/viewAppointment'],  { state: { appointment } });
   }
 
   navigateToAdd()
   {
-    this.router.navigate(["/AddAppointment"], { state: { nid: this.nid }})
+    this.router.navigate(["/Doctor/AddAppointment"], { state: { nid: this.nid }})
   }
 
   navigateToIssues()
   {
     this.pid = this.myService.GetPidByNid(this.nid).subscribe((data: any) => {
       const pid = data;
-      this.router.navigate(['/ViewIssues', pid]);
+      this.router.navigate(['/Doctor/ViewIssues', pid]);
     });
   }
 
   goBack(){
     this.Location.back();
+  }
+
+
+  AddNewPatient(){
+    this.router.navigate(['/Doctor/DoctorRegistersPatient']);
+
   }
 
   filter(): void {

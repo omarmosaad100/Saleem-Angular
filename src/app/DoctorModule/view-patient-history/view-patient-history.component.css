@@ -1,9 +1,9 @@
 .card{
-  height: 125px;
-  max-height: 125px;
+  /* height: 125px; */
+  /* max-height: 125px; */
   overflow: hidden;
-  background-color: #1C3847;
-  color: aliceblue;
+  /* background-color: #1C3847; */
+  /* color: aliceblue; */
 }
 
 .appointments{

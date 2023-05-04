@@ -26,7 +26,7 @@ export class DoctorRegistersPatientComponent {
         this.validationMessage = 'National Id does not have a corresponding account!';
       })
 
-      this.router.navigate(['/ViewPatientHistory', this.nationalId])
+      this.router.navigate(['/Doctor/ViewPatientHistory', this.nationalId])
     }
     else {
       this.validationMessage = 'Invalid National ID. Please check your input.';

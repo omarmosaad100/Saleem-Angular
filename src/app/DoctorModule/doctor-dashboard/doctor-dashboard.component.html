@@ -1,0 +1,33 @@
+<div class="dahboard row h-100 m-0">
+  <div class="col-md-3 col-sm-12 shadow p-0 position-relative" [hidden]="isCollapsed">
+    <!-- <i class="fa-solid fa-list btn-collapse p-2" (click)=></i> -->
+    <app-doctor-sidebar></app-doctor-sidebar>
+  </div>
+
+  <div class="col-md col-sm-12 dashboard-content bg-light p-0">
+    <div class="w-100 dahboard-nav py-2">
+
+      <i class="fa-solid fa-list btn-collapse p-2" (click)="isCollapsed = !isCollapsed "></i>
+
+      <div class="mx-3 float-end pb-2"  ngbDropdown>
+        <button
+          class="btn btn-outline-primary me-2"
+          id="dropdownManual"
+          ngbDropdownToggle
+        >
+          <img [src]="imgSrc" alt="Profile" class="w-30 h-30"/>
+          <h6 class="d-inline-block px-3 "> {{username}} </h6>
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownManual" class="w-100 border-0 bg-white">
+          <button ngbDropdownItem class="px-1 text-danger w-100" (click)="logout()" >Sign Out</button>
+
+        </div>
+
+      </div>
+
+    </div>
+    <app-loading *ngIf="loading"></app-loading>
+    <router-outlet></router-outlet>
+
+
+</div>
