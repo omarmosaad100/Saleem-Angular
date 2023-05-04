@@ -6,6 +6,7 @@ import { APIUrlConnectionService } from '../../Services/APIUrlConnection.service
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PatientAppointment } from '../../Models/patientAppointment/Patient-Appointment';
 import { PatientAppointmentDetailComponent } from '../patient-appointment-detail/patient-appointment-detail.component';
+import { PatientLoadingService } from '../Services/patient-loading.service';
 
 @Component({
   selector: 'app-patient-appointments',
@@ -16,8 +17,9 @@ export class PatientAppointmentsComponent implements OnInit {
   baseURL: string = this.url.GetURL() + '/Patient';
   doctors: DoctorVisitCard[] = [];
   isactive: boolean = true;
+  dataLoaded:any;
 
-  constructor(private http: HttpClient, private url: APIUrlConnectionService, private modalService: NgbModal) {}
+  constructor(private http: HttpClient, private url: APIUrlConnectionService, private modalService: NgbModal , private loadingService:PatientLoadingService) {}
 
   logDoctorId(doctorId: string) {
     //Id for appointment not doctor
@@ -32,10 +34,24 @@ export class PatientAppointmentsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loadingService.loadPages();
+
     const token = localStorage.getItem('token') || '';
     const headers = { Authorization: 'Bearer ' + token };
-    this.http.get<DoctorVisitCard[]>(this.baseURL + '/GetDataOFVisitedDoctors', { headers }).subscribe((data) => {
-      this.doctors = data;
+    this.http.get<DoctorVisitCard[]>(this.baseURL + '/GetDataOFVisitedDoctors', { headers })
+    .subscribe({
+     next: (data) => {
+        this.doctors = data;
+        this.dataLoaded = true;
+        this.loadingService.unloadPages();
+
+      },
+      error:()=>{
+        this.dataLoaded = false;
+        this.loadingService.unloadPages();
+      }
     });
+
+
   }
 }

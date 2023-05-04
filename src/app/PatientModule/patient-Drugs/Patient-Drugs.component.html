@@ -1,6 +1,17 @@
+
+
 <div class="w-85 mt-5 mx-auto " >
   <h2 class="text-center my-5">View Drugs schedules </h2>
-  <table class="table">
+
+  <div class="alert alert-danger mx-auto w-75" *ngIf="!loadedData">
+    Can't Load any Drugs
+  </div>
+
+  <div class="alert alert-primary mx-auto w-75" *ngIf="drugs.length < 0">
+    Patient not have any drugs
+  </div>
+
+  <table class="table" *ngIf="loadedData">
     <thead>
       <tr>
         <th scope="col">Name</th>

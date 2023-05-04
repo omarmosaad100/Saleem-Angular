@@ -7,3 +7,9 @@
   background-color: #E1EAED!important;
   height: 100%;
 }
+
+@media (max-width:576px) {
+  .patient-illnesses {
+    margin-top: 20px;
+  }
+}

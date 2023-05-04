@@ -12,23 +12,31 @@ export class DonationComponent implements OnInit {
 
   donate:number = 0;
   closeForm:boolean = false;
+  error:any;
 
   constructor() {
-
   }
 
   submit(amount:number){
-    this.closeForm = true
-    render(
-      {
-        id: "#paypal",
-        value: amount.toString(),
-        currency: 'USD',
-        onApprove: () => {
-          alert("successfully")
+    if(this.donate > 0){
+      this.closeForm = true;
+      this.error = false;
+
+      render(
+        {
+          id: "#paypal",
+          value: amount.toString(),
+          currency: 'USD',
+          onApprove: () => {
+            alert("successfully")
+          }
         }
-      }
-    )
+      )
+    }
+    else{
+      this.error = true;
+    }
+
   }
 
 
