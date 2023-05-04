@@ -1,11 +1,11 @@
 <!-- <app-admin-nav></app-admin-nav> -->
 
 <div class="row m-0 p-0 w-100">
-  <div class="col-lg-6 col-md-12  px-0">
+  <div class="col-lg-8 col-md-12  px-0">
       <img src="../../../assets/Images/adminBg.jpg" alt="" class="login-img">
   </div>
 
-  <form class=" col-lg-6 col-md-12 mt-5 pt-5" *ngIf="!loggedIn" #AdminLoginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
+  <form class=" col-lg col-md-12 mt-5 pt-5" *ngIf="!loggedIn" #AdminLoginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
 
     <div class="alert alert-danger" *ngIf="error">
       Invalid Username or password
@@ -16,13 +16,13 @@
         <input
           name="username"
           id="username" [(ngModel)]="model.username"
-          class="form-control me-2 mt-2 p-2" type="text" placeholder="Enter username">
+          class="form-control me-2 mt-2 p-2" type="text" >
     </div>
 
       <div class="form-group mb-4 w-75 mx-auto">
         <label for="password">Password</label>
         <input id="password" [(ngModel)]="model.password" name="password"
-              class="form-control me-2 mt-2 p-2 " type="password" placeholder="Enter password">
+              class="form-control me-2 mt-2 p-2 " type="password" >
 
         <button class="btn btn-outline-primary mt-4" type="submit">Login</button>
         </div>
