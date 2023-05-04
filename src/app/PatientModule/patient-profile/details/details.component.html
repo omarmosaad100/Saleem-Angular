@@ -1,14 +1,12 @@
 
-<div class="row profile-details bg-light">
+<div class="row profile-details bg-light" *ngIf="loading">
+
   <div class="col-md-6 col-sm-12 bg-white py-4 px-1 profile-img-container ">
     <div class="profile d-flex flex-column align-items-center">
+      <img src="{{data?.imgPath ?? '../../../../assets/Images/profile.png'}}"  alt="profile" class="profile-img"/>
 
-
-      <!-- <img src="../../../../assets/Images/{{data.imgPath ?? 'profile.png'}}"  alt="profile" class="profile-img"/> -->
-      <img src="{{data.imgPath ?? '../../../../assets/Images/profile.png'}}"  alt="profile" class="profile-img"/>
-
-      <h6 class="mt-4"> {{data.name}}</h6>
-      <p class=""> {{data.email}}</p>
+      <h6 class="mt-4"> {{data?.name}}</h6>
+      <p class=""> {{data?.email}}</p>
       <a class="btn btn-primary btn-edit" routerLink="/patient/dashboard/edit"> Edit Profile</a>
     </div>
   </div>
@@ -16,17 +14,17 @@
   <div class="col-md col-sm-12 bg-white py-4 profile-data-container">
     <div>
       <h6>Gender</h6>
-      <p> {{data.gender}}</p>
+      <p> {{data?.gender}}</p>
     </div>
     <hr>
     <div>
       <h6>Phone Number</h6>
-      <p> (+20){{data.phoneNumber}}</p>
+      <p> (+20){{data?.phoneNumber}}</p>
     </div>
     <hr>
     <div>
       <h6>National Id</h6>
-      <p> {{data.nationalId}}</p>
+      <p> {{data?.nationalId}}</p>
     </div>
   </div>
 

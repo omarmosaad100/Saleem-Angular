@@ -6,4 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./patient-profile.component.css']
 })
 export class PatientComponent {
+
+  dataLoaded:any;
+
+  checkLoadedHandler(state:boolean){
+    console.log(state)
+    this.dataLoaded = state;
+  }
+
+
 }

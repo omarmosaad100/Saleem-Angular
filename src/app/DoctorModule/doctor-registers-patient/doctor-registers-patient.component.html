@@ -1,14 +1,17 @@
 <div class="container my-5" style="height:500px">
+<h1 class="text-center my-5"> Register New Patient</h1>
 
 <form (ngSubmit)="submitForm()">
-    <div class="mb-3">
-      <label for="nationalId" class="form-label">Egyptian National ID:</label>
-      <input type="text" class="form-control" id="nationalId" name="nationalId" [(ngModel)]="nationalId" #nationalIdCtrl="ngModel" required>
+    <div class="mb-3 w-75 mx-auto mt-5 d-flex flex-column">
+      <label for="nationalId" class="form-label mb-3">Egyptian National ID:</label>
+
+      <input type="text" class="form-control mb-3" id="nationalId" name="nationalId" [(ngModel)]="nationalId" #nationalIdCtrl="ngModel" required>
+
       <div *ngIf="validationMessage && submitted" class="text-danger">
         Please enter a valid 14-digit Egyptian national ID.
       </div>
 
+      <button type="submit" class="btn btn-primary mt-4 w-25" >Submit</button>
     </div>
-    <button type="submit" class="btn btn-primary" >Submit</button>
   </form>
   </div>

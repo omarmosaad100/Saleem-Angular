@@ -24,7 +24,7 @@ import { LoadingModule } from '../LoadingModule/loading.module';
 
   ],
   exports:[
-    HomePageComponent
+    HomePageComponent,
   ],
 
   imports: [

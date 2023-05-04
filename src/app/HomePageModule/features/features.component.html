@@ -4,10 +4,10 @@
   </h1>
 
   <div class="row mt-5 w-100 justify-content-center " >
-    <div class="col-6 feature-container" *ngFor="let FeatureData of Features" >
+    <div class="col-md-6 col-sm-12 feature-container" *ngFor="let FeatureData of Features" >
       <div class="row shadow py-3 rounded-3" >
-        <img class="col-3 mx-3 feature-img" src={{FeatureData.img}} alt=""/>
-        <div class="col">
+        <img class="col-md-3 col-sm-5 mx-md-3 feature-img" src={{FeatureData.img}} alt=""/>
+        <div class="col-md col-sm-12">
           <h5 class="mb-3 mt-1 fw-bold text-dark-blue"> {{FeatureData.header}}</h5>
           <p class="feature-text text-light-blue ">{{FeatureData.description}}</p>
         </div>

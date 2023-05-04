@@ -9,6 +9,9 @@ import {Router} from "@angular/router";
 })
 export class AdminLoginComponent implements OnInit {
 
+  error:any;
+  errorMsg:any;
+
   //#region negmTest
   constructor(private adminAccountService: AdminAccountService,
               private router: Router) {
@@ -32,7 +35,9 @@ export class AdminLoginComponent implements OnInit {
   getCurrentUser() {
     this.adminAccountService.currentAdmin$.subscribe({
       next: user => this.loggedIn = !!user, //convert user to boolean
-      error: error => console.log(error),
+      error: error => {
+        console.log(error)
+      },
     })
   }
 
@@ -45,9 +50,11 @@ export class AdminLoginComponent implements OnInit {
         this.loggedIn = true;
       },
       error: error => {
-        console.log(error);
+        this.error=true;
+        this.errorMsg = error.error;
       },
       complete: () => {
+        this.error = false;
         this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
           this.router.navigate(['/Admin/GetAllDrugs']);
         });

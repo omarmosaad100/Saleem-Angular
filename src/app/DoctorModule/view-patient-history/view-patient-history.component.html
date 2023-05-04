@@ -1,16 +1,15 @@
 <div class="container my-5" style="min-height:500px">
   <div class="row d-flex align-items-center justify-content-between">
-    <div class="col-md-4">
-      <h1>Patient history</h1>
-    </div>
+    <h1 class="text-center pb-3">Patient history</h1>
+
   </div>
 
-  <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-between" style="padding: 10px; margin-top: 5px; margin-top: 5px;">
-    <a class="btn btn-primary" (click)="goBack()" >New Patient</a>
-    <a class=" btn btn-primary py-1" (click)="navigateToAdd()" role="button">Add Appointment</a>
-    <a class=" btn btn-primary py-1" (click)="navigateToIssues()" role="button">All Issues</a>
+  <div class="row d-flex row-cols-md-3 g-4 justify-content-between" style="padding: 10px; margin-top: 5px; margin-top: 5px;">
+    <a class="btn btn-outline-primary " (click)="AddNewPatient()" >New Patient</a>
+    <a class=" btn btn-outline-primary py-1" (click)="navigateToAdd()" role="button">Add Appointment</a>
+    <a class=" btn btn-outline-primary py-1" (click)="navigateToIssues()" role="button">All Issues</a>
 
-    <a class="btn btn-primary py-1" (click)="showFilter = !showFilter" role="button">Filter</a>
+    <a class="btn btn-outline-danger py-1" (click)="showFilter = !showFilter" role="button">Filter</a>
     <div *ngIf="showFilter">
       <label>Filter by specialization:</label>
       <select [(ngModel)]="selectedSpecialization" (change)="filter()">
@@ -20,11 +19,11 @@
     </div>
   </div>
 
-  <div class="row row-cols-1 row-cols-md-3 g-4" style="padding-top: 10px;">
+  <div class="row row-cols-1 row-cols-md-3 g-4 py-4">
     <div class="col" *ngFor="let appointment of filteredAppointments">
-      <div class="card" (click)="navigateToDetails(appointment)">
+      <div class="card pb-3 shadow" (click)="navigateToDetails(appointment)">
+        <h5 class="card-header">Appointment with Dr. {{ appointment.doctorName }}</h5>
         <div class="card-body">
-          <h5 class="card-title">Appointment with Dr. {{ appointment.doctorName }}</h5>
           <div class="card-text">
             Date: {{ appointment.date | date:'short' }}<br>
             Comment: {{ appointment.comment }}<br>

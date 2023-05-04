@@ -1,34 +1,46 @@
-<div class="container pt-5 pb-5">
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" id="name" [(ngModel)]="Drug.name">
-  </div>
-  <div class="form-group">
-    <label>Method of taking</label>
-    <select [(ngModel)]="MethodOfTakingValue" class="form-control">
-      <option *ngFor="let value of enumValues" [value]="value">{{ value }}</option>
-    </select>
-  </div>
-  <!-- <div class="form-group">
-    <label for="name">Method of taking</label>
-    <input type="text" class="form-control" id="method" [(ngModel)]="Drug.method">
-  </div> -->
-  <div class="d-grid justify-content-center align-items-center grid">
-    <div class="row">
-      <h4>Treated Issues</h4>
-      <div class="col-4" *ngFor="let issue of Issues?.length > 0 && Issues">
-        <input id="t-{{issue.id}}" type="checkbox" name="{{issue.name}}" [value]="issue.id "
-               (change)="onTreatedCheck($event, issue.id)">
-        <label>{{issue.name}}</label>
-      </div>
-      <h4>Conflicted Issues</h4>
-      <div class="col-4" *ngFor="let issue of Issues?.length > 0 && Issues">
-        <input id="c-{{issue.id}}" type="checkbox" name="{{issue.name}}" [value]="issue.id"
-               (change)="onConflictedChecked($event, issue.id)">
-        <label>{{issue.name}}</label>
-      </div>
+<div class="container pb-5 add-drug">
+  <h1 class="text-center py-3">  Add New Drug</h1>
+
+  <div class=" w-75 m-auto">
+    <div class="form-group mb-4">
+      <label for="name">Name</label>
+      <input type="text" class="form-control mt-2" id="name" [(ngModel)]="Drug.name">
     </div>
+
+    <div class="form-group mb-4">
+      <label>Method of taking</label>
+      <select [(ngModel)]="MethodOfTakingValue" class="form-control mt-2">
+        <option *ngFor="let value of enumValues" [value]="value" class="form-control">{{ value }}</option>
+      </select>
+    </div>
+    <!-- <div class="form-group">
+      <label for="name">Method of taking</label>
+      <input type="text" class="form-control" id="method" [(ngModel)]="Drug.method">
+    </div> -->
+    <div class="d-grid justify-content-center align-items-center grid mb-4">
+      <div class="row ">
+        <h4 class="py-3">Treated Issues</h4>
+        <div class="col-md-4 col-sm-6 mb-3" *ngFor="let issue of Issues?.length > 0 && Issues">
+          <input id="t-{{issue.id}}" type="checkbox" name="{{issue.name}}" [value]="issue.id "
+                 (change)="onTreatedCheck($event, issue.id)">
+          <label class="px-2">{{issue.name}}</label>
+        </div>
+
+        <!-- <div class="mt-3"> -->
+          <hr class="mt-3"/>
+          <h4 class="py-3">Conflicted Issues</h4>
+          <div class="col-md-4 col-sm-6 mb-3" *ngFor="let issue of Issues?.length > 0 && Issues">
+            <input id="c-{{issue.id}}" type="checkbox" name="{{issue.name}}" [value]="issue.id"
+                   (change)="onConflictedChecked($event, issue.id)">
+            <label class="px-2">{{issue.name}}</label>
+          </div>
+        <!-- </div> -->
+        </div>
+
+
+    </div>
+    <button type="button" class="btn btn-primary my-3" (click)="AddDrug()">Add drug</button>
+
   </div>
-  <button type="button" class="btn btn-primary my-3" (click)="AddDrug()">Add drug</button>
 
 </div>

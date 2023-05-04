@@ -28,7 +28,7 @@ export class AddLicenseComponent {
     });
 
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-      this.router.navigate(['/AddLicense']);
+      this.router.navigate(['/Admin/AddLicense']);
     });
   }
 }

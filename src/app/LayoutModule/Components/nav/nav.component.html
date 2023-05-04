@@ -9,18 +9,18 @@
           <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" [ngClass]="{'show': isNavbarOpen}">
+          <div class="collapse navbar-collapse flex-row-reverse" [ngClass]="{'show': isNavbarOpen}">
             <!-- un authorized -->
 
-            <div  class="float-end d-flex nav-right justify-content-between" >
-              <a [hidden] = "isAuth" class="nav-link px-3 btn py-1 w-40" href="#" routerLink="/Login" routerLinkActive="router-link-active" >Login</a>
-              <a  [hidden] ="isAuth" class="nav-link w-50 btn btn-primary text-light py-1 mx-2 w-40" href="/Login">Sign up</a>
+            <div  class="d-flex  justify-content-around auth-contanier" >
+              <a [hidden] = "isAuth" class="nav-link px-3 btn py-1 w-25" href="#" routerLink="/Login" routerLinkActive="router-link-active" >Login</a>
+              <a  [hidden] ="isAuth" class="nav-link btn btn-primary text-light py-1 mx-2 w-25" href="/Login">Sign up</a>
               <!-- authorized -->
-              <button class="d-flex nav-link px-3 w-50 btn py-1" (click)="getProfile()" >
+              <button class="d-flex nav-link px-3 w-25 btn py-1" (click)="getProfile()" >
                 <img  [hidden] = "!isAuth"  [src]="imgSrc" alt="Profile" class="w-30 h-30"/>
                 <span [hidden] = "!isAuth" class="mt-1 mx-2"> Profile </span>
               </button>
-              <button [hidden] = "!isAuth" class="nav-link px-1 btn btn-danger text-light py-1 w-40" (click)="logout()" >Sign Out</button>
+              <button [hidden] = "!isAuth" class="nav-link px-1 btn btn-danger text-light py-1 w-25" (click)="logout()" >Sign Out</button>
             </div>
 
 
