@@ -1,0 +1,8 @@
+
+@media (max-width:576px) {
+  .add-drug{
+    margin-top: 50px;
+    width: 100%;
+    padding: 0!important;
+  }
+}

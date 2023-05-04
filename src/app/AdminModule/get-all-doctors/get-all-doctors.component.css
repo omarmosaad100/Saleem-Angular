@@ -17,3 +17,12 @@ table.myTableColor tbody tr:hover {
 table.myTableColor tbody tr:hover td{
   color: #1c3847;
 }
+
+@media (max-width:576px) {
+  table.myTableColor{
+    margin-top: 50px;
+    width: 100%;
+    padding: 0!important;
+  }
+}
+

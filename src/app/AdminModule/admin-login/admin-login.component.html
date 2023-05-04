@@ -1,26 +1,39 @@
 <!-- <app-admin-nav></app-admin-nav> -->
-<div class="container " style="height: 60.5vh;">
-  <form class="d-flex flex-column justify-content-center mt-5 pt-5" *ngIf="!loggedIn" #AdminLoginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input
-        name="username"
-        id="username" [(ngModel)]="model.username"
-        class="form-control me-2" type="text" placeholder="Enter username">
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input id="password" [(ngModel)]="model.password" name="password"
-             class="form-control me-2" type="password" placeholder="Enter password">
-      <button class="btn btn-outline-success" type="submit">Login</button>
-    </div>
-  </form>
-  <div *ngIf="loggedIn" class="d-flex justify-content-center align-items-center flex-column">
-    <h1>
-      You Are Already Logged In.
-    </h1>
-    <a routerLink="/Admin" class="btn btn-outline-success" type="submit">Go To Admin Dashboard</a>
+
+<div class="row m-0 p-0 w-100">
+  <div class="col-lg-6 col-md-12  px-0">
+      <img src="../../../assets/Images/adminBg.jpg" alt="" class="login-img">
   </div>
-</div>
+
+  <form class=" col-lg-6 col-md-12 mt-5 pt-5" *ngIf="!loggedIn" #AdminLoginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
+
+    <div class="alert alert-danger" *ngIf="error">
+      Invalid Username or password
+    </div>
+
+    <div class="form-group mb-4 w-75 mx-auto">
+        <label for="username" >Username</label>
+        <input
+          name="username"
+          id="username" [(ngModel)]="model.username"
+          class="form-control me-2 mt-2 p-2" type="text" placeholder="Enter username">
+    </div>
+
+      <div class="form-group mb-4 w-75 mx-auto">
+        <label for="password">Password</label>
+        <input id="password" [(ngModel)]="model.password" name="password"
+              class="form-control me-2 mt-2 p-2 " type="password" placeholder="Enter password">
+
+        <button class="btn btn-outline-primary mt-4" type="submit">Login</button>
+        </div>
+
+  </form>
+    <div *ngIf="loggedIn" class="d-flex justify-content-center align-items-center flex-column">
+      <h1>
+        You Are Already Logged In.
+      </h1>
+      <a routerLink="/Admin" class="btn btn-outline-success" type="submit">Go To Admin Dashboard</a>
+    </div>
+  </div>
 <app-admin-footer></app-admin-footer>
 

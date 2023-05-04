@@ -23,21 +23,6 @@
     background-color: #F5F5F5;
   }
 }
-/*
-@media (min-width: 768px) {
-  .AdminViews{
-    max-height:  50vh;
-    overflow-y: scroll;
-    max-width: 90%;
-    margin: auto;
-  }
-  .AdminViews::-webkit-scrollbar
-  {
-    height: 6px;
-    background-color: #F5F5F5;
-  }
-} */
-
 .sidebar-routes li a{
   cursor:  pointer;
   padding-left: 10px;
@@ -64,7 +49,18 @@
   color: white; */
   background-color: #1c3847;
   color: white;
-  min-height: 100vh;
+  height: 100vh;
+  position: fixed;
+  width: inherit;
 }
 
+
+@media (max-width:576px) {
+  .sidebar{
+    width: 100%!important;
+    margin-top: 50px;
+    position: relative!important;
+    height: auto!important;
+  }
+}
 
