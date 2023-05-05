@@ -18,7 +18,7 @@ errors:{} = {};
 
 SubmitData(data:IRegisterAsPatient): void {
   this.http.post(
-    'https://localhost:7016/api/Patient/Register',
+    'https://youssefehab77.bsite.net/api/Patient/Register',
     data
 
   ).subscribe({
