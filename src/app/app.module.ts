@@ -61,7 +61,7 @@ import { GetAllDrugsComponent } from './AdminModule/get-all-drugs/get-all-drugs.
   providers: [ToastService, {
     provide: 'text/css', useValue: 'text/css'
   }],
-  bootstrap: [AppComponent,GetAllDrugsComponent],
+  bootstrap: [AppComponent],
 })
 export class AppModule {
 }

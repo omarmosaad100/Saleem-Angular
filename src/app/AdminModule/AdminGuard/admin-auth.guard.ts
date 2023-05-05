@@ -3,7 +3,6 @@ import {ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree, Route
 import {Observable} from 'rxjs';
 import {AdminAccountService} from "../AdminServices/AdminAuth/admin-acount.service";
 import {ToastService} from "angular-toastify";
-import {AdminLoginComponent} from "../admin-login/admin-login.component";
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +21,6 @@ export class AdminAuthGuard implements CanActivate {
     if (this.authService.isAuthenticated) {
       return true;
     } else {
-      console.log("jjdj")
       this._toastService.error('UnAuthorized, Please Login First!');
       this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
         this.router.navigate(['/Admin/Login']);

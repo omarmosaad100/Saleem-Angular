@@ -10,6 +10,10 @@ export class AuthContainerComponent implements OnInit {
   showLoginForm:boolean = false;
   showRegisterForm:boolean = true;
 
+  ActorClicked:any;
+  // doctorClicked:any;
+
+
   constructor() { }
 
   ngOnInit() {
@@ -24,5 +28,15 @@ export class AuthContainerComponent implements OnInit {
       this.showRegisterForm = true;
       this.showLoginForm = false;
     }
+  }
+
+  PatientLoginHandler(){
+    localStorage.setItem("actor" , "patient");
+    this.ActorClicked = true;
+  }
+
+  DoctorLoginHandler(){
+    localStorage.setItem("actor" , "doctor");
+    this.ActorClicked = true;
   }
 }

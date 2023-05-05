@@ -12,7 +12,7 @@ export class NavComponent implements OnInit{
   isNavbarOpen = false;
   isAuth:boolean
   imgSrc:string  ;
-
+  username:any;
 
   constructor(private authService : AuthService , private router:Router, private imgService:ProfileImgService){
     this.isAuth = this.authService.isAuthenticated();
@@ -22,6 +22,7 @@ export class NavComponent implements OnInit{
   ngOnInit(): void {
     this.authService.getLoggedStatus().subscribe(status=>{
       this.isAuth=status;
+      this.username = localStorage.getItem("username")
     });
 
     // this.imgService.getImgUrl().subscribe(img=>{
@@ -36,6 +37,9 @@ export class NavComponent implements OnInit{
     let role = localStorage.getItem("role");
     if(role == 'Patient'){
       this.router.navigate(['/patient/dashboard/profile'])
+    }
+    if(role == 'Doctor'){
+      this.router.navigate(['/Doctor/DoctorRegistersPatient'])
     }
   }
 

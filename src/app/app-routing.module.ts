@@ -4,10 +4,6 @@ import {AuthContainerComponent} from './Components/Authentication/AuthContainer/
 import {ErrorPageComponent} from './LayoutModule/Components/error-page/error-page.component';
 import {HomePageComponent} from './HomePageModule/home-page/home-page.component';
 import {LayoutComponent} from './LayoutModule/layout.component';
-import {PatientAppointmentsComponent} from './PatientModule/patient-appointments/patient-appointments.component';
-import {PatientDrugsComponent} from './PatientModule/patient-Drugs/Patient-Drugs.component';
-import {PatientIllnessesComponent} from './PatientModule/patient-illnesses/patient-illnesses.component';
-import {AdminContainerComponent} from "./AdminModule/AdminContainer/admin-container.component";
 import {AdminLayoutComponent} from "./AdminModule/admin-layout/admin-layout.component";
 
 
@@ -38,12 +34,14 @@ const routes: Routes = [
 
   },
   {path: "Home", redirectTo: ""},
-  {path: "Login", component: AuthContainerComponent},
-  {path: "Register", component: AuthContainerComponent},
+  {path: "Login", redirectTo:"Join" },
+  {path: "Join", component: AuthContainerComponent },
+
+  // {path: "Register", component: AuthContainerComponent},
   {path: "**", component: ErrorPageComponent}];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

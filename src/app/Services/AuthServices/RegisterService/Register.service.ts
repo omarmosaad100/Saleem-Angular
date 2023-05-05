@@ -1,7 +1,9 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ToastService } from 'angular-toastify';
-import { IRegisterAsPatient } from 'src/app/Models/Register/IRegisterAsPatient';
+import { IRegister } from 'src/app/Models/Register/IRegister';
+import { APIUrlConnectionService } from '../../APIUrlConnection.service';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -9,23 +11,33 @@ import { IRegisterAsPatient } from 'src/app/Models/Register/IRegisterAsPatient';
 })
 export class RegisterService {
 
-
-constructor(private http: HttpClient , private _toastService: ToastService){
-
-}
 errors:{} = {};
+url:any;
+role = localStorage.getItem("actor");
+
+constructor(private router:Router , private  UrlService: APIUrlConnectionService , private http: HttpClient , private _toastService: ToastService){
+ let actor = localStorage.getItem("actor");
+ this.url =
+   actor=="patient"
+    // as patient
+    ? `${this.UrlService.GetURL()}/Patient/Register`
+    // as doctor
+    : `${this.UrlService.GetURL()}/Doctor/Register`
+}
 
 
-SubmitData(data:IRegisterAsPatient): void {
+
+SubmitData(data:IRegister): void {
+  
   this.http.post(
-    'https://localhost:7016/api/Patient/Register',
+    this.url,
     data
 
   ).subscribe({
     next: (data)=>{
     },
     error: (error)=>{
-      if (error.error?.length > 0) {
+      if (error?.error?.length > 0) {
         error.error.forEach((e:any) =>
           {
             this._toastService.error( `Error: ${e["description"]}`);
@@ -45,7 +57,16 @@ SubmitData(data:IRegisterAsPatient): void {
 
     },
     complete: ()=>{
-      this._toastService.success('Patient Added Successfully ❤✅');
+      if(this.role == "patient")
+      {
+        this._toastService.success('Patient Added Successfully ❤✅');
+        this.router.navigate(['/patient/dashboard/profile']);
+      }
+      else{
+        this._toastService.success('Doctor Added Successfully ❤✅');
+        this.router.navigate(["/Doctor/DoctorRegistersPatient"]);
+
+      }
     }
 
   });

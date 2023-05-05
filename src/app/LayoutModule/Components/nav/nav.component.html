@@ -7,18 +7,20 @@
         </div>
 
           <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
-            <span class="navbar-toggler-icon"></span>
+            <i class="fa-solid fa-sliders text-light"></i>
+
+
           </button>
           <div class="collapse navbar-collapse flex-row-reverse" [ngClass]="{'show': isNavbarOpen}">
             <!-- un authorized -->
 
             <div  class="d-flex  justify-content-around auth-contanier" >
-              <a [hidden] = "isAuth" class="nav-link px-3 btn py-1 w-25" href="#" routerLink="/Login" routerLinkActive="router-link-active" >Login</a>
-              <a  [hidden] ="isAuth" class="nav-link btn btn-primary text-light py-1 mx-2 w-25" href="/Login">Sign up</a>
+              <a [hidden] = "isAuth" class="nav-link px-3 btn py-1 w-25" routerLink="/Login" routerLinkActive="router-link-active" >Login</a>
+              <a  [hidden] ="isAuth" class="nav-link btn btn-primary text-light py-1 mx-2 w-25" routerLink="/Login">Sign up</a>
               <!-- authorized -->
-              <button class="d-flex nav-link px-3 w-25 btn py-1" (click)="getProfile()" >
+              <button class="d-flex nav-link mx-4 w-25 btn py-1" (click)="getProfile()" >
                 <img  [hidden] = "!isAuth"  [src]="imgSrc" alt="Profile" class="w-30 h-30"/>
-                <span [hidden] = "!isAuth" class="mt-1 mx-2"> Profile </span>
+                <span [hidden] = "!isAuth" class="mt-1"> {{username}} </span>
               </button>
               <button [hidden] = "!isAuth" class="nav-link px-1 btn btn-danger text-light py-1 w-25" (click)="logout()" >Sign Out</button>
             </div>
