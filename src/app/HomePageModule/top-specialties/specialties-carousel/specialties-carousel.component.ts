@@ -25,12 +25,8 @@ export class SpecialtiesCarouselComponent implements OnInit {
         (data:any) => {
             let splittedData = [];
             for (let i = 0; i < data.length; i++) {
-
               splittedData.push(data.slice(i , i+=4));
-              console.log(i , splittedData)
-
             }
-            console.log(splittedData)
             this.data = splittedData
             this.loadingService.unloadPages();
         },
