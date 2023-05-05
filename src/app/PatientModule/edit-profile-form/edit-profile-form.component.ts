@@ -7,6 +7,7 @@ import { EditProfileService } from '../Services/edit-profile.service';
 import { ToastService } from 'angular-toastify';
 import { CloudinaryService } from '../Services/cloudinary.service';
 import { ProfileImgService } from 'src/app/Services/ProfileImg.service';
+import { PatientLoadingService } from '../Services/patient-loading.service';
 
 @Component({
   selector: 'patient-edit-profile-form',
@@ -23,22 +24,35 @@ export class EditProfileFormComponent implements OnInit {
   hasError:any;
   success:any;
 
+  isDataLoaded : any;
 
   selectedFile: File | null = null;
 
   constructor(private profileService:ProfileService , private http: HttpClient , private service:EditProfileService
-    ,private cloudService:CloudinaryService , private imgService:ProfileImgService
+    ,private cloudService:CloudinaryService , private imgService:ProfileImgService,  private loadingService:PatientLoadingService
   ){
     this.ProfileData = new RegisterAsPatient();
   }
   ngOnInit() {
-    this.profileService.getPatientData().subscribe(
-      (data)=>{
+    this.loadingService.loadPages();
+
+    this.profileService.getPatientData().subscribe({
+      next:(data)=>{
+
         this.ProfileData = data;
         this.gender = GenderEnum[data.gender]
         this.imgPath = data.imgPath;
+        this.isDataLoaded = true
+        this.loadingService.unloadPages();
+
+
+      },
+      error:()=>{
+        this.isDataLoaded = false;
+        this.loadingService.unloadPages();
 
       }
+    }
     )
   }
 

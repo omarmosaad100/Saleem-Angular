@@ -1,5 +1,6 @@
 <div class="dahboard row h-100 m-0">
-  <div class="col-md-3 col-sm-12 shadow p-0" [hidden]="isCollapsed">
+  <div class="col-md-3 col-sm-12 shadow p-0 position-relative" [hidden]="isCollapsed">
+    <!-- <i class="fa-solid fa-list btn-collapse p-2" (click)=></i> -->
     <app-patient-sidebar></app-patient-sidebar>
   </div>
 
@@ -25,6 +26,7 @@
       </div>
 
     </div>
+    <app-loading *ngIf="loading"></app-loading>
     <router-outlet></router-outlet>
 
 

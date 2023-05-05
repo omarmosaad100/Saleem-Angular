@@ -3,13 +3,6 @@
 /*}*/
 
 
-.disabled-link {
-  color: gray;
-  pointer-events: none;
-  text-decoration: none;
-  cursor: default;
-}
-
 
 
  @media (max-width: 768px) {
@@ -23,21 +16,6 @@
     background-color: #F5F5F5;
   }
 }
-/*
-@media (min-width: 768px) {
-  .AdminViews{
-    max-height:  50vh;
-    overflow-y: scroll;
-    max-width: 90%;
-    margin: auto;
-  }
-  .AdminViews::-webkit-scrollbar
-  {
-    height: 6px;
-    background-color: #F5F5F5;
-  }
-} */
-
 .sidebar-routes li a{
   cursor:  pointer;
   padding-left: 10px;
@@ -49,22 +27,55 @@
 }
 .sidebar-routes li a:hover{
   background-color: #C1D4D4;
+  color: #022034!important;
+
+}
+.sidebar-routes li a:hover i{
+  color: #022034!important;
+
 }
 
 .active{
-  background-color: #E3EAEE;
-  color: #0d6efd!important;
+  background-color: #C1D4D4;
+  color: #022034!important;
   border: 0;
   text-align: start!important;
+}
+.active i{
+  color: #022034!important;
 
 }
+
 
 .sidebar{
   /* background-color:  #022034!important;
   color: white; */
   background-color: #1c3847;
   color: white;
-  min-height: 100vh;
+  height: 100vh;
+  position: fixed;
+  width: inherit;
 }
 
+.disabled-link {
+  color: gray!important;
+  pointer-events: none;
+  text-decoration: none;
+  cursor: default;
+}
+
+.disabled-link i{
+  color: gray;
+
+}
+
+
+@media (max-width:576px) {
+  .sidebar{
+    width: 100%!important;
+    margin-top: 50px;
+    position: relative!important;
+    height: auto!important;
+  }
+}
 

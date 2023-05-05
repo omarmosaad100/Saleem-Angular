@@ -43,7 +43,7 @@ import { DonationComponent } from './donation/donation.component';
     NgbPaginationModule,
     NgbTypeaheadModule,
     NgbDropdownModule,
-    // LoadingModule
+    LoadingModule
 
 
   ],

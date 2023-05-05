@@ -4,11 +4,14 @@
 
 <div class="w-100 p-0 m-0 flex-column d-flex" >
 
-
-  <div class="row h-50 top-container mx-0">
+  <h2 class="text-center my-5"> View Profile </h2>
+  <div class="alert alert-danger w-75 mx-auto" *ngIf="!dataLoaded">
+    Can't load Patient Data ❌
+  </div>
+  <div class="row h-50 top-container mx-0" >
     <!-- view patient details -->
     <div class="col-md-7 col-sm-12">
-      <patient-details></patient-details>
+      <patient-details (dataIsLoaded) ="checkLoadedHandler($event)"></patient-details>
     </div>
 
     <!-- view patient illnesses -->

@@ -27,3 +27,10 @@
   color: #8DA9BC;
   font-weight: bold;
 }
+
+
+@media (max-width:576px) {
+  .profile-data-container , .profile-img-container {
+    margin-top: 20px;
+  }
+}

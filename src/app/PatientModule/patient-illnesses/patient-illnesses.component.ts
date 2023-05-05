@@ -5,6 +5,7 @@ import { Specialization, SpecializationMap } from '../../Enums/SpecializationEnu
 import { APIUrlConnectionService } from "../../Services/APIUrlConnection.service";
 
 import { DatePipe } from '@angular/common';
+import { PatientLoadingService } from '../Services/patient-loading.service';
 
 @Component({
   selector: 'patient-illnesses',
@@ -14,8 +15,9 @@ import { DatePipe } from '@angular/common';
 export class PatientIllnessesComponent {
 
   baseURL :string = this.url.GetURL() + '/Patient';
+  loading:any;
 
-  constructor(private http: HttpClient, private url:APIUrlConnectionService) {
+  constructor(private http: HttpClient, private url:APIUrlConnectionService , private loadingService:PatientLoadingService) {
 
    }
   illnesses:patientIllnesses[]=[]
@@ -23,12 +25,25 @@ export class PatientIllnessesComponent {
     return SpecializationMap[specialization] || 'Unknown';
   }
 
-  ngOnInit() {const token = localStorage.getItem('token') || '';
-  const headers = { Authorization: 'Bearer ' + token };
-  this.http.get<patientIllnesses[]>(this.baseURL+'/GetPatientillnesses', { headers })
-    .subscribe((data) => {
-      this.illnesses = data;
+  ngOnInit() {
+    this.loadingService.loadPages();
+
+    const token = localStorage.getItem('token') || '';
+    const headers = { Authorization: 'Bearer ' + token };
+    this.http.get<patientIllnesses[]>(this.baseURL+'/GetPatientillnesses', { headers })
+      .subscribe({
+        next:(data) => {
+        this.illnesses = data;
+        this.loading  = true;
+        this.loadingService.unloadPages();
+
+        },
+        error:(error)=>{
+          this.loading  = false;
+          this.loadingService.unloadPages();
+
+        }
     })
-  }
+    }
 
 }

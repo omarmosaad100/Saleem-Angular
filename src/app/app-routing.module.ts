@@ -15,11 +15,12 @@ const routes: Routes = [
   {
     path: "", component: LayoutComponent, children: [
       {path: "", component: HomePageComponent},
-      {
-        path: ""
-        , loadChildren: () => import('./DoctorModule/doctor.module')
-          .then(m => m.DoctorModule)
-      }]
+    ]
+  },
+  {
+    path: "Doctor"
+    , loadChildren: () => import('./DoctorModule/doctor.module')
+      .then(m => m.DoctorModule)
   },
   {
     path: "patient"

@@ -6,7 +6,7 @@
   width: 100%;
 }
 .nav-right{
-  width: 40%;
+  width: 24%;
 }
 
 /* negm test  */
@@ -20,4 +20,22 @@
 }
 
 
+
+@media (max-width:576px) {
+  .navBG{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: inline-block;
+    padding-top: 15px;
+  }
+
+  .btn-collapse-container{
+    width: 50%;
+    position: absolute;
+    left: 10px;
+
+  }
+}
 

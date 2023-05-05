@@ -1,7 +1,15 @@
 <h2 class="text-center my-5">View All Appointments </h2>
-<div class="d-flex flex-wrap">
-  <div class="card m-2 p-3" *ngFor="let doctor of doctors">
 
+<div class="alert alert-danger mx-auto w-75" *ngIf="!dataLoaded">
+  Can't Load any Appointments
+</div>
+
+<div class="alert alert-primary mx-auto w-75" *ngIf="doctors.length < 0">
+  Patient not have any Appointments
+</div>
+
+<div class="d-flex flex-wrap justify-content-center mb-3" *ngIf="dataLoaded">
+  <div class="card mb-3 p-3 mx-2" *ngFor="let doctor of doctors">
     <img src="'../../../../../assets/Images/{{doctor.gender ? 'female.png' : 'male.png'}}"  class="rounded-circle m-auto" style="height: 100px; width: 100px;" alt="...">
     <div class="card-body pt-3">
       <h6 class="card-title mb-3"><b>Name: {{ doctor.name }}</b></h6>

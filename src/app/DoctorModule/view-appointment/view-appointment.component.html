@@ -1,5 +1,9 @@
 
-<div class="container" style="margin: 5px">
+<div class="alert alert-danger m-5 " *ngIf="!appointment">
+  Can't access appointment details
+</div>
+
+<div class="container px-5" *ngIf="appointment">
   <div class="row" style="padding-bottom: 20px; padding-top: 30px;">
     <h1>Prescription</h1>
   </div>

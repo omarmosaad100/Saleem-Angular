@@ -8,6 +8,9 @@ import { FormsModule } from '@angular/forms';
 import { DoctorRoutingModule } from './doctor-routing.module';
 import { DoctorComponent } from './doctor.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DoctorSidebarComponent } from './doctor-sidebar/doctor-sidebar.component';
+import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -18,14 +21,18 @@ import { ReactiveFormsModule } from '@angular/forms';
         ViewAppointmentComponent,
         DoctorRegistersPatientComponent,
         ViewPatientHistoryComponent,
-        DoctorComponent
+        DoctorComponent,
+        DoctorSidebarComponent,
+        DoctorDashboardComponent
     ],
     imports: [
         CommonModule,
         FormsModule,
         // LayoutModule,
         ReactiveFormsModule,
+        NgbDropdownModule,
         DoctorRoutingModule
+
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],  // Add this line
 

@@ -1,4 +1,4 @@
-<div class=" bg-white patient-illnesses pb-3">
+<div class=" bg-white patient-illnesses pb-3" *ngIf="loading">
   <h3 class="text-center py-3"> Patient Illnesses </h3>
 
   <ng-container *ngIf="illnesses.length>0 else noIllness">

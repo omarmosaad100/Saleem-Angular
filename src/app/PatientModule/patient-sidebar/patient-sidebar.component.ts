@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-patient-sidebar',
@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientSidebarComponent implements OnInit {
 
+  @Output() CollapseHandler = new EventEmitter<boolean>();
+  isCollapsed:boolean = false;
+
   constructor() { }
+
+  CollapseHandlerFun() {
+    this.CollapseHandler.emit(!this.isCollapsed);
+  }
 
   ngOnInit() {
   }

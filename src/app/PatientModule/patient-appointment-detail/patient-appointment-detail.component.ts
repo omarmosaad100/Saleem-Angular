@@ -4,6 +4,7 @@ import { APIUrlConnectionService } from '../../Services/APIUrlConnection.service
 import { PatientAppointment } from '../../Models/patientAppointment/Patient-Appointment';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Specialization, SpecializationMap } from '../../Enums/SpecializationEnum.enum';
+import { PatientLoadingService } from '../Services/patient-loading.service';
 
 @Component({
   selector: 'app-patient-appointment-detail',
@@ -17,14 +18,23 @@ export class PatientAppointmentDetailComponent {
   getSpecializationName(specialization: number): string {
     return SpecializationMap[specialization] || 'Unknown';
   }
-  constructor(private http: HttpClient, private url: APIUrlConnectionService, public activeModal: NgbActiveModal) {}
+  constructor(private http: HttpClient, private url: APIUrlConnectionService, public activeModal: NgbActiveModal , private loadingService:PatientLoadingService) {}
 
   ngOnInit() {
+    this.loadingService.loadPages();
+
     const token = localStorage.getItem('token') || '';
     const AppID = localStorage.getItem('Appointment ID') || '';
     const headers = { Authorization: 'Bearer ' + token };
     this.http.get<PatientAppointment>(this.baseURL + '/GetAppointmentDetails/' + AppID, { headers }).subscribe((data) => {
       this.appointment = data;
-    });
+      this.loadingService.unloadPages();
+
+      },
+      (error)=>{
+        this.loadingService.unloadPages();
+
+      }
+    )
   }
 }

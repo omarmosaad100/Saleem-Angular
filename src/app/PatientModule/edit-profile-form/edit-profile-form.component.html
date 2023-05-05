@@ -1,4 +1,11 @@
-<form class="m-auto w-75 mt-5  form px-3  scroll" #Form = "ngForm" (ngSubmit) = "SubmitData()">
+<h2 class="text-center my-5"> Edit Profile </h2>
+
+<div class="alert alert-danger w-75 mx-auto" *ngIf="!isDataLoaded">
+  Can't load Patient Data ❌
+</div>
+
+
+<form class="m-auto w-75 mt-5  form px-3  scroll" #Form = "ngForm" (ngSubmit) = "SubmitData()" *ngIf="isDataLoaded">
 
 
   <div class="alert alert-danger" *ngIf="hasError"> {{errorMessage}}</div>

@@ -1,0 +1,60 @@
+.sidebar-routes li a{
+  cursor:  pointer;
+  padding-left: 10px;
+  border: 0;
+  text-align: left!important;
+  border-radius: 5px;
+
+}
+.sidebar-routes li a:hover{
+  background-color: #C1D4D4;
+  color: #022034!important;
+
+}
+.sidebar-routes li a:hover i{
+  color: #022034!important;
+
+}
+
+.active{
+  background-color: #C1D4D4;
+  color: #022034!important;
+  border: 0;
+  text-align: start!important;
+}
+.active i{
+  color: #022034!important;
+
+}
+
+.sidebar{
+  background-color:  #022034!important;
+  color: white;
+  height: 100vh;
+  /* width: 100%; */
+  position: fixed;
+}
+
+.disabled-link {
+  color: gray;
+  pointer-events: none;
+  text-decoration: none;
+  cursor: default;
+}
+
+.disabled-link i{
+  color: gray;
+
+}
+
+
+
+
+@media (max-width:576px) {
+  .sidebar{
+    width: 100%!important;
+    margin-top: 50px;
+    position: relative!important;
+    height: auto!important;
+  }
+}

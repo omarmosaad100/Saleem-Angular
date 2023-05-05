@@ -2,8 +2,8 @@
 
   form {
     margin: 0 auto;
-    max-width: 500px;
-    background-color: aliceblue;
+    /* max-width: 600px; */
+    /* background-color: rgb(217, 219, 222); */
 }
 /* Add some spacing between form elements */
 .form-group {

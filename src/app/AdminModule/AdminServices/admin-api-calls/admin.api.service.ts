@@ -17,7 +17,7 @@ export class AdminApiService {
     }
   }
 
-  //private readonly URL = "https://localhost:7016/api/Admin";
+ // private readonly URL = "https://localhost:7016/api/Admin";
   private readonly URL = "https://youssefehab77.bsite.net/api/Admin";
 
   getAllDrugs() {
