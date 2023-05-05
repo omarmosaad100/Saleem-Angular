@@ -27,16 +27,28 @@
 
           <!-- add Authentication Header Component-->
           <!-- Active Form Container-->
+
+          <div class="d-flex flex-column w-75  mx-auto" *ngIf="!ActorClicked">
+            <h2 class="pb-5 pt-3 text-center"> Enter Your Role </h2>
+            <button class="btn btn-role fs-4 w-75 mx-auto " (click)="PatientLoginHandler()">
+              As Patient
+            </button>
+
+            <button class="btn btn-role w-75 mx-auto fs-4 my-4"  (click)="DoctorLoginHandler()">
+              As Doctor
+            </button>
+          </div>
+
           <!--* Login Form-->
-          <div [hidden]="!showLoginForm">
+          <div *ngIf="showLoginForm && ActorClicked ">
             <app-LoginForm></app-LoginForm>
           </div>
 
           <!--* Register Form-->
-
-          <div [hidden]="!showRegisterForm">
+          <div *ngIf="showRegisterForm && ActorClicked">
             <app-RegisterForm></app-RegisterForm>
           </div>
+
 
         </div>
       </div>

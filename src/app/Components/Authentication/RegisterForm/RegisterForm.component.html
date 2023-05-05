@@ -1,7 +1,7 @@
 <form class="register-form form px-3  scroll" #Form = "ngForm" (ngSubmit) = "SubmitData()">
 
   <!-- * name -->
-    <div class="mb-2">
+    <div class="mb-3">
       <label for="name" class="form-label"> Username</label>
       <input #fname="ngModel" [(ngModel)]="RegisterData.name"  type="text"  class="form-control" id="name" name="name" required >
       <div [hidden]=" fname.valid || fname.untouched" class=" text-danger py-1">
@@ -10,7 +10,7 @@
     </div>
 
     <!-- * email -->
-    <div class="mb-2">
+    <div class="mb-3">
       <label for="email"  class="form-label">Email address</label>
       <input #emailRef="ngModel" name="email"  [(ngModel)]="RegisterData.email" type="email" class="form-control" id="email" required pattern="[a-zA-Z0-9]{1,}@[a-zA-Z]{3,}.[a-zA-Z]{3,4}"  >
 
@@ -22,7 +22,7 @@
     </div>
 
     <!-- * Password -->
-    <div class="mb-2">
+    <div class="mb-3">
       <label for="password" class="form-label">Password</label>
       <input #password="ngModel" [(ngModel)]="RegisterData.password" type="password" class="form-control" id="password"  name="password"  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}" required>
 
@@ -33,7 +33,7 @@
     </div>
 
     <!-- * NationalID -->
-    <div class="mb-2">
+    <div class="mb-3">
       <label for="nationalID" class="form-label">National ID</label>
       <input #nationalID="ngModel" [(ngModel)]="RegisterData.nationalID" type="text" class="form-control" id="nationalID" pattern="[0-9]{14}" required name="nationalID">
 
@@ -43,7 +43,33 @@
       </div>
     </div>
 
-     <!-- * Mobile -->
+    <!--* *********** Doctor ************ -->
+
+    <!-- Doctor License -->
+    <div class="mb-3" *ngIf="isRoleDoctor">
+      <label for="license" class="form-label">License ID</label>
+      <input #LicenseRef="ngModel" [(ngModel)]="RegisterData.license" type="text" class="form-control" id="license" required name="license">
+
+      <div [hidden]="LicenseRef.untouched || LicenseRef.valid" class="text-danger py-1">
+        <span [hidden]="!LicenseRef.errors?.['required']"> License ID is Required <br></span>
+      </div>
+    </div>
+
+    <div class="mb-3" *ngIf="isRoleDoctor">
+      <label for="specialization" class="form-label">Specialization</label>
+
+      <div class="col-sm-12 col-lg-12">
+        <select class="form-control" [(ngModel)]="RegisterData.specialization" name="specialization">
+          <option  [value]="index" *ngFor="let spec of getAllSpecialization() ; let index = index" class="form-control"> {{spec}} </option>
+  
+        </select>
+      </div>
+      
+    </div>
+    <!--* *********** end Doctor ************ -->
+
+
+    <!-- * Mobile -->
      <div class="mb-3">
       <label for="mobile" class="form-label">Mobile</label>
       <div class="input-group">
@@ -60,14 +86,14 @@
 
 
     <!-- * Age -->
-    <div class="mb-2">
+    <div class="mb-3" *ngIf="!isRoleDoctor">
       <label for="age" class="form-label">Age</label>
       <input #age="ngModel" [(ngModel)]="RegisterData.age" type="number" min="0" max="200" class="form-control" id="age" required name="age">
     </div>
 
 
     <!-- * Gender -->
-    <div class="mb-2">
+    <div class="mb-3">
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="Gender" id="Female"  [(ngModel)]="gender" value="Female">
         <label class="form-check-label" for="Female">Female</label>

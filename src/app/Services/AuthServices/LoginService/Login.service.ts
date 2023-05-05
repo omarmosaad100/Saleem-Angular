@@ -13,10 +13,18 @@ export class LoginService {
 
   private isLoggedIn:BehaviorSubject<boolean>;
   errors:{} = {};
+  url:any;
 
   constructor(private  UrlService: APIUrlConnectionService ,private http: HttpClient , private _toastService: ToastService , private router: Router){
     this.isLoggedIn=new BehaviorSubject<boolean> (this.isUserLogged);
 
+    let actor = localStorage.getItem("actor");
+    this.url =
+    actor=="patient"
+      // as patient
+      ? `${this.UrlService.GetURL()}/Patient/Login`
+      // as doctor
+      : `${this.UrlService.GetURL()}/Doctor/Login`
   }
 
   get isUserLogged(): boolean
@@ -25,8 +33,9 @@ export class LoginService {
   }
 
   SubmitData(data:ILoginAsPatient): void {
+
     this.http.post(
-      `${this.UrlService.GetURL()}/Patient/Login`,
+      this.url,
       {
         "userNationalId" : data.userNationalId,
         "password" :data.password
@@ -36,10 +45,17 @@ export class LoginService {
         if(data){
           localStorage.setItem("token" , data['token']);
           this.isLoggedIn.next(true);
+
           if(data['role'] == 'Patient'){
             localStorage.setItem("role" , data['role']);
             localStorage.setItem("username" , data['username']);
             this.router.navigate(['/patient/dashboard/profile']);
+          }
+
+          else if(data['role'] == 'Doctor'){
+            localStorage.setItem("role" , data['role']);
+            localStorage.setItem("username" , data['username']);
+            this.router.navigate(['/Doctor/RegistersPatient']);
           }
         }
       },
@@ -58,6 +74,11 @@ export class LoginService {
   logout(): void {
     // Perform logout logic here
     localStorage.removeItem('token')
+    localStorage.removeItem("username");
+
+    localStorage.removeItem('actor')
+
+    
     this.isLoggedIn.next(false);
     this.router.navigate(['/Login']);
   }

@@ -1,7 +1,7 @@
 import { GenderEnum } from "../../Enums/GenderEnum.enum";
-import { IRegisterAsPatient } from "./IRegisterAsPatient";
+import { IRegister } from "./IRegister";
 
-export class RegisterAsPatient implements IRegisterAsPatient {
+export class RegisterAsPatient implements IRegister {
 
   nationalID: string  = "";
   name: string = "";

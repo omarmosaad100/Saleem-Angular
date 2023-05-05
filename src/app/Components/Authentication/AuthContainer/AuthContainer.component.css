@@ -39,6 +39,14 @@
   }
 }
 
+.btn-role{
+  background-color: #D0E2E0;
+  height: 100px;
+  color: #00385C;
+}
+.btn-role:nth-child(2){
+  background-color: #F5CE23;
+}
 
 @media (min-width:576px ) and (max-width: 991px){
   .image-container > img{
