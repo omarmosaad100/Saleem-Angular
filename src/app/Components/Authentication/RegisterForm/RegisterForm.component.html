@@ -56,15 +56,15 @@
     </div>
 
     <div class="mb-3" *ngIf="isRoleDoctor">
-      <label for="specialization" class="form-label">Specialization</label>
+      <label  class="form-label">Specialization</label>
 
       <div class="col-sm-12 col-lg-12">
         <select class="form-control" [(ngModel)]="RegisterData.specialization" name="specialization">
           <option  [value]="index" *ngFor="let spec of getAllSpecialization() ; let index = index" class="form-control"> {{spec}} </option>
-  
+
         </select>
       </div>
-      
+
     </div>
     <!--* *********** end Doctor ************ -->
 
