@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppointmentDto } from '../../Dtos/AppointmentDto';
 
@@ -7,6 +7,7 @@ import { AppointmentDto } from '../../Dtos/AppointmentDto';
   providedIn: 'root'
 })
 export class AppointmentService {
+
 
   constructor(private http: HttpClient) { }
 
@@ -37,7 +38,7 @@ export class AppointmentService {
 
   public GetPidByNid(nid: any): Observable<any> {
     const url =  `https://youssefehab77.bsite.net/api/Doctor/GetPidByNid?nid=${nid}`;
-    return this.http.get(url);
+    return this.http.get(url, { responseType: 'text' as 'json' });
   }
 
   public DeleteIssueByPidAndIssueName(pid: any, issueName: any){
