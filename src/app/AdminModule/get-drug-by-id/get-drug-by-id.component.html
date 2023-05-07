@@ -1,34 +1,37 @@
 <div class="card mx-auto my-5 border-0 shadow " style="width: 20rem;">
-  <img class="card-img-top DrugdetImage" src="../../../assets/Images/drugIcon.png" alt="Card image cap" class="w-50 mx-auto py-2">
+  <img class="card-img-top DrugdetImage" src="../../../assets/Images/drugIcon.png" alt="Card image cap"
+       class="w-50 mx-auto py-2">
 
-    <div class="d-flex card-header">
-      <h5> Drug Name : </h5>
-      <h5 class="card-title px-2">{{Drug.name}}</h5>
-    </div>
+  <div class="text-center  d-flex card-header justify-content-center">
+    <h2 class="card-title px-2">{{Drug.name}}</h2>
+  </div>
 
-    <!--    <p class="card-text">{{Drug.id}}</p>-->
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        <p>Drug Method :</p>
-        <p class="card-text">{{Drug.method}}</p>
-      </li>
+  <!--    <p class="card-text">{{Drug.id}}</p>-->
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item text-center">
+      <div class="d-flex justify-content-center card-header">
+        <h4>Drug Method</h4>
+      </div>
+      <p class="card-text">{{Drug.method}}</p>
+    </li>
 
-      <li class="list-group-item" *ngIf="Drug.treatedIssuesIds  > 0">
-        Treated Issues:
-        <br>
-        <p *ngFor="let treatedIssue of Drug.treatedIssuesIds" class="card-text">{{treatedIssue.name}}</p>
-      </li>
+    <li class="list-group-item text-center" *ngIf="Drug.treatedIssuesIds.length  > 0">
+      <div class="d-flex card-header justify-content-center">
+        <h4>Treated Issues</h4>
+      </div>
+      <p *ngFor="let treatedIssue of Drug.treatedIssuesIds" class="card-text">{{treatedIssue.name}}</p>
+    </li>
 
-      <li class="list-group-item" *ngIf="Drug.conflictedIssuesIds  > 0">
-        Conflicted Issues :
-        <br>
-        <p *ngFor="let conflictedIssue of Drug.conflictedIssuesIds" class="card-text">{{conflictedIssue.name}}</p>
-        <a routerLink="/Admin/GetAllDrugs" class="btn btn-primary">Go to drug list</a>
-        <a routerLink="/Admin/UpdateDrug/{{ID}}" class="btn btn-primary ms-5">Update drug</a>
-      </li>
-
-    </ul>
-
-
-
+    <li class="list-group-item text-center" *ngIf="Drug.conflictedIssuesIds.length  > 0">
+      <div class="d-flex card-header justify-content-center">
+        <h4>Side Effects</h4>
+      </div>
+      <br>
+      <p *ngFor="let conflictedIssue of Drug.conflictedIssuesIds" class="card-text">{{conflictedIssue.name}}</p>
+    </li>
+  </ul>
+<div class="d-flex justify-content-center align-items-center mt-3">
+  <a routerLink="/Admin/GetAllDrugs" class="btn btn-primary">Go to drug list</a>
+  <a routerLink="/Admin/UpdateDrug/{{ID}}" class="btn btn-primary ms-5">Update drug</a>
+</div>
 </div>

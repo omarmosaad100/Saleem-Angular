@@ -14,14 +14,15 @@ export class GetDrugByIdComponent implements OnInit {
 
   ID: any;
   Drug: any;
+
   constructor(private myActivate: ActivatedRoute, private myService: AdminApiService) {
     this.ID = myActivate.snapshot.params["id"]
-    this.Drug =  new NewDrugDto("", DrugTakingMethod.Oral);
+    this.Drug = new NewDrugDto("", DrugTakingMethod.Oral, [], []);
   }
 
   ngOnInit(): void {
     this.myService.getDrugById(this.ID).subscribe({
-      next: (data:any) => {
+      next: (data: any) => {
         console.log(data);
         this.Drug.name = data.name;
         this.Drug.method = this.getEnumString(data["method"])
