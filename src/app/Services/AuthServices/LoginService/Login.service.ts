@@ -54,8 +54,9 @@ export class LoginService {
 
           else if(data['role'] == 'Doctor'){
             localStorage.setItem("role" , data['role']);
-            localStorage.setItem("username" , data['username']);
-            this.router.navigate(['/Doctor/RegistersPatient']);
+            localStorage.setItem("username" , data['username']); //get did
+            localStorage.setItem("did" , data['did']); //get did
+            this.router.navigate(['/Doctor/DoctorRegistersPatient']);
           }
         }
       },
@@ -78,7 +79,7 @@ export class LoginService {
 
     localStorage.removeItem('actor')
 
-    
+
     this.isLoggedIn.next(false);
     this.router.navigate(['/Login']);
   }
