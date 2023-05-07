@@ -27,7 +27,7 @@ export class AppointmentService {
   }
 
   public AddAppointment(appointmentDto: AppointmentDto): Observable<any> {
-    const url = `https://youssefehab77.bsite.net/api/Doctor/AddAppointment`;
+    const url = `https://localhost:7016/api/Doctor/AddAppointment`;
     return this.http.post(url, appointmentDto);
   }
 
