@@ -16,7 +16,7 @@ export class AppointmentDetailsFormComponent {
 
   doctorComment= "";
   issues: any;
-  did = 2; //get from claim
+  did = localStorage.getItem("did"); //get from claim
   nid: any;
   pid: any;
   doctorProfile: any;
@@ -26,6 +26,7 @@ export class AppointmentDetailsFormComponent {
 
   ngOnInit(): void {
     this.nid = window.history.state.nid;
+    console.log(this.nid);
     this.getAllIssues();
     this.GetPidByNid();
   }
@@ -39,7 +40,7 @@ export class AppointmentDetailsFormComponent {
 
   GetPidByNid(){
     this.appointmentService.GetPidByNid(this.nid).subscribe((data: any) =>
-      {this.pid = data;}
+    {this.pid = data;}
     );
   }
 

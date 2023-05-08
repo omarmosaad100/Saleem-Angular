@@ -8,21 +8,21 @@
   Patient not have any Appointments
 </div>
 
-<div class="d-flex flex-wrap justify-content-center mb-3" *ngIf="dataLoaded">
-  <div class="card mb-3 p-3 mx-2" *ngFor="let doctor of doctors">
-    <img src="'../../../../../assets/Images/{{doctor.gender ? 'female.png' : 'male.png'}}"  class="rounded-circle m-auto" style="height: 100px; width: 100px;" alt="...">
-    <div class="card-body pt-3">
-      <h6 class="card-title mb-3"><b>Name: {{ doctor.name }}</b></h6>
-      <p class="card-text">Gender: {{ doctor.gender === 0 ? 'Male' : 'Female' }}</p>
-      <p class="card-text">Specialization: {{ getSpecializationName(doctor.specialization) }}</p>
-      <p class="card-text">Date: {{ doctor.appointmentDate | date:'yyyy/MM/dd'}}</p>
+<div class="container my-3 mx-3">
+  <div class="row">
+    <div class="col-md-4 col-sm-6 mb-3" *ngFor="let doctor of doctors">
+      <div class="card p-3">
+        <img src="'../../../../../assets/Images/{{doctor.gender ? 'female.png' : 'male.png'}}"  class="rounded-circle m-auto" style="height: 100px; width: 100px;" alt="...">
+        <div class="card-body pt-3">
+          <h6 class="card-title mb-3"><b>Name: {{ doctor.name }}</b></h6>
+          <p class="card-text">Gender: {{ doctor.gender === 0 ? 'Male' : 'Female' }}</p>
+          <p class="card-text">Specialization: {{ getSpecializationName(doctor.specialization) }}</p>
+          <p class="card-text">Date: {{ doctor.appointmentDate | date:'yyyy/MM/dd'}}</p>
+        </div>
+        <div class="card-footer text-center">
+          <a class="btn btn-outline-primary" (click)="logDoctorId(doctor.id)">More Details</a>
+        </div>
+      </div>
     </div>
-    <div class="card text-center">
-      <a class="btn btn-outline-primary" (click)="logDoctorId(doctor.id)">More Details</a>
-    </div>
-  </div>
-  <div class="col-md col-sm-12">
-
-    <!-- <app-patient-appointment-detail [hidden]="!isactive"></app-patient-appointment-detail> -->
   </div>
 </div>

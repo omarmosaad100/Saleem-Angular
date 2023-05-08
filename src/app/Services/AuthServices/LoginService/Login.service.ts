@@ -57,9 +57,9 @@ export class LoginService {
           else if(data['role'] == 'Doctor')
           {
             localStorage.setItem("role" , data['role']);
-            localStorage.setItem("username" , data['username']);
-
-            //this.router.navigate(['/Doctor/DoctorRegistersPatient']);},
+            localStorage.setItem("username" , data['username']); //get did
+            localStorage.setItem("did" , data['did']); //get did
+            this.router.navigate(['/Doctor/DoctorRegistersPatient']);
           }
         }
       },
