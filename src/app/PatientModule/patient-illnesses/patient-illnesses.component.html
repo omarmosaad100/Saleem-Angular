@@ -6,11 +6,11 @@
 
     <li class="px-2 mx-3" *ngFor="let specialization of illnesses">
       <h6 class="m-2 text-danger">{{getSpecializationName(specialization.specialization) }}</h6>
-        <!-- <ul>
+        <ul>
           <li *ngFor="let issue of specialization.diagnosedIssues">
             <p class="mb-0 pb-1">Issue: {{ issue.name }}</p>
           </li>
-        </ul> -->
+        </ul>
       </li>
     </ul>
 
