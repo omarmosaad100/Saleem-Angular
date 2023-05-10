@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DoctorSidebarComponent } from './doctor-sidebar/doctor-sidebar.component';
 import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChatBoxComponent } from './chat-box/chat-box.component';
 
 
 
@@ -23,7 +24,8 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
         ViewPatientHistoryComponent,
         DoctorComponent,
         DoctorSidebarComponent,
-        DoctorDashboardComponent
+        DoctorDashboardComponent,
+        ChatBoxComponent
     ],
     imports: [
         CommonModule,
