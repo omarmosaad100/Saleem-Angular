@@ -27,7 +27,7 @@
   position: fixed;
 }
 
-@media (max-width:576px) {
+@media (max-width:768px) {
   .sidebar{
     width: 100%!important;
     margin-top: 50px;

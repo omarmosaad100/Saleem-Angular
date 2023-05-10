@@ -1,18 +1,36 @@
-<ngb-carousel
-	#carousel
-	[interval]="5000"
-	[pauseOnHover]="pauseOnHover"
-	[pauseOnFocus]="pauseOnFocus"
-	(slide)="onSlide($event)"
-  class="w-100"
->
+
   <!-- <div *ngComponentOutlet="componentData"></div> -->
-  <ng-template ngbSlide *ngFor="let img of images; index as i" class="position-relative">
-    <div class="carousel-img-wrapper">
-    </div>
-    <img [src]="img" alt="My image {{i + 1}} description"  class="carousel-img"/>
+    <div class="row mx-0 carousel-container ">
+      <div class="col-md-6 col-sm-12 carousel-text-container px-0">
+        <div class="d-flex px-5 justify-content-center align-items-center h-100">
+          <h2 class="text-white ">
+            "In the process of finding a solution to problems caused by human defects,
+            we discovered a solution to human defects"
 
-  </ng-template>
+          </h2>
+        </div>
+      </div>
 
-</ngb-carousel>
+      <div class="col-md-6 col-sm-12 px-0">
+        <ngb-carousel
+          #carousel
+          [interval]="5000"
+          [pauseOnHover]="pauseOnHover"
+          [pauseOnFocus]="pauseOnFocus"
+          (slide)="onSlide($event)"
+          class="w-100"
+        >
+          <ng-template ngbSlide *ngFor="let img of images; index as i" class="position-relative">
+
+                <div class="carousel-img-wrapper">
+                </div>
+                <img [src]="img" alt="My image {{i + 1}} description"  class="carousel-img"/>
+              </ng-template>
+
+            </ngb-carousel>
+      </div>
+  </div>
+
+
+
 

@@ -18,13 +18,19 @@
   margin-bottom: 20px;
 }
 
-
+.features h1{
+  font-size: 40px;
+}
 @media (max-width:991px) {
 
   .feature-container{
     width: 95%;
     margin-left: 10px;
     margin-bottom: 20px;
+  }
+
+  .feature-container h1{
+    font-size: 25px!important;
   }
 
 

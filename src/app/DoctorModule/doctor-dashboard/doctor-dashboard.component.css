@@ -12,14 +12,27 @@
   /* box-shadow: 2px 3px 5px rgb(186, 186, 186); */
 }
 
+.doc-sidebar{
+  background-color:  #022034!important;
 
-@media (max-width:576px) {
-  .dahboard-nav{
-    position: absolute;
-    top: 0;
-  }
-  .dashboard-content{
-    margin-top: 50px;
-  }
 }
 
+
+@media (max-width:768px) {
+  .dahboard-nav{
+    position: absolute;
+    width: 100%;
+    top: 0;
+  }
+
+.router-outlet-container{
+  margin-top: 120px;
+}
+}
+
+
+@media (min-width:768px) {
+  .dashboard-content{
+    position:relative;
+  }
+}

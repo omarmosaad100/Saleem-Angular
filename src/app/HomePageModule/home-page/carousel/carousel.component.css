@@ -12,10 +12,22 @@
   height: 80vh;
 }
 
+.carousel-text-container{
+  background-color: #022034;
+  color: white!important;
+}
 
-@media (max-width:576px) {
+@media (max-width:768px) {
   .carousel-img{
     height: 30vh;
+  }
+  .carousel-container{
+    flex-direction: column-reverse;
+  }
+  .carousel-text-container h2
+  {
+    font-size: 20px;
+    padding: 20px;
   }
 }
 
