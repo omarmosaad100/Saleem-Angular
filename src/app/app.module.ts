@@ -20,7 +20,6 @@ import {PatientModule} from './PatientModule/patient.module';
 import {AdminModule} from "./AdminModule/admin.module";
 import {AdminLayoutModule} from "./AdminModule/admin-layout/admin-layout.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { GetAllDrugsComponent } from './AdminModule/get-all-drugs/get-all-drugs.component';
 
 
 @NgModule({

@@ -28,7 +28,7 @@ constructor(private router:Router , private  UrlService: APIUrlConnectionService
 
 
 SubmitData(data:IRegister): void {
-  
+
   this.http.post(
     this.url,
     data
@@ -44,9 +44,10 @@ SubmitData(data:IRegister): void {
           }
 
         )
-    } else {
+    }
+      else {
         let iterator : any;
-        for (iterator of  Object.values(error.error.errors)) {
+        for (iterator of  Object.values(error?.error?.errors)) {
           Array.from(iterator).forEach(element => {
             this._toastService.error(element + "❌");
           });

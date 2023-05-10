@@ -5,6 +5,8 @@ import { ToastService } from 'angular-toastify';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ILoginAsPatient } from 'src/app/Models/Login/ILoginAsPatient';
 import { APIUrlConnectionService } from '../../APIUrlConnection.service';
+import { switchMap } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -52,7 +54,8 @@ export class LoginService {
             this.router.navigate(['/patient/dashboard/profile']);
           }
 
-          else if(data['role'] == 'Doctor'){
+          else if(data['role'] == 'Doctor')
+          {
             localStorage.setItem("role" , data['role']);
             localStorage.setItem("username" , data['username']); //get did
             localStorage.setItem("did" , data['did']); //get did
@@ -66,10 +69,18 @@ export class LoginService {
       },
       complete: ()=>{
         this._toastService.success('Login Successfully ❤✅');
+        this.createChat();
       }
 
     });
 
+  }
+
+  createChat() {
+    const createChatUrl = `${this.UrlService.GetURL()}/GPT/CreateChat`;
+    this.http.get(createChatUrl).subscribe({
+      complete: () => console.log(this.http.get(createChatUrl))
+    });
   }
 
   logout(): void {
