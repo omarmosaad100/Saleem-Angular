@@ -9,11 +9,10 @@
 }
 }
 
-
+/* small */
 @media (min-width:576px) and (max-width:991px) {
   .login-img{
     height: 50vh!important;
   }
 }
-
 

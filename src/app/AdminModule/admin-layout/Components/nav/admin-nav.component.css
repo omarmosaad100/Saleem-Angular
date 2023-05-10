@@ -21,7 +21,7 @@
 
 
 
-@media (max-width:576px) {
+@media (max-width:768px) {
   .navBG{
     position: absolute;
     top: 0;
@@ -38,4 +38,3 @@
 
   }
 }
-
