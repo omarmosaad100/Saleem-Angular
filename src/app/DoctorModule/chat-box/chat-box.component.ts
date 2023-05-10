@@ -20,9 +20,9 @@ export class ChatBoxComponent  implements OnInit
   constructor(private service: AppointmentService) {}
 
   ngOnInit(): void {
-    this.nid = window.history.state.nid;
-    this.GetPidByNid();
-    this.getAllIssues();
+    // this.nid = window.history.state.nid;
+    // this.GetPidByNid();
+    // this.getAllIssues();
   }
 
 

@@ -1,36 +1,39 @@
-<div class="card mx-auto my-5 border-0 shadow " style="width: 20rem;">
+<div class="card mx-auto my-5 border-0 shadow " style="width: 25rem;">
   <img class="card-img-top DrugdetImage" src="../../../assets/Images/drugIcon.png" alt="Card image cap"
-       class="w-50 mx-auto py-2">
+       class="w-40 mx-auto py-2">
 
-  <div class="text-center  d-flex card-header justify-content-center">
+  <div class="d-flex card-header justify-content-center">
     <h2 class="card-title px-2">{{Drug.name}}</h2>
   </div>
 
   <!--    <p class="card-text">{{Drug.id}}</p>-->
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item text-center">
-      <div class="d-flex justify-content-center card-header">
+  <ul class="list-group list-group-flush  mx-0">
+    <li class="list-group-item p-0 my-3 text-center">
+      <div class="d-flex card-header justify-content-center">
         <h4>Drug Method</h4>
       </div>
       <p class="card-text">{{Drug.method}}</p>
     </li>
 
-    <li class="list-group-item text-center" *ngIf="Drug.treatedIssuesIds.length  > 0">
-      <div class="d-flex card-header justify-content-center">
+
+  </ul>
+
+  <ul class="row p-0 m-0">
+    <li class="list-group-item text-center col-md-6 col-sm-12" *ngIf="Drug.treatedIssuesIds.length  > 0">
+      <div class="d-flex card-header justify-content-center ">
         <h4>Treated Issues</h4>
       </div>
-      <p *ngFor="let treatedIssue of Drug.treatedIssuesIds" class="card-text">{{treatedIssue.name}}</p>
+      <p *ngFor="let treatedIssue of Drug.treatedIssuesIds" class="card-text pt-2">{{treatedIssue.name}}</p>
     </li>
 
-    <li class="list-group-item text-center" *ngIf="Drug.conflictedIssuesIds.length  > 0">
+    <li class="list-group-item text-center col-md-6 col-sm-12" *ngIf="Drug.conflictedIssuesIds.length  > 0">
       <div class="d-flex card-header justify-content-center">
         <h4>Side Effects</h4>
       </div>
-      <br>
-      <p *ngFor="let conflictedIssue of Drug.conflictedIssuesIds" class="card-text">{{conflictedIssue.name}}</p>
+      <p *ngFor="let conflictedIssue of Drug.conflictedIssuesIds" class="card-text pt-2">{{conflictedIssue.name}}</p>
     </li>
   </ul>
-<div class="d-flex justify-content-center align-items-center mt-3">
+<div class="d-flex justify-content-center align-items-center my-3">
   <a routerLink="/Admin/GetAllDrugs" class="btn btn-primary">Go to drug list</a>
   <a routerLink="/Admin/UpdateDrug/{{ID}}" class="btn btn-primary ms-5">Update drug</a>
 </div>
