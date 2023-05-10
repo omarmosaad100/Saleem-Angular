@@ -51,4 +51,14 @@ export class AppointmentService {
     return this.http.get(url);
   }
 
+  public StartNewChat(pid: any, issues: any): Observable<any>{
+    const url = `https://youssefehab77.bsite.net/api/GPT/StartNewChat?pid=${pid}&issues=${issues}`
+    return this.http.get(url);
+  }
+
+  public SaleemGPT(query: any): Observable<any>{
+    const url = `https://youssefehab77.bsite.net/api/GPT/SaleemGPT?query=${query}`
+    return this.http.get(url);
+  }
+
 }

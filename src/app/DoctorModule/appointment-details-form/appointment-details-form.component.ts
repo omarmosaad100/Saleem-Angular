@@ -11,7 +11,8 @@ import { forkJoin, Observable } from 'rxjs';
   styleUrls: ['./appointment-details-form.component.css']
 })
 
-export class AppointmentDetailsFormComponent {
+export class AppointmentDetailsFormComponent implements OnInit
+{
   @Output() appointmentAdded = new EventEmitter<void>();
 
   doctorComment= "";

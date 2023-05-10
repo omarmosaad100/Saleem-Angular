@@ -1,5 +1,5 @@
 <div class="container pb-5 add-drug">
-  <h1 class="text-center py-3">  Add New Drug</h1>
+  <h1 class="text-center py-3"> Add New Drug</h1>
 
   <div class=" w-75 m-auto">
     <div class="form-group mb-4">
@@ -27,19 +27,22 @@
         </div>
 
         <!-- <div class="mt-3"> -->
-          <hr class="mt-3"/>
-          <h4 class="py-3">Conflicted Issues</h4>
-          <div class="col-md-4 col-sm-6 mb-3" *ngFor="let issue of Issues?.length > 0 && Issues">
-            <input id="c-{{issue.id}}" type="checkbox" name="{{issue.name}}" [value]="issue.id"
-                   (change)="onConflictedChecked($event, issue.id)">
-            <label class="px-2">{{issue.name}}</label>
-          </div>
-        <!-- </div> -->
+        <hr class="mt-3"/>
+        <h4 class="py-3">Conflicted Issues</h4>
+        <div class="col-md-4 col-sm-6 mb-3" *ngFor="let issue of Issues?.length > 0 && Issues">
+          <input id="c-{{issue.id}}" type="checkbox" name="{{issue.name}}" [value]="issue.id"
+                 (change)="onConflictedChecked($event, issue.id)">
+          <label class="px-2">{{issue.name}}</label>
         </div>
+        <!-- </div> -->
+      </div>
 
 
     </div>
-    <button type="button" class="btn btn-primary my-3" (click)="AddDrug()">Add drug</button>
+    <div class="d-flex justify-content-center align-items-center">
+
+      <button type="button" class="btn btn-primary my-3 w-25" (click)="AddDrug()">Add drug</button>
+    </div>
 
   </div>
 

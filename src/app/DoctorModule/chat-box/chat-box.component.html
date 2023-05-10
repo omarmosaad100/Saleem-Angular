@@ -1,0 +1,14 @@
+<div class="chat-box-container">
+  <button class="chat-box-button" (click)="toggleChatBox()">
+    Chat
+  </button>
+  <div *ngIf="isChatBoxOpen" class="chat-box">
+    <div class="chat-box-messages">
+      <!-- Display messages here -->
+    </div>
+    <div class="chat-box-input">
+      <input type="text" [(ngModel)]="userInput" placeholder="Type your message" />
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>
