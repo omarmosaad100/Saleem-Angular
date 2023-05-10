@@ -20,10 +20,10 @@ export class PatientIllnessesComponent {
   constructor(private http: HttpClient, private url:APIUrlConnectionService , private loadingService:PatientLoadingService) {
 
    }
-  illnesses:patientIllnesses[]=[]
-  getSpecializationName(specialization: number): string {
-    return SpecializationMap[specialization] || 'Unknown';
-  }
+  illnesses:patientIllnesses[]=[];
+  // getSpecializationName(specialization: number): string {
+  //   return SpecializationMap[specialization] || 'Unknown';
+  // }
 
   ngOnInit() {
     this.loadingService.loadPages();
@@ -31,11 +31,14 @@ export class PatientIllnessesComponent {
     const token = localStorage.getItem('token') || '';
     const headers = { Authorization: 'Bearer ' + token };
     this.http.get<patientIllnesses[]>(this.baseURL+'/GetPatientillnesses', { headers })
+    // this.http.get<patientIllnesses[]>( "https://localhost:7016/api/Patient/GetPatientillnesses", { headers })
       .subscribe({
         next:(data) => {
         this.illnesses = data;
         this.loading  = true;
         this.loadingService.unloadPages();
+        for(var item of this.illnesses)
+        console.log(item.issueName)
 
         },
         error:(error)=>{
