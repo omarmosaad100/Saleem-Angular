@@ -37,9 +37,6 @@ export class PatientIllnessesComponent {
         this.illnesses = data;
         this.loading  = true;
         this.loadingService.unloadPages();
-        for(var item of this.illnesses)
-        console.log(item.issueName)
-
         },
         error:(error)=>{
           this.loading  = false;
