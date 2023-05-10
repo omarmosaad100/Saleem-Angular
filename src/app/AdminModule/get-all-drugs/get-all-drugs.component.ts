@@ -16,7 +16,7 @@ export class GetAllDrugsComponent implements OnInit {
   data:any;
   page = 1;
   currentPage = 1;
-	pageSize = 5;
+	pageSize = 10;
 
   constructor(private http: HttpClient,
               private myservice: AdminApiService,
