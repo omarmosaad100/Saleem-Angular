@@ -89,6 +89,7 @@ export class LoginService {
     localStorage.removeItem("username");
 
     localStorage.removeItem('actor')
+    localStorage.removeItem('role')
 
 
     this.isLoggedIn.next(false);

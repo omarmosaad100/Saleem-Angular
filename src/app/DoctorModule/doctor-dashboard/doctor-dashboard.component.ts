@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {LoginService} from "../../Services/AuthServices/LoginService/Login.service";
 
 @Component({
   selector: 'app-doctor-dashboard',
@@ -8,25 +9,25 @@ import { Router } from '@angular/router';
 })
 export class DoctorDashboardComponent implements OnInit {
 
-  isCollapsed:boolean = false;
-  imgSrc :string = localStorage.getItem("profileImg") ?? "../../../assets/Images/profile.png";
-  username:any;
+  isCollapsed: boolean = false;
+  imgSrc: string = localStorage.getItem("profileImg") ?? "../../../assets/Images/profile.png";
+  username: any;
   loading: any;
 
-  constructor(private router:Router){
+  constructor(private router: Router, private authService: LoginService) {
 
     this.username = localStorage.getItem("username")?.toString();
 
     // this.router.navigate(['/']); // routing automatically to profile
   }
+
   ngOnInit() {
 
   }
-  logout(){
-    //this.authService.logout();
-    this.router.navigate(['/Login']);
-  }
 
+  logout() {
+    this.authService.logout();
+  }
 
 
 }
