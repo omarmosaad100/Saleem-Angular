@@ -60,7 +60,6 @@
 
 # View All Appointment 
 ![image](https://github.com/omarmosaad100/Saleem-Angular/assets/71345608/3a1dde98-49d5-4fba-ad1b-0bb0f306c3b7)
-![image](https://github.com/omarmosaad100/Saleem-Angular/assets/71345608/a3ad3e1e-532e-413b-b26b-516c4e91c87b)
 
 # Donation 
 A patient can make donation to the App, which will be used on any health issue in Egypt.
