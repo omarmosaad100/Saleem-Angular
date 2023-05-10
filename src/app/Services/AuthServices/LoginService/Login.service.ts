@@ -84,14 +84,11 @@ export class LoginService {
   }
 
   logout(): void {
-    // Perform logout logic here
     localStorage.removeItem('token')
     localStorage.removeItem("username");
-
     localStorage.removeItem('actor')
     localStorage.removeItem('role')
-
-
+    localStorage.removeItem('did')
     this.isLoggedIn.next(false);
     this.router.navigate(['/Login']);
   }
