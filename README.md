@@ -17,7 +17,7 @@
 ![image](https://github.com/omarmosaad100/Saleem-Angular/assets/71345608/a99b2e5d-c79e-492c-af54-ace72801702c)
 
 ## Admin has different route to login 
-![image](https://github.com/omarmosaad100/Saleem-Angular/assets/71345608/bda9716b-4b21-46dd-9405-a2c600b05a03)
+![Uploading image.png…]()
 
 ----------------------------------------------------------------------------------------
 
